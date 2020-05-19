@@ -1,0 +1,17 @@
+https://www.postgresql.org/ftp/projects/pgFoundry/dbsamples/
+
+https://github.com/lerocha/chinook-database
+
+https://github.com/devrimgunduz/pagila
+
+https://wiki.postgresql.org/wiki/Sample_Databases
+
+https://www.sqlskills.com/sql-server-resources/sql-server-demos/
+
+https://docs.microsoft.com/es-es/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases
+
+https://blog.sqlauthority.com/2020/02/15/mysql-download-sample-database-sakila-world-employee/amp/
+
+https://dev.mysql.com/doc/sakila/en/sakila-installation.html
+
+https://github.com/datacharmer/test_db?files=1
