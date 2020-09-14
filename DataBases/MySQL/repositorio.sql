@@ -9,7 +9,7 @@ CREATE TABLE `tme` (
   `url` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `oai_set` varchar(255) DEFAULT NULL,
-  `dispquery` enum('false','true') NOT NULL COMMENT 'Dispon¡vel para consulta externa',
+  `dispquery` enum('false','true') NOT NULL,
   `dc_title` varchar(255) DEFAULT NULL,
   `dc_creator` text,
   `dc_subject` varchar(255) DEFAULT NULL,
@@ -25,8 +25,8 @@ CREATE TABLE `tme` (
   `dc_relation` varchar(255) DEFAULT NULL,
   `dc_coverage` varchar(255) DEFAULT NULL,
   `dc_rights` varchar(255) DEFAULT NULL,
-  `loginbd` varchar(15) NOT NULL COMMENT 'Login do banco de dados',
-  `passwordbd` varchar(15) NOT NULL COMMENT 'Senha de acesso ao banco de dados',
+  `loginbd` varchar(15) NOT NULL,
+  `passwordbd` varchar(15) NOT NULL,
   PRIMARY KEY (`serial`)
 ) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
