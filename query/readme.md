@@ -7,4 +7,4 @@ Pré-requisitos:
 5) Instalar o textblob (pip install textblob)
 6) Instalar o client MySQL (pip install mysql-connector-python)
 7) Instalar o PyCountry (pip install pycountry)
-8) Na primeira execução descomentar o código #nltk.download('punkt'), #nltk.download('stopwords') e #nltk.download('wordnet')
+8) Na primeira execução descomentar o código #nltk.download('punkt'), #nltk.download('stopwords'), #nltk.download('omw') e #nltk.download('wordnet')
