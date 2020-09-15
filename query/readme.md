@@ -8,3 +8,4 @@ Pré-requisitos:
 6) Instalar o client MySQL (pip install mysql-connector-python)
 7) Instalar o PyCountry (pip install pycountry)
 8) Na primeira execução descomentar o código #nltk.download('punkt'), #nltk.download('stopwords'), #nltk.download('omw') e #nltk.download('wordnet')
+9) Copiar a pasta WordNet para a pasta C:\Program Files (x86)\
