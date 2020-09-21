@@ -9,3 +9,4 @@ Pré-requisitos:
 7) Instalar o PyCountry (pip install pycountry)
 8) Na primeira execução descomentar o código #nltk.download('punkt'), #nltk.download('stopwords'), #nltk.download('omw') e #nltk.download('wordnet')
 9) Copiar a pasta WordNet para a pasta C:\Program Files (x86)\
+10) Alterar a biblioteca Translate do TextBlob para não gerar erro ao não encontrar uma tradução para um determinado termo. Comente as linhas 84 e 85 do arquivo \venv\Lib\site-packages\textblob\translate.py 
