@@ -1,0 +1,12 @@
+CONSULTA: ator morto
+CONSULTA EXPANDIDA: actor actriz artista actor dead dead
+IDIOMA: por
+TERMO DE VALOR: 'fast and furious'
+ATRIBUTO: 
+FUNCAO AGREGACAO: 
+FUNCAO ORDENACAO: 
+FUNCAO AGRUPAMENTO: 
+CONSULTA EXPANDIDA: [actor, actriz, artista, actor, dead, dead]
+BANCOS COM INFORMACOES UTEIS: {}
+RANKING DOS BANCOS: []
+Nao existem bancos com informacoes uteis para a consulta!

@@ -1,0 +1,12 @@
+CONSULTA: atuação direção Tempo
+CONSULTA EXPANDIDA: atuação interpretação representação executar fazer directing apontar direcionar dirigir vez hora tempo
+IDIOMA: por
+TERMO DE VALOR: 
+ATRIBUTO: 
+FUNCAO AGREGACAO: 
+FUNCAO ORDENACAO: 
+FUNCAO AGRUPAMENTO: 
+CONSULTA EXPANDIDA: [atuação, interpretação, representação, executar, fazer, directing, apontar, direcionar, dirigir, vez, hora, tempo]
+BANCOS COM INFORMACOES UTEIS: {}
+RANKING DOS BANCOS: []
+Nao existem bancos com informacoes uteis para a consulta!

@@ -1,0 +1,967 @@
+CONSULTA: Smallville episódio
+CONSULTA EXPANDIDA: smallville episódio
+IDIOMA: por
+TERMO DE VALOR: 
+ATRIBUTO: .idea
+FUNCAO AGREGACAO: outputs
+FUNCAO ORDENACAO: preprocessing.py
+FUNCAO AGRUPAMENTO: sqlFunctions.py
+CONSULTA EXPANDIDA: [smallville, episódio]
+BANCOS COM INFORMACOES UTEIS: {imdb_pt_red=1}
+
+PESQUISANDO O BANCO imdb_pt_red
+RELACIONAMENTO ENTRE AS TABELAS NO BANCO imdb_pt_red: {pessoa=[ator_filme.fk_atorFilme_pessoa, diretor_filme.fk_diretorFilme_pessoa], ator_filme=[filme.fk_atorFilme_filme, pessoa.fk_atorFilme_pessoa], filme=[ator_filme.fk_atorFilme_filme, diretor_filme.fk_diretorFilme_filme, episodio.fk_episodio_filme, genero_filme.fk_generoFilme_filme], genero_filme=[filme.fk_generoFilme_filme, genero.fk_generoFilme_genero], diretor_filme=[filme.fk_diretorFilme_filme, pessoa.fk_diretorFilme_pessoa], genero=[genero_filme.fk_generoFilme_genero], episodio=[filme.fk_episodio_filme]}
+
+MATRIZ DE PESOS
+
+MATRIZ SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+smallville	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+episódio	0	0	88	0	0	0	0	0	0	0	0	82	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+
+
+MATRIZ VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+smallville	65	65	65	65	65	65	0	0	65	65	65	65	65	0	0	65	65	0	65	65	65	65	
+episódio	65	65	65	65	65	65	0	0	65	65	65	65	65	0	0	65	65	0	65	65	65	65	
+
+1º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+smallville*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+episódio	0	0	88*	0	0	0	0	0	0	0	0	82	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 88
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+smallville	65	65	65	65	75*	75	0	0	65	65	65	65	65	0	0	65	65	0	65	65	65	65	
+episódio*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 75
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+episódio ---> episodio
+smallville ---> episodio.episodioId.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [episodio]
+
+CONSULTA SQL: select distinct episodio.filmeId, episodio.numeroTemporada, episodio.numeroEpisodio
+from episodio
+where episodio.episodioId like '%smallville%' 
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+2º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+smallville*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+episódio	0	0	88*	0	0	0	0	0	0	0	0	82	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 88
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+smallville	65	65	65	65	-100	75*	0	0	65	65	65	65	65	0	0	65	65	0	65	65	65	65	
+episódio*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 75
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+episódio ---> episodio
+smallville ---> episodio.filmeId.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [episodio]
+
+CONSULTA SQL: select distinct episodio.episodioId, episodio.numeroTemporada, episodio.numeroEpisodio
+from episodio
+where episodio.filmeId like '%smallville%' 
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+3º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+smallville*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+episódio	0	0	-100	0	0	0	0	0	0	0	0	82*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 82
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+smallville	69	69	69	69	75*	75	0	0	69	69	69	69	69	0	0	69	69	0	69	69	69	69	
+episódio*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 75
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+episódio ---> episodio.episodioid
+smallville ---> episodio.episodioId.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [episodio]
+
+CONSULTA SQL: select distinct episodio.episodioid
+from episodio
+where episodio.episodioId like '%smallville%' 
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+4º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+smallville*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+episódio	0	0	-100	0	0	0	0	0	0	0	0	82*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 82
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+smallville	69	69	69	69	-100	75*	0	0	69	69	69	69	69	0	0	69	69	0	69	69	69	69	
+episódio*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 75
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+episódio ---> episodio.episodioid
+smallville ---> episodio.filmeId.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [episodio]
+
+CONSULTA SQL: select distinct episodio.episodioid
+from episodio
+where episodio.filmeId like '%smallville%' 
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+5º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+smallville*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+episódio	0	0	-100	0	0	0	0	0	0	0	0	82*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 82
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+smallville	-100	-100	-100	-100	-100	-100	0	0	69*	69	69	69	69	0	0	69	69	0	69	69	69	69	
+episódio*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 69
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+episódio ---> episodio.episodioid
+smallville ---> filme.filmeId.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [episodio, filme]
+EXECUCAO DO CAMINHO: episodio. filme.fk_episodio_filme
+
+CONSULTA SQL: select distinct episodio.episodioid
+from episodio, filme
+where filme.filmeId like '%smallville%' AND  filme.filmeId = episodio.filmeId
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+6º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+smallville*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+episódio	0	0	-100	0	0	0	0	0	0	0	0	82*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 82
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+smallville	-100	-100	-100	-100	-100	-100	0	0	-100	69*	69	69	69	0	0	69	69	0	69	69	69	69	
+episódio*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 69
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+episódio ---> episodio.episodioid
+smallville ---> filme.tipo.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [episodio, filme]
+EXECUCAO DO CAMINHO: episodio. filme.fk_episodio_filme
+
+CONSULTA SQL: select distinct episodio.episodioid
+from episodio, filme
+where filme.tipo like '%smallville%' AND  filme.filmeId = episodio.filmeId
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+7º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+smallville*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+episódio	0	0	-100	0	0	0	0	0	0	0	0	82*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 82
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+smallville	-100	-100	-100	-100	-100	-100	0	0	-100	-100	69*	69	69	0	0	69	69	0	69	69	69	69	
+episódio*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 69
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+episódio ---> episodio.episodioid
+smallville ---> filme.titulo.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [episodio, filme]
+EXECUCAO DO CAMINHO: episodio. filme.fk_episodio_filme
+
+CONSULTA SQL: select distinct episodio.episodioid
+from episodio, filme
+where filme.titulo like '%smallville%' AND  filme.filmeId = episodio.filmeId
+
+
+RESULTADO
+-----------------------------------------------------
+episodio.episodioid 	
+
+tt0394892 	
+tt0702930 	
+tt0702931 	
+tt0702932 	
+tt0702933 	
+tt0702934 	
+tt0702935 	
+tt0702936 	
+tt0702937 	
+tt0702938 	
+tt0702939 	
+tt0702940 	
+tt0702941 	
+tt0702942 	
+tt0702943 	
+tt0702944 	
+tt0702945 	
+tt0702946 	
+tt0702947 	
+tt0702948 	
+tt0702949 	
+tt0702950 	
+tt0702951 	
+tt0702952 	
+tt0702953 	
+tt0702954 	
+tt0702955 	
+tt0702956 	
+tt0702957 	
+tt0702958 	
+tt0702959 	
+tt0702960 	
+tt0702961 	
+tt0702962 	
+tt0702963 	
+tt0702964 	
+tt0702965 	
+tt0702966 	
+tt0702967 	
+tt0702968 	
+tt0702969 	
+tt0702970 	
+tt0702971 	
+tt0702972 	
+tt0702973 	
+tt0702974 	
+tt0702975 	
+tt0702976 	
+tt0702977 	
+tt0702978 	
+tt0702979 	
+tt0702981 	
+tt0702982 	
+tt0702983 	
+tt0702984 	
+tt0702985 	
+tt0702986 	
+tt0702987 	
+tt0702988 	
+tt0702989 	
+tt0702990 	
+tt0702991 	
+tt0702992 	
+tt0702993 	
+tt0702994 	
+tt0702995 	
+tt0702996 	
+tt0702997 	
+tt0702998 	
+tt0702999 	
+tt0703000 	
+tt0703001 	
+tt0703002 	
+tt0703003 	
+tt0703004 	
+tt0703005 	
+tt0703006 	
+tt0703007 	
+tt0703008 	
+tt0703009 	
+tt0703010 	
+tt0703011 	
+tt0703012 	
+tt0703013 	
+tt0703014 	
+tt0703015 	
+tt0703016 	
+tt0703017 	
+tt0703018 	
+tt0703019 	
+tt0703020 	
+tt0703021 	
+tt0703022 	
+tt0703023 	
+tt0703024 	
+tt0703025 	
+tt0703026 	
+tt0703027 	
+tt0703028 	
+tt0703029 	
+tt0703030 	
+tt0703031 	
+tt0703032 	
+tt0703033 	
+tt0759270 	
+tt0770866 	
+tt0776042 	
+tt0776043 	
+tt0776256 	
+tt0777524 	
+tt0781983 	
+tt0851026 	
+tt0854017 	
+tt0855623 	
+tt0860230 	
+tt0860231 	
+tt0860232 	
+tt0883272 	
+tt0892673 	
+tt0893232 	
+tt0909291 	
+tt0925651 	
+tt0925652 	
+tt0925653 	
+tt0925654 	
+tt0928328 	
+tt0959376 	
+tt0960605 	
+tt0978549 	
+tt0978550 	
+tt0989789 	
+tt0989790 	
+tt0989791 	
+tt1032115 	
+tt1032116 	
+tt1032117 	
+tt1032118 	
+tt1032119 	
+tt1032120 	
+tt1032121 	
+tt1032122 	
+tt1032123 	
+tt1032124 	
+tt1032125 	
+tt1032126 	
+tt1032127 	
+tt1164723 	
+tt1173416 	
+tt1200236 	
+tt1200237 	
+tt1208489 	
+tt1208490 	
+tt1211751 	
+tt1263577 	
+tt1266014 	
+tt1267037 	
+tt1267038 	
+tt1267039 	
+tt1267040 	
+tt1267041 	
+tt1267042 	
+tt1267043 	
+tt1267044 	
+tt1267045 	
+tt1267046 	
+tt1267291 	
+tt1329871 	
+tt1329872 	
+tt1337080 	
+tt1337081 	
+tt1360618 	
+tt1366090 	
+tt1385356 	
+tt1390458 	
+tt1396207 	
+tt1465296 	
+tt1465297 	
+tt1468806 	
+tt1468807 	
+tt1480515 	
+tt1480516 	
+tt1490353 	
+tt1490354 	
+tt1499824 	
+tt1510516 	
+tt1512300 	
+tt1535502 	
+tt1535503 	
+tt1584507 	
+tt1588124 	
+tt1588125 	
+tt1588126 	
+tt1609037 	
+tt1609038 	
+tt1612968 	
+tt1612969 	
+tt1628580 	
+tt1628581 	
+tt1628582 	
+tt1628583 	
+tt1628584 	
+tt1628585 	
+tt1628586 	
+tt1628587 	
+tt1628588 	
+tt1628589 	
+tt1628590 	
+tt1628591 	
+tt1628592 	
+tt1628593 	
+tt1628595 	
+tt1628596 	
+tt1628597 	
+tt1628598 	
+tt1628599 	
+tt1628600 	
+tt1628601 	
+tt0703034 	
+tt0703035 	
+tt0703036 	
+tt0776645 	
+tt0776646 	
+tt0776647 	
+tt0776648 	
+tt0776649 	
+tt5751816 	
+tt5751818 	
+tt5751822 	
+tt5751824 	
+-----------------------------------------------------
+
+8º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+smallville*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+episódio	0	0	-100	0	0	0	0	0	0	0	0	82*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 82
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+smallville	-100	-100	-100	-100	-100	-100	0	0	-100	-100	-100	69*	69	0	0	69	69	0	69	69	69	69	
+episódio*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 69
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+episódio ---> episodio.episodioid
+smallville ---> filme.anoInicio.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [episodio, filme]
+EXECUCAO DO CAMINHO: episodio. filme.fk_episodio_filme
+
+CONSULTA SQL: select distinct episodio.episodioid
+from episodio, filme
+where filme.anoInicio like '%smallville%' AND  filme.filmeId = episodio.filmeId
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+9º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+smallville*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+episódio	0	0	-100	0	0	0	0	0	0	0	0	82*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 82
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+smallville	-100	-100	-100	-100	-100	-100	0	0	-100	-100	-100	-100	69*	0	0	69	69	0	69	69	69	69	
+episódio*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 69
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+episódio ---> episodio.episodioid
+smallville ---> filme.anoFim.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [episodio, filme]
+EXECUCAO DO CAMINHO: episodio. filme.fk_episodio_filme
+
+CONSULTA SQL: select distinct episodio.episodioid
+from episodio, filme
+where filme.anoFim like '%smallville%' AND  filme.filmeId = episodio.filmeId
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+10º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+smallville*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+episódio	0	0	-100	0	0	0	0	0	0	0	0	82*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 82
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+smallville	69*	69	69	69	-100	-100	0	0	69	69	69	69	69	0	0	69	69	0	69	69	69	69	
+episódio*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 69
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+episódio ---> episodio.episodioid
+smallville ---> ator_filme.filmeId.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [ator_filme, episodio]
+EXECUCAO DO CAMINHO: ator_filme. filme.fk_atorFilme_filme episodio.fk_episodio_filme
+
+CONSULTA SQL: select distinct episodio.episodioid
+from ator_filme, episodio, filme
+where ator_filme.filmeId like '%smallville%' AND  filme.filmeId = ator_filme.filmeId AND filme.filmeId = episodio.filmeId
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+11º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+smallville*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+episódio	0	0	-100	0	0	0	0	0	0	0	0	82*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 82
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+smallville	-100	69*	69	69	-100	-100	0	0	69	69	69	69	69	0	0	69	69	0	69	69	69	69	
+episódio*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 69
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+episódio ---> episodio.episodioid
+smallville ---> ator_filme.pessoaId.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [ator_filme, episodio]
+EXECUCAO DO CAMINHO: ator_filme. filme.fk_atorFilme_filme episodio.fk_episodio_filme
+
+CONSULTA SQL: select distinct episodio.episodioid
+from ator_filme, episodio, filme
+where ator_filme.pessoaId like '%smallville%' AND  filme.filmeId = ator_filme.filmeId AND filme.filmeId = episodio.filmeId
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+12º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+smallville*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+episódio	0	0	-100	0	0	0	0	0	0	0	0	82*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 82
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+smallville	-100	-100	69*	69	-100	-100	0	0	69	69	69	69	69	0	0	69	69	0	69	69	69	69	
+episódio*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 69
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+episódio ---> episodio.episodioid
+smallville ---> diretor_filme.filmeId.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [diretor_filme, episodio]
+EXECUCAO DO CAMINHO: diretor_filme. filme.fk_diretorFilme_filme episodio.fk_episodio_filme
+
+CONSULTA SQL: select distinct episodio.episodioid
+from diretor_filme, episodio, filme
+where diretor_filme.filmeId like '%smallville%' AND  filme.filmeId = diretor_filme.filmeId AND filme.filmeId = episodio.filmeId
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+13º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+smallville*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+episódio	0	0	-100	0	0	0	0	0	0	0	0	82*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 82
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+smallville	-100	-100	-100	69*	-100	-100	0	0	69	69	69	69	69	0	0	69	69	0	69	69	69	69	
+episódio*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 69
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+episódio ---> episodio.episodioid
+smallville ---> diretor_filme.pessoaId.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [diretor_filme, episodio]
+EXECUCAO DO CAMINHO: diretor_filme. filme.fk_diretorFilme_filme episodio.fk_episodio_filme
+
+CONSULTA SQL: select distinct episodio.episodioid
+from diretor_filme, episodio, filme
+where diretor_filme.pessoaId like '%smallville%' AND  filme.filmeId = diretor_filme.filmeId AND filme.filmeId = episodio.filmeId
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+14º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+smallville*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+episódio	0	0	-100	0	0	0	0	0	0	0	0	82*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 82
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+smallville	-100	-100	-100	-100	-100	-100	0	0	-100	-100	-100	-100	-100	0	0	-100	69*	0	69	69	69	69	
+episódio*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 69
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+episódio ---> episodio.episodioid
+smallville ---> genero_filme.filmeId.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [genero_filme, episodio]
+EXECUCAO DO CAMINHO: genero_filme. filme.fk_generoFilme_filme episodio.fk_episodio_filme
+
+CONSULTA SQL: select distinct episodio.episodioid
+from genero_filme, episodio, filme
+where genero_filme.filmeId like '%smallville%' AND  filme.filmeId = genero_filme.filmeId AND filme.filmeId = episodio.filmeId
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+15º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+smallville*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+episódio	0	0	-100	0	0	0	0	0	0	0	0	82*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 82
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+smallville	-100	-100	-100	-100	-100	-100	0	0	-100	-100	-100	-100	-100	0	0	69*	69	0	69	69	69	69	
+episódio*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 69
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+episódio ---> episodio.episodioid
+smallville ---> genero.nome.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [episodio, genero]
+EXECUCAO DO CAMINHO: episodio. filme.fk_episodio_filme genero_filme.fk_generoFilme_filme genero.fk_generoFilme_genero
+
+CONSULTA SQL: select distinct episodio.episodioid
+from genero_filme, episodio, genero, filme
+where genero.nome like '%smallville%' AND  filme.filmeId = episodio.filmeId AND filme.filmeId = genero_filme.filmeId AND genero.generoId = genero_filme.generoId
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+16º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+smallville*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+episódio	0	0	-100	0	0	0	0	0	0	0	0	82*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 82
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+smallville	-100	-100	-100	-100	-100	-100	0	0	-100	-100	-100	-100	-100	0	0	-100	-100	0	69*	69	69	69	
+episódio*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 69
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+episódio ---> episodio.episodioid
+smallville ---> pessoa.pessoaId.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [pessoa, episodio]
+EXECUCAO DO CAMINHO: pessoa. diretor_filme.fk_diretorFilme_pessoa filme.fk_diretorFilme_filme episodio.fk_episodio_filme
+
+CONSULTA SQL: select distinct episodio.episodioid
+from pessoa, diretor_filme, episodio, filme
+where pessoa.pessoaId like '%smallville%' AND  pessoa.pessoaId = diretor_filme.pessoaId AND filme.filmeId = diretor_filme.filmeId AND filme.filmeId = episodio.filmeId
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+17º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+smallville*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+episódio	0	0	-100	0	0	0	0	0	0	0	0	82*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 82
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+smallville	-100	-100	-100	-100	-100	-100	0	0	-100	-100	-100	-100	-100	0	0	-100	-100	0	69*	69	69	69	
+episódio*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 69
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+episódio ---> episodio.episodioid
+smallville ---> pessoa.pessoaId.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [pessoa, episodio]
+EXECUCAO DO CAMINHO: pessoa. ator_filme.fk_atorFilme_pessoa filme.fk_atorFilme_filme episodio.fk_episodio_filme
+
+CONSULTA SQL: select distinct episodio.episodioid
+from ator_filme, pessoa, episodio, filme
+where pessoa.pessoaId like '%smallville%' AND pessoa.pessoaId = ator_filme.pessoaId AND filme.filmeId = ator_filme.filmeId AND filme.filmeId = episodio.filmeId
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+18º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+smallville*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+episódio	0	0	-100	0	0	0	0	0	0	0	0	82*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 82
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+smallville	-100	-100	-100	-100	-100	-100	0	0	-100	-100	-100	-100	-100	0	0	-100	-100	0	-100	69*	69	69	
+episódio*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 69
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+episódio ---> episodio.episodioid
+smallville ---> pessoa.nome.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [pessoa, episodio]
+EXECUCAO DO CAMINHO: pessoa. diretor_filme.fk_diretorFilme_pessoa filme.fk_diretorFilme_filme episodio.fk_episodio_filme
+
+CONSULTA SQL: select distinct episodio.episodioid
+from pessoa, diretor_filme, episodio, filme
+where pessoa.nome like '%smallville%' AND  pessoa.pessoaId = diretor_filme.pessoaId AND filme.filmeId = diretor_filme.filmeId AND filme.filmeId = episodio.filmeId
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+19º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+smallville*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+episódio	0	0	-100	0	0	0	0	0	0	0	0	82*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 82
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+smallville	-100	-100	-100	-100	-100	-100	0	0	-100	-100	-100	-100	-100	0	0	-100	-100	0	-100	69*	69	69	
+episódio*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 69
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+episódio ---> episodio.episodioid
+smallville ---> pessoa.nome.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [pessoa, episodio]
+EXECUCAO DO CAMINHO: pessoa. ator_filme.fk_atorFilme_pessoa filme.fk_atorFilme_filme episodio.fk_episodio_filme
+
+CONSULTA SQL: select distinct episodio.episodioid
+from ator_filme, pessoa, episodio, filme
+where pessoa.nome like '%smallville%' AND pessoa.pessoaId = ator_filme.pessoaId AND filme.filmeId = ator_filme.filmeId AND filme.filmeId = episodio.filmeId
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+20º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+smallville*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+episódio	0	0	-100	0	0	0	0	0	0	0	0	82*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 82
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+smallville	-100	-100	-100	-100	-100	-100	0	0	-100	-100	-100	-100	-100	0	0	-100	-100	0	-100	-100	69*	69	
+episódio*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 69
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+episódio ---> episodio.episodioid
+smallville ---> pessoa.anoNascimento.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [pessoa, episodio]
+EXECUCAO DO CAMINHO: pessoa. diretor_filme.fk_diretorFilme_pessoa filme.fk_diretorFilme_filme episodio.fk_episodio_filme
+
+CONSULTA SQL: select distinct episodio.episodioid
+from pessoa, diretor_filme, episodio, filme
+where pessoa.anoNascimento like '%smallville%' AND  pessoa.pessoaId = diretor_filme.pessoaId AND filme.filmeId = diretor_filme.filmeId AND filme.filmeId = episodio.filmeId
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+21º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+smallville*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+episódio	0	0	-100	0	0	0	0	0	0	0	0	82*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 82
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+smallville	-100	-100	-100	-100	-100	-100	0	0	-100	-100	-100	-100	-100	0	0	-100	-100	0	-100	-100	69*	69	
+episódio*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 69
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+episódio ---> episodio.episodioid
+smallville ---> pessoa.anoNascimento.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [pessoa, episodio]
+EXECUCAO DO CAMINHO: pessoa. ator_filme.fk_atorFilme_pessoa filme.fk_atorFilme_filme episodio.fk_episodio_filme
+
+CONSULTA SQL: select distinct episodio.episodioid
+from ator_filme, pessoa, episodio, filme
+where pessoa.anoNascimento like '%smallville%' AND pessoa.pessoaId = ator_filme.pessoaId AND filme.filmeId = ator_filme.filmeId AND filme.filmeId = episodio.filmeId
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+22º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+smallville*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+episódio	0	0	-100	0	0	0	0	0	0	0	0	82*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 82
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+smallville	-100	-100	-100	-100	-100	-100	0	0	-100	-100	-100	-100	-100	0	0	-100	-100	0	-100	-100	-100	69*	
+episódio*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 69
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+episódio ---> episodio.episodioid
+smallville ---> pessoa.anoMorte.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [pessoa, episodio]
+EXECUCAO DO CAMINHO: pessoa. diretor_filme.fk_diretorFilme_pessoa filme.fk_diretorFilme_filme episodio.fk_episodio_filme
+
+CONSULTA SQL: select distinct episodio.episodioid
+from pessoa, diretor_filme, episodio, filme
+where pessoa.anoMorte like '%smallville%' AND  pessoa.pessoaId = diretor_filme.pessoaId AND filme.filmeId = diretor_filme.filmeId AND filme.filmeId = episodio.filmeId
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+23º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+smallville*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+episódio	0	0	-100	0	0	0	0	0	0	0	0	82*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 82
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+smallville	-100	-100	-100	-100	-100	-100	0	0	-100	-100	-100	-100	-100	0	0	-100	-100	0	-100	-100	-100	69*	
+episódio*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 69
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+episódio ---> episodio.episodioid
+smallville ---> pessoa.anoMorte.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [pessoa, episodio]
+EXECUCAO DO CAMINHO: pessoa. ator_filme.fk_atorFilme_pessoa filme.fk_atorFilme_filme episodio.fk_episodio_filme
+
+CONSULTA SQL: select distinct episodio.episodioid
+from ator_filme, pessoa, episodio, filme
+where pessoa.anoMorte like '%smallville%' AND pessoa.pessoaId = ator_filme.pessoaId AND filme.filmeId = ator_filme.filmeId AND filme.filmeId = episodio.filmeId
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+Tempo em millis: 51111

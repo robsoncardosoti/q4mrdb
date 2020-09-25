@@ -1,0 +1,12 @@
+CONSULTA: dirigido
+CONSULTA EXPANDIDA: directed apontar direcionar dirigir
+IDIOMA: por
+TERMO DE VALOR: 'star is born'
+ATRIBUTO: 
+FUNCAO AGREGACAO: 
+FUNCAO ORDENACAO: 
+FUNCAO AGRUPAMENTO: 
+CONSULTA EXPANDIDA: [directed, apontar, direcionar, dirigir]
+BANCOS COM INFORMACOES UTEIS: {}
+RANKING DOS BANCOS: []
+Nao existem bancos com informacoes uteis para a consulta!

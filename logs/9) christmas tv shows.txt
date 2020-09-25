@@ -1,0 +1,12 @@
+CONSULTA: Natal televisão mostrar
+CONSULTA EXPANDIDA: natal nadal televisão tevê televisor apresentação exibição show
+IDIOMA: por
+TERMO DE VALOR: 
+ATRIBUTO: 
+FUNCAO AGREGACAO: 
+FUNCAO ORDENACAO: 
+FUNCAO AGRUPAMENTO: 
+CONSULTA EXPANDIDA: [natal, nadal, televisão, tevê, televisor, apresentação, exibição, show]
+BANCOS COM INFORMACOES UTEIS: {}
+RANKING DOS BANCOS: []
+Nao existem bancos com informacoes uteis para a consulta!

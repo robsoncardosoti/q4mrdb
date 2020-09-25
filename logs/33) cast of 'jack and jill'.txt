@@ -1,0 +1,12 @@
+CONSULTA: fundida
+CONSULTA EXPANDIDA: elenco molde
+IDIOMA: por
+TERMO DE VALOR: 'jack and jill'
+ATRIBUTO: 
+FUNCAO AGREGACAO: 
+FUNCAO ORDENACAO: 
+FUNCAO AGRUPAMENTO: 
+CONSULTA EXPANDIDA: [elenco, molde]
+BANCOS COM INFORMACOES UTEIS: {}
+RANKING DOS BANCOS: []
+Nao existem bancos com informacoes uteis para a consulta!

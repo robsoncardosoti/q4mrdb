@@ -1,0 +1,12 @@
+CONSULTA: term_value direção
+CONSULTA EXPANDIDA: directoring
+IDIOMA: POR
+TERMO DE VALOR: 'steven spielberg'
+ATRIBUTO: 
+FUNCAO AGREGACAO: 
+FUNCAO ORDENACAO: 
+FUNCAO AGRUPAMENTO: 
+CONSULTA EXPANDIDA: [directoring]
+BANCOS COM INFORMACOES UTEIS: {}
+RANKING DOS BANCOS: []
+Nao existem bancos com informacoes uteis para a consulta!

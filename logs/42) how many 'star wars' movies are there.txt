@@ -1,0 +1,553 @@
+CONSULTA: filme
+CONSULTA EXPANDIDA: cinema filme filmes
+IDIOMA: por
+TERMO DE VALOR: 'star wars'
+ATRIBUTO: cinema
+FUNCAO AGREGACAO: count(cinema)
+FUNCAO ORDENACAO: 
+FUNCAO AGRUPAMENTO: 
+CONSULTA EXPANDIDA: [cinema, filme, filmes]
+BANCOS COM INFORMACOES UTEIS: {imdb_pt_red=4}
+
+PESQUISANDO O BANCO imdb_pt_red
+RELACIONAMENTO ENTRE AS TABELAS NO BANCO imdb_pt_red: {pessoa=[ator_filme.fk_atorFilme_pessoa, diretor_filme.fk_diretorFilme_pessoa], ator_filme=[filme.fk_atorFilme_filme, pessoa.fk_atorFilme_pessoa], filme=[ator_filme.fk_atorFilme_filme, diretor_filme.fk_diretorFilme_filme, episodio.fk_episodio_filme, genero_filme.fk_generoFilme_filme], genero_filme=[filme.fk_generoFilme_filme, genero.fk_generoFilme_genero], diretor_filme=[filme.fk_diretorFilme_filme, pessoa.fk_diretorFilme_pessoa], genero=[genero_filme.fk_generoFilme_genero], episodio=[filme.fk_episodio_filme]}
+
+MATRIZ DE PESOS
+
+MATRIZ SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+filme	0	0	0	100	0	0	0	82	0	82	0	0	82	0	0	82	0	0	0	0	0	0	0	82	0	0	0	0	0	
+'star wars'	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+
+
+MATRIZ VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+filme	65	65	65	65	65	65	0	0	65	65	65	65	65	0	0	65	65	0	65	65	65	65	
+'star wars'	65	65	65	65	65	65	0	0	65	65	65	65	65	0	0	65	65	0	65	65	65	65	
+
+1º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+filme	0	0	0	100*	0	0	0	82	0	82	0	0	82	0	0	82	0	0	0	0	0	0	0	82	0	0	0	0	0	
+'star wars'*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 100
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+filme*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+'star wars'	75*	75	75	75	65	65	0	0	75	75	75	75	75	0	0	65	75	0	65	65	65	65	
+PONTUACAO VW: 75
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+filme ---> filme
+'star wars' ---> ator_filme.filmeId.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [ator_filme, filme]
+EXECUCAO DO CAMINHO: ator_filme. filme.fk_atorFilme_filme
+
+CONSULTA SQL: select distinct ator_filme.pessoaId, filme.tipo, filme.titulo, filme.anoInicio, filme.anoFim, filme.avaliacao
+from ator_filme, filme
+where ator_filme.filmeId like '%star%' AND filme.filmeId = ator_filme.filmeId
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+2º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+filme	0	0	0	100*	0	0	0	82	0	82	0	0	82	0	0	82	0	0	0	0	0	0	0	82	0	0	0	0	0	
+'star wars'*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 100
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+filme*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+'star wars'	-100	75*	75	75	65	65	0	0	75	75	75	75	75	0	0	65	75	0	65	65	65	65	
+PONTUACAO VW: 75
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+filme ---> filme
+'star wars' ---> ator_filme.pessoaId.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [ator_filme, filme]
+EXECUCAO DO CAMINHO: ator_filme. filme.fk_atorFilme_filme
+
+CONSULTA SQL: select distinct filme.tipo, filme.titulo, filme.anoInicio, filme.anoFim, filme.avaliacao
+from ator_filme, filme
+where ator_filme.pessoaId like '%star%' AND filme.filmeId = ator_filme.filmeId
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+3º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+filme	0	0	0	100*	0	0	0	82	0	82	0	0	82	0	0	82	0	0	0	0	0	0	0	82	0	0	0	0	0	
+'star wars'*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 100
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+filme*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+'star wars'	-100	-100	75*	75	65	65	0	0	75	75	75	75	75	0	0	65	75	0	65	65	65	65	
+PONTUACAO VW: 75
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+filme ---> filme
+'star wars' ---> diretor_filme.filmeId.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [diretor_filme, filme]
+EXECUCAO DO CAMINHO: diretor_filme. filme.fk_diretorFilme_filme
+
+CONSULTA SQL: select distinct diretor_filme.pessoaId, filme.tipo, filme.titulo, filme.anoInicio, filme.anoFim, filme.avaliacao
+from diretor_filme, filme
+where diretor_filme.filmeId like '%star%' AND filme.filmeId = diretor_filme.filmeId
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+4º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+filme	0	0	0	100*	0	0	0	82	0	82	0	0	82	0	0	82	0	0	0	0	0	0	0	82	0	0	0	0	0	
+'star wars'*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 100
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+filme*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+'star wars'	-100	-100	-100	75*	65	65	0	0	75	75	75	75	75	0	0	65	75	0	65	65	65	65	
+PONTUACAO VW: 75
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+filme ---> filme
+'star wars' ---> diretor_filme.pessoaId.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [diretor_filme, filme]
+EXECUCAO DO CAMINHO: diretor_filme. filme.fk_diretorFilme_filme
+
+CONSULTA SQL: select distinct filme.tipo, filme.titulo, filme.anoInicio, filme.anoFim, filme.avaliacao
+from diretor_filme, filme
+where diretor_filme.pessoaId like '%star%' AND filme.filmeId = diretor_filme.filmeId
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+5º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+filme	0	0	0	100*	0	0	0	82	0	82	0	0	82	0	0	82	0	0	0	0	0	0	0	82	0	0	0	0	0	
+'star wars'*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 100
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+filme*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+'star wars'	-100	-100	-100	-100	65	65	0	0	75*	75	75	75	75	0	0	65	75	0	65	65	65	65	
+PONTUACAO VW: 75
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+filme ---> filme
+'star wars' ---> filme.filmeId.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [filme]
+
+CONSULTA SQL: select distinct filme.tipo, filme.titulo, filme.anoInicio, filme.anoFim, filme.avaliacao
+from filme
+where filme.filmeId like '%star%' AND  filme.filmeId like '%wars%' 
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+6º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+filme	0	0	0	100*	0	0	0	82	0	82	0	0	82	0	0	82	0	0	0	0	0	0	0	82	0	0	0	0	0	
+'star wars'*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 100
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+filme*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+'star wars'	-100	-100	-100	-100	65	65	0	0	-100	75*	75	75	75	0	0	65	75	0	65	65	65	65	
+PONTUACAO VW: 75
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+filme ---> filme
+'star wars' ---> filme.tipo.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [filme]
+
+CONSULTA SQL: select distinct filme.filmeId, filme.titulo, filme.anoInicio, filme.anoFim, filme.avaliacao
+from filme
+where filme.tipo like '%star%' AND  filme.tipo like '%wars%' 
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+7º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+filme	0	0	0	100*	0	0	0	82	0	82	0	0	82	0	0	82	0	0	0	0	0	0	0	82	0	0	0	0	0	
+'star wars'*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 100
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+filme*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+'star wars'	-100	-100	-100	-100	65	65	0	0	-100	-100	75*	75	75	0	0	65	75	0	65	65	65	65	
+PONTUACAO VW: 75
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+filme ---> filme
+'star wars' ---> filme.titulo.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [filme]
+
+CONSULTA SQL: select distinct filme.filmeId, filme.tipo, filme.anoInicio, filme.anoFim, filme.avaliacao
+from filme
+where filme.titulo like '%star%' AND  filme.titulo like '%wars%' 
+
+
+RESULTADO
+-----------------------------------------------------
+filme.filmeId 	filme.tipo 	filme.anoInicio 	filme.anoFim 	filme.avaliacao 	
+
+tt0086190 	movie 	1983 	null 	8.3 	
+tt0088510 	tvSeries 	1985 	1986 	6.1 	
+tt0120915 	movie 	1999 	null 	6.5 	
+tt0121765 	movie 	2002 	null 	6.5 	
+tt0121766 	movie 	2005 	null 	7.5 	
+tt0313990 	movie 	1985 	null 	6.9 	
+tt0361243 	tvSeries 	2003 	2005 	7.8 	
+tt0387563 	movie 	2004 	null 	5.4 	
+tt0458290 	tvSeries 	2008 	2020 	8.2 	
+tt0466264 	movie 	2003 	null 	7.2 	
+tt10239898 	movie 	2020 	null 	null 	
+tt10250692 	tvSeries 	2019 	null 	null 	
+tt10277930 	movie 	2007 	null 	8.4 	
+tt10300394 	movie 	2023 	null 	null 	
+tt10300396 	movie 	2025 	null 	null 	
+tt10300398 	movie 	2027 	null 	null 	
+tt10321138 	movie 	2016 	null 	null 	
+tt10653012 	tvSeries 	2017 	null 	6.2 	
+tt10772724 	tvSeries 	2018 	null 	6.5 	
+tt10799452 	tvSeries 	2019 	2020 	5.4 	
+tt10815480 	tvSeries 	2019 	null 	null 	
+tt10935248 	tvSeries 	2017 	null 	8.2 	
+tt10949930 	tvSeries 	2019 	null 	null 	
+tt10994972 	movie 	2019 	null 	null 	
+tt11038354 	tvSeries 	2018 	null 	null 	
+tt11281500 	tvSeries 	2017 	2017 	6.2 	
+tt11382524 	tvSeries 	2020 	null 	7.6 	
+tt11563030 	movie 	2018 	null 	null 	
+tt11616456 	movie 	2019 	null 	null 	
+tt11645366 	tvSeries 	2015 	null 	null 	
+tt11708822 	tvSeries 	2018 	2020 	null 	
+tt11719872 	tvSeries 	2020 	null 	null 	
+tt1185834 	movie 	2008 	null 	5.9 	
+tt11905336 	movie 	2019 	null 	7.6 	
+tt11953086 	tvSeries 	2016 	null 	null 	
+tt11968190 	movie 	2023 	null 	null 	
+tt12031272 	tvSeries 	2019 	null 	null 	
+tt12516530 	tvSeries 	1981 	1981 	null 	
+tt12516552 	tvSeries 	1983 	1983 	null 	
+tt12516558 	tvSeries 	1996 	1996 	null 	
+tt12708542 	tvSeries 	2021 	null 	null 	
+tt12910544 	movie 	2020 	null 	null 	
+tt12938384 	tvSeries 	2018 	null 	null 	
+tt1403957 	tvSeries 	2009 	null 	6.3 	
+tt1432993 	movie 	2009 	null 	5.2 	
+tt1970025 	movie 	2005 	null 	6.2 	
+tt2076340 	movie 	2007 	null 	7.5 	
+tt2099249 	tvSeries 	2009 	null 	6.3 	
+tt2275656 	movie 	2014 	null 	4.0 	
+tt2488496 	movie 	2015 	null 	7.9 	
+tt2527336 	movie 	2017 	null 	7.0 	
+tt2527338 	movie 	2019 	null 	6.6 	
+tt2930604 	tvSeries 	2014 	2018 	8.0 	
+tt3014650 	tvSeries 	2013 	null 	7.4 	
+tt3648510 	movie 	2014 	null 	6.5 	
+tt3748528 	movie 	2016 	null 	7.8 	
+tt3778644 	movie 	2018 	null 	6.9 	
+tt3810772 	movie 	2014 	null 	6.3 	
+tt4401260 	movie 	2015 	null 	null 	
+tt4600820 	tvSeries 	2015 	null 	null 	
+tt4644286 	movie 	2011 	null 	8.3 	
+tt4854650 	movie 	2017 	null 	null 	
+tt5268892 	tvSeries 	2014 	null 	7.0 	
+tt5314636 	tvSeries 	2015 	null 	5.6 	
+tt5341848 	tvSeries 	2014 	null 	null 	
+tt5459566 	tvSeries 	2016 	null 	7.5 	
+tt5691242 	tvSeries 	2015 	null 	null 	
+tt5715678 	tvSeries 	2016 	null 	7.5 	
+tt5807098 	tvSeries 	2014 	null 	6.9 	
+tt5956554 	tvSeries 	2016 	null 	7.1 	
+tt5957180 	movie 	2017 	null 	5.8 	
+tt6438108 	movie 	2021 	null 	null 	
+tt6522426 	movie 	2017 	null 	null 	
+tt6587704 	tvSeries 	2016 	null 	7.2 	
+tt6682462 	movie 	2012 	null 	null 	
+tt6779076 	tvSeries 	2017 	2018 	4.9 	
+tt7020922 	tvSeries 	2017 	null 	4.2 	
+tt7354414 	tvSeries 	2006 	2017 	4.8 	
+tt7421764 	movie 	2017 	null 	5.5 	
+tt7640228 	movie 	2017 	null 	7.6 	
+tt7753242 	movie 	2017 	null 	null 	
+tt7776316 	movie 	2019 	null 	null 	
+tt7810706 	movie 	2017 	null 	6.1 	
+tt7890784 	tvSeries 	2017 	null 	5.8 	
+tt8336340 	tvSeries 	2018 	2020 	4.9 	
+tt8405802 	tvSeries 	2016 	null 	null 	
+tt8452558 	movie 	2007 	null 	null 	
+tt8499594 	tvSeries 	2017 	null 	null 	
+tt9129500 	movie 	2018 	null 	6.9 	
+tt9297164 	tvSeries 	2018 	null 	6.5 	
+tt9336300 	movie 	2018 	null 	5.0 	
+tt9353248 	tvSeries 	2018 	null 	5.2 	
+tt9548962 	movie 	2018 	null 	8.8 	
+tt9635760 	movie 	2020 	null 	null 	
+tt9842704 	movie 	2018 	null 	null 	
+-----------------------------------------------------
+
+8º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+filme	0	0	0	100*	0	0	0	82	0	82	0	0	82	0	0	82	0	0	0	0	0	0	0	82	0	0	0	0	0	
+'star wars'*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 100
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+filme*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+'star wars'	-100	-100	-100	-100	65	65	0	0	-100	-100	-100	75*	75	0	0	65	75	0	65	65	65	65	
+PONTUACAO VW: 75
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+filme ---> filme
+'star wars' ---> filme.anoInicio.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [filme]
+
+CONSULTA SQL: select distinct filme.filmeId, filme.tipo, filme.titulo, filme.anoFim, filme.avaliacao
+from filme
+where filme.anoInicio like '%star%' AND  filme.anoInicio like '%wars%' 
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+9º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+filme	0	0	0	100*	0	0	0	82	0	82	0	0	82	0	0	82	0	0	0	0	0	0	0	82	0	0	0	0	0	
+'star wars'*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 100
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+filme*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+'star wars'	-100	-100	-100	-100	65	65	0	0	-100	-100	-100	-100	75*	0	0	65	75	0	65	65	65	65	
+PONTUACAO VW: 75
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+filme ---> filme
+'star wars' ---> filme.anoFim.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [filme]
+
+CONSULTA SQL: select distinct filme.filmeId, filme.tipo, filme.titulo, filme.anoInicio, filme.avaliacao
+from filme
+where filme.anoFim like '%star%' AND  filme.anoFim like '%wars%' 
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+10º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+filme	0	0	0	100*	0	0	0	82	0	82	0	0	82	0	0	82	0	0	0	0	0	0	0	82	0	0	0	0	0	
+'star wars'*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 100
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+filme*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+'star wars'	-100	-100	-100	-100	65	65	0	0	-100	-100	-100	-100	-100	0	0	65	75*	0	65	65	65	65	
+PONTUACAO VW: 75
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+filme ---> filme
+'star wars' ---> genero_filme.filmeId.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [genero_filme, filme]
+EXECUCAO DO CAMINHO: genero_filme. filme.fk_generoFilme_filme
+
+CONSULTA SQL: select distinct genero_filme.generoId, filme.tipo, filme.titulo, filme.anoInicio, filme.anoFim, filme.avaliacao
+from genero_filme, filme
+where genero_filme.filmeId like '%star%' AND  genero_filme.filmeId like '%wars%' AND  filme.filmeId = genero_filme.filmeId
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+11º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+filme	0	0	0	100*	0	0	0	82	0	82	0	0	82	0	0	82	0	0	0	0	0	0	0	82	0	0	0	0	0	
+'star wars'*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 100
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+filme*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+'star wars'	75*	75	75	75	65	65	0	0	75	75	75	75	75	0	0	65	75	0	65	65	65	65	
+PONTUACAO VW: 75
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+filme ---> filme
+'star wars' ---> ator_filme.filmeId.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [ator_filme, filme]
+EXECUCAO DO CAMINHO: ator_filme. pessoa.fk_atorFilme_pessoa diretor_filme.fk_diretorFilme_pessoa filme.fk_diretorFilme_filme
+
+CONSULTA SQL: select distinct pessoa.nome, pessoa.anoNascimento, pessoa.anoMorte, filme.tipo, filme.titulo, filme.anoInicio, filme.anoFim, filme.avaliacao
+from ator_filme, pessoa, diretor_filme, filme
+where ator_filme.filmeId like '%star%' AND  ator_filme.filmeId like '%wars%' AND  pessoa.pessoaId = ator_filme.pessoaId AND pessoa.pessoaId = diretor_filme.pessoaId AND filme.filmeId = diretor_filme.filmeId
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+12º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+filme	0	0	0	100*	0	0	0	82	0	82	0	0	82	0	0	82	0	0	0	0	0	0	0	82	0	0	0	0	0	
+'star wars'*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 100
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+filme*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+'star wars'	-100	75*	75	75	65	65	0	0	75	75	75	75	75	0	0	65	75	0	65	65	65	65	
+PONTUACAO VW: 75
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+filme ---> filme
+'star wars' ---> ator_filme.pessoaId.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [ator_filme, filme]
+EXECUCAO DO CAMINHO: ator_filme. pessoa.fk_atorFilme_pessoa diretor_filme.fk_diretorFilme_pessoa filme.fk_diretorFilme_filme
+
+CONSULTA SQL: select distinct ator_filme.filmeId, pessoa.nome, pessoa.anoNascimento, pessoa.anoMorte, filme.tipo, filme.titulo, filme.anoInicio, filme.anoFim, filme.avaliacao
+from ator_filme, pessoa, diretor_filme, filme
+where ator_filme.pessoaId like '%star%' AND  ator_filme.pessoaId like '%wars%' AND  pessoa.pessoaId = ator_filme.pessoaId AND pessoa.pessoaId = diretor_filme.pessoaId AND filme.filmeId = diretor_filme.filmeId
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+13º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+filme	0	0	0	100*	0	0	0	82	0	82	0	0	82	0	0	82	0	0	0	0	0	0	0	82	0	0	0	0	0	
+'star wars'*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 100
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+filme*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+'star wars'	-100	-100	75*	75	65	65	0	0	75	75	75	75	75	0	0	65	75	0	65	65	65	65	
+PONTUACAO VW: 75
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+filme ---> filme
+'star wars' ---> diretor_filme.filmeId.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [diretor_filme, filme]
+EXECUCAO DO CAMINHO: diretor_filme. pessoa.fk_diretorFilme_pessoa ator_filme.fk_atorFilme_pessoa filme.fk_atorFilme_filme
+
+CONSULTA SQL: select distinct pessoa.nome, pessoa.anoNascimento, pessoa.anoMorte, filme.tipo, filme.titulo, filme.anoInicio, filme.anoFim, filme.avaliacao
+from ator_filme, diretor_filme, pessoa, filme
+where diretor_filme.filmeId like '%star%' AND  diretor_filme.filmeId like '%wars%' AND  pessoa.pessoaId = diretor_filme.pessoaId AND pessoa.pessoaId = ator_filme.pessoaId AND filme.filmeId = ator_filme.filmeId
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+14º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	ator_filme	diretor_filme	episodio	filme	genero	genero_filme	pessoa	ator_filme.filmeid	ator_filme.pessoaid	diretor_filme.filmeid	diretor_filme.pessoaid	episodio.episodioid	episodio.filmeid	episodio.numerotemporada	episodio.numeroepisodio	filme.filmeid	filme.tipo	filme.titulo	filme.anoinicio	filme.anofim	filme.avaliacao	genero.generoid	genero.nome	genero_filme.filmeid	genero_filme.generoid	pessoa.pessoaid	pessoa.nome	pessoa.anonascimento	pessoa.anomorte	
+filme	0	0	0	100*	0	0	0	82	0	82	0	0	82	0	0	82	0	0	0	0	0	0	0	82	0	0	0	0	0	
+'star wars'*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 100
+
+MAPEAMENTO VW:
+null	ator_filme.filmeId.java.lang.String	ator_filme.pessoaId.java.lang.String	diretor_filme.filmeId.java.lang.String	diretor_filme.pessoaId.java.lang.String	episodio.episodioId.java.lang.String	episodio.filmeId.java.lang.String	episodio.numeroTemporada.java.lang.Integer	episodio.numeroEpisodio.java.lang.Integer	filme.filmeId.java.lang.String	filme.tipo.java.lang.String	filme.titulo.java.lang.String	filme.anoInicio.java.lang.String	filme.anoFim.java.lang.String	filme.avaliacao.java.math.BigDecimal	genero.generoId.java.lang.Integer	genero.nome.java.lang.String	genero_filme.filmeId.java.lang.String	genero_filme.generoId.java.lang.Integer	pessoa.pessoaId.java.lang.String	pessoa.nome.java.lang.String	pessoa.anoNascimento.java.lang.String	pessoa.anoMorte.java.lang.String	
+filme*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+'star wars'	-100	-100	-100	75*	65	65	0	0	75	75	75	75	75	0	0	65	75	0	65	65	65	65	
+PONTUACAO VW: 75
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+filme ---> filme
+'star wars' ---> diretor_filme.pessoaId.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [diretor_filme, filme]
+EXECUCAO DO CAMINHO: diretor_filme. pessoa.fk_diretorFilme_pessoa ator_filme.fk_atorFilme_pessoa filme.fk_atorFilme_filme
+
+CONSULTA SQL: select distinct diretor_filme.filmeId, pessoa.nome, pessoa.anoNascimento, pessoa.anoMorte, filme.tipo, filme.titulo, filme.anoInicio, filme.anoFim, filme.avaliacao
+from ator_filme, diretor_filme, pessoa, filme
+where diretor_filme.pessoaId like '%star%' AND  diretor_filme.pessoaId like '%wars%' AND  pessoa.pessoaId = diretor_filme.pessoaId AND pessoa.pessoaId = ator_filme.pessoaId AND filme.filmeId = ator_filme.filmeId
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+Tempo em millis: 195524

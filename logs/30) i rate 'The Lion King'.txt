@@ -1,0 +1,12 @@
+CONSULTA: taxa
+CONSULTA EXPANDIDA: ritmo velocidade tarifa
+IDIOMA: por
+TERMO DE VALOR: 'the lion king'
+ATRIBUTO: 
+FUNCAO AGREGACAO: 
+FUNCAO ORDENACAO: 
+FUNCAO AGRUPAMENTO: 
+CONSULTA EXPANDIDA: [ritmo, velocidade, tarifa]
+BANCOS COM INFORMACOES UTEIS: {}
+RANKING DOS BANCOS: []
+Nao existem bancos com informacoes uteis para a consulta!
