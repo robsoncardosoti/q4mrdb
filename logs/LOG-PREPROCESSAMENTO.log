@@ -1,0 +1,438 @@
+C:\Users\robson_v\AppData\Local\Microsoft\WindowsApps\python.exe D:/query/preprocessing.py
+ * Serving Flask app "preprocessing" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 185-492-735
+ * Running on http://localhost:5000/ (Press CTRL+C to quit)
+A consulta inicial é:  marc forster director
+A consulta Segmentada é:  ['marc', 'forster', 'director']
+A consulta sem Stopwords é:  ['marc', 'forster', 'director']
+A consulta sem Radical é:  ['marc', 'forster', 'director']
+A consulta Expandida é:  ['marc', 'director', 'manager', 'managing_director', 'theater_director', 'theatre_director', 'film_director', 'conductor', 'music_director']
+Os termos traduzidos são:  ['marc', 'forster', 'administrador', 'diretor', 'gerente', 'director']
+127.0.0.1 - - [25/Sep/2020 10:59:07] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 10:59:07] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [25/Sep/2020 10:59:07] "GET /static/bootstrap.css HTTP/1.1" 304 -
+A consulta inicial é:  director movie list
+A consulta Segmentada é:  ['director', 'movie', 'list']
+A consulta sem Stopwords é:  ['director', 'movie', 'list']
+A consulta sem Radical é:  ['director', 'movie', 'list']
+A consulta Expandida é:  ['director', 'manager', 'managing_director', 'theater_director', 'theatre_director', 'film_director', 'conductor', 'music_director', 'movie', 'film', 'picture', 'moving_picture', 'moving-picture_show', 'motion_picture', 'motion-picture_show', 'picture_show', 'pic', 'flick', 'list', 'listing', 'tilt', 'inclination', 'lean', 'leaning']
+127.0.0.1 - - [25/Sep/2020 10:59:23] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 10:59:23] "GET / HTTP/1.1" 200 -
+Os termos traduzidos são:  ['administrador', 'diretor', 'gerente', 'director', 'cinema', 'filme', 'filmes', 'lista', 'listagem', 'lista_numerada', 'inclinação']
+A consulta inicial é:  finished animation series
+A consulta Segmentada é:  ['finished', 'animation', 'series']
+A consulta sem Stopwords é:  ['finished', 'animation', 'series']
+A consulta sem Radical é:  ['finished', 'animation', 'series']
+A consulta Expandida é:  ['animation', 'life', 'living', 'aliveness', 'vitality', 'spiritedness', 'invigoration', 'brio', 'vivification', 'liveliness', 'series', 'serial', 'serial_publication']
+127.0.0.1 - - [25/Sep/2020 10:59:28] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 10:59:28] "GET / HTTP/1.1" 200 -
+Os termos traduzidos são:  ['acabar', 'encerrar', 'finalizar', 'aportar', 'animação', 'vida', 'sequência', 'série', 'folhetim_televisivo']
+A consulta inicial é:  movies action
+A consulta Segmentada é:  ['movies', 'action']
+A consulta sem Stopwords é:  ['movies', 'action']
+A consulta sem Radical é:  ['movie', 'action']
+A consulta Expandida é:  ['movie', 'film', 'picture', 'moving_picture', 'moving-picture_show', 'motion_picture', 'motion-picture_show', 'picture_show', 'pic', 'flick', 'action', 'activity', 'activeness', 'military_action', 'natural_process', 'natural_action', 'action_mechanism', 'legal_action', 'action_at_law']
+Os termos traduzidos são:  ['cinema', 'filme', 'filmes', 'ação', 'atividade', 'ato', 'actividade']
+127.0.0.1 - - [25/Sep/2020 10:59:32] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 10:59:32] "GET / HTTP/1.1" 200 -
+A consulta inicial é:  movies princess disney
+A consulta Segmentada é:  ['movies', 'princess', 'disney']
+A consulta sem Stopwords é:  ['movies', 'princess', 'disney']
+A consulta sem Radical é:  ['movie', 'princess', 'disney']
+A consulta Expandida é:  ['movie', 'film', 'picture', 'moving_picture', 'moving-picture_show', 'motion_picture', 'motion-picture_show', 'picture_show', 'pic', 'flick', 'princess', 'Disney', 'Walt_Disney', 'Walter_Elias_Disney']
+Os termos traduzidos são:  ['cinema', 'filme', 'filmes', 'princesa', 'príncipe', 'walt_disney']
+127.0.0.1 - - [25/Sep/2020 10:59:42] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 10:59:42] "GET / HTTP/1.1" 200 -
+A consulta inicial é:  movies years 2020
+A consulta Segmentada é:  ['movies', 'years', '2020']
+A consulta sem Stopwords é:  ['movies', 'years', '2020']
+A consulta sem Radical é:  ['movie', 'year', '2020']
+A consulta Expandida é:  ['movie', 'film', 'picture', 'moving_picture', 'moving-picture_show', 'motion_picture', 'motion-picture_show', 'picture_show', 'pic', 'flick', 'year', 'twelvemonth', 'yr', 'class']
+Os termos traduzidos são:  ['cinema', 'filme', 'filmes', 'ano', '2020']
+127.0.0.1 - - [25/Sep/2020 10:59:50] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 10:59:50] "GET / HTTP/1.1" 200 -
+A consulta inicial é:  supernatural episodes list
+A consulta Segmentada é:  ['supernatural', 'episodes', 'list']
+A consulta sem Stopwords é:  ['supernatural', 'episodes', 'list']
+A consulta sem Radical é:  ['supernatural', 'episode', 'list']
+A consulta Expandida é:  ['supernatural', 'occult', 'episode', 'installment', 'instalment', 'sequence', 'list', 'listing', 'tilt', 'inclination', 'lean', 'leaning']
+Os termos traduzidos são:  ['ocultismo', 'oculto', 'sobrenatural', 'sobrecomum', 'episódio', 'lista', 'listagem', 'lista_numerada', 'inclinação']
+127.0.0.1 - - [25/Sep/2020 10:59:55] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 10:59:55] "GET / HTTP/1.1" 200 -
+O termo de valor é:  'game of thrones'
+A consulta inicial é:   actors
+A consulta Segmentada é:  ['actors']
+A consulta sem Stopwords é:  ['actors']
+A consulta sem Radical é:  ['actor']
+A consulta Expandida é:  ['actor', 'histrion', 'player', 'thespian', 'role_player', 'doer', 'worker']
+127.0.0.1 - - [25/Sep/2020 11:00:12] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:00:12] "GET / HTTP/1.1" 200 -
+Os termos traduzidos são:  ['actor', 'actriz', 'artista', 'actor']
+A consulta inicial é:  christmas tv shows
+A consulta Segmentada é:  ['christmas', 'tv', 'shows']
+A consulta sem Stopwords é:  ['christmas', 'tv', 'shows']
+A consulta sem Radical é:  ['christmas', 'tv', 'show']
+A consulta Expandida é:  ['Christmas', 'Christmastide', 'Christmastime', 'Yule', 'Yuletide', 'Noel', 'Christmas_Day', 'Xmas', 'Dec_25', 'television', 'telecasting', 'TV', 'video', 'television_receiver', 'television_set', 'tv', 'tv_set', 'idiot_box', 'boob_tube', 'telly', 'goggle_box', 'show', 'display', 'appearance']
+127.0.0.1 - - [25/Sep/2020 11:00:17] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:00:17] "GET / HTTP/1.1" 200 -
+Os termos traduzidos são:  ['ciclo_do_natal', 'natal', 'filmes_de_natal', 'nadal', 'televisão', 'tevê', 'televisor', 'apresentação', 'exibição', 'show']
+O termo de valor é:  'steven spielberg'
+A consulta inicial é:   directoring
+A consulta Segmentada é:  ['directoring']
+A consulta sem Stopwords é:  ['directoring']
+A consulta sem Radical é:  ['directoring']
+A consulta Expandida é:  []
+127.0.0.1 - - [25/Sep/2020 11:00:21] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:00:21] "GET / HTTP/1.1" 200 -
+Os termos traduzidos são:  ['directoring']
+O termo de valor é:  'james harkness'
+A consulta inicial é:  movies  acting
+A consulta Segmentada é:  ['movies', 'acting']
+A consulta sem Stopwords é:  ['movies', 'acting']
+A consulta sem Radical é:  ['movie', 'acting']
+A consulta Expandida é:  ['movie', 'film', 'picture', 'moving_picture', 'moving-picture_show', 'motion_picture', 'motion-picture_show', 'picture_show', 'pic', 'flick', 'acting', 'playing', 'playacting', 'performing']
+Os termos traduzidos são:  ['cinema', 'filme', 'filmes', 'atuação', 'interpretação', 'representação', 'executar', 'fazer']
+127.0.0.1 - - [25/Sep/2020 11:00:30] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:00:30] "GET / HTTP/1.1" 200 -
+O termo de valor é:  'fast and furious'
+A consulta inicial é:  actor dead 
+A consulta Segmentada é:  ['actor', 'dead']
+A consulta sem Stopwords é:  ['actor', 'dead']
+A consulta sem Radical é:  ['actor', 'dead']
+A consulta Expandida é:  ['actor', 'histrion', 'player', 'thespian', 'role_player', 'doer', 'worker', 'dead']
+127.0.0.1 - - [25/Sep/2020 11:00:46] "POST /search HTTP/1.1" 302 -
+Os termos traduzidos são:  ['actor', 'actriz', 'artista', 'actor', 'dead', 'dead']
+127.0.0.1 - - [25/Sep/2020 11:00:46] "GET / HTTP/1.1" 200 -
+A consulta inicial é:  movies with most actress
+A consulta Segmentada é:  ['movies', 'with', 'most', 'actress']
+A função de Agregação é:  max
+A consulta sem Stopwords é:  ['movies', 'actress']
+A consulta sem Radical é:  ['movie', 'actress']
+A consulta Expandida é:  ['movie', 'film', 'picture', 'moving_picture', 'moving-picture_show', 'motion_picture', 'motion-picture_show', 'picture_show', 'pic', 'flick', 'actress']
+Os termos traduzidos são:  ['cinema', 'filme', 'filmes', 'actor', 'actriz', 'ator']
+127.0.0.1 - - [25/Sep/2020 11:01:12] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:01:12] "GET / HTTP/1.1" 200 -
+A consulta inicial é:  best movies ratings 2020
+A consulta Segmentada é:  ['best', 'movies', 'ratings', '2020']
+A consulta sem Stopwords é:  ['best', 'movies', 'ratings', '2020']
+A consulta sem Radical é:  ['best', 'movie', 'rating', '2020']
+A consulta Expandida é:  ['best', 'topper', 'Best', 'C._H._Best', 'Charles_Herbert_Best', 'movie', 'film', 'picture', 'moving_picture', 'moving-picture_show', 'motion_picture', 'motion-picture_show', 'picture_show', 'pic', 'flick', 'evaluation', 'valuation', 'rating', 'military_rank', 'military_rating', 'paygrade']
+Os termos traduzidos são:  ['best', 'best', 'cinema', 'filme', 'filmes', 'avaliação', 'avaliação_(ciência)', '2020']
+127.0.0.1 - - [25/Sep/2020 11:01:19] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:01:19] "GET / HTTP/1.1" 200 -
+A consulta inicial é:  actor died in 2020
+A consulta Segmentada é:  ['actor', 'died', 'in', '2020']
+A consulta sem Stopwords é:  ['actor', 'died', '2020']
+A consulta sem Radical é:  ['actor', 'died', '2020']
+A consulta Expandida é:  ['actor', 'histrion', 'player', 'thespian', 'role_player', 'doer', 'worker']
+Os termos traduzidos são:  ['actor', 'actriz', 'artista', 'actor', 'bater_as_botas', 'comer_capim_pela_raiz', 'falecer', 'died', '2020']
+127.0.0.1 - - [25/Sep/2020 11:01:25] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:01:25] "GET / HTTP/1.1" 200 -
+O termo de valor é:  'based true story'
+A consulta inicial é:  movie short 
+A consulta Segmentada é:  ['movie', 'short']
+A consulta sem Stopwords é:  ['movie', 'short']
+A consulta sem Radical é:  ['movie', 'short']
+A consulta Expandida é:  ['movie', 'film', 'picture', 'moving_picture', 'moving-picture_show', 'motion_picture', 'motion-picture_show', 'picture_show', 'pic', 'flick', 'short', 'short_circuit', 'shortstop']
+Os termos traduzidos são:  ['cinema', 'filme', 'filmes', 'short', 'curto-circuito', 'curto_circuito']
+127.0.0.1 - - [25/Sep/2020 11:01:37] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:01:37] "GET / HTTP/1.1" 200 -
+A consulta inicial é:  movies episode in the sea
+A consulta Segmentada é:  ['movies', 'episode', 'in', 'the', 'sea']
+A consulta sem Stopwords é:  ['movies', 'episode', 'sea']
+A consulta sem Radical é:  ['movie', 'episode', 'sea']
+A consulta Expandida é:  ['movie', 'film', 'picture', 'moving_picture', 'moving-picture_show', 'motion_picture', 'motion-picture_show', 'picture_show', 'pic', 'flick', 'episode', 'installment', 'instalment', 'sequence', 'sea', 'ocean']
+127.0.0.1 - - [25/Sep/2020 11:01:43] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:01:44] "GET / HTTP/1.1" 200 -
+Os termos traduzidos são:  ['cinema', 'filme', 'filmes', 'episódio', 'mar', 'oceano', 'infinidade']
+A consulta inicial é:  avengers movies all actress name
+A consulta Segmentada é:  ['avengers', 'movies', 'all', 'actress', 'name']
+A consulta sem Stopwords é:  ['avengers', 'movies', 'actress', 'name']
+A consulta sem Radical é:  ['avenger', 'movie', 'actress', 'name']
+A consulta Expandida é:  ['avenger', 'retaliator', 'movie', 'film', 'picture', 'moving_picture', 'moving-picture_show', 'motion_picture', 'motion-picture_show', 'picture_show', 'pic', 'flick', 'actress', 'name', 'gens', 'figure', 'public_figure', 'epithet']
+127.0.0.1 - - [25/Sep/2020 11:01:51] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:01:51] "GET / HTTP/1.1" 200 -
+Os termos traduzidos são:  ['avenger', 'cinema', 'filme', 'filmes', 'actor', 'actriz', 'ator', 'antenome', 'nome', 'nome_de_batismo', 'name']
+O termo de valor é:  'yes, prime minister'
+A consulta inicial é:  episode of 
+A consulta Segmentada é:  ['episode', 'of']
+A consulta sem Stopwords é:  ['episode']
+A consulta sem Radical é:  ['episode']
+A consulta Expandida é:  ['episode', 'installment', 'instalment', 'sequence']
+Os termos traduzidos são:  ['episódio']
+127.0.0.1 - - [25/Sep/2020 11:01:56] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:01:56] "GET / HTTP/1.1" 200 -
+A consulta inicial é:  movies of drama and romance
+A consulta Segmentada é:  ['movies', 'of', 'drama', 'and', 'romance']
+A consulta sem Stopwords é:  ['movies', 'drama', 'romance']
+A consulta sem Radical é:  ['movie', 'drama', 'romance']
+A consulta Expandida é:  ['movie', 'film', 'picture', 'moving_picture', 'moving-picture_show', 'motion_picture', 'motion-picture_show', 'picture_show', 'pic', 'flick', 'play', 'drama', 'dramatic_play', 'dramatic_event', 'love_affair', 'romance', 'romanticism', 'Romance', 'Romance_language', 'Latinian_language', 'love_story']
+127.0.0.1 - - [25/Sep/2020 11:02:11] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:02:11] "GET / HTTP/1.1" 200 -
+Os termos traduzidos são:  ['cinema', 'filme', 'filmes', 'drama', 'teatro', 'drama', 'romance', 'romantismo']
+O termo de valor é:  'good versus evil'
+A consulta inicial é:  
+A consulta Segmentada é:  []
+A consulta sem Stopwords é:  []
+A consulta sem Radical é:  []
+A consulta Expandida é:  []
+Os termos traduzidos são:  []
+127.0.0.1 - - [25/Sep/2020 11:02:16] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:02:17] "GET / HTTP/1.1" 200 -
+A consulta inicial é:  comedy or documentary
+A consulta Segmentada é:  ['comedy', 'or', 'documentary']
+A consulta sem Stopwords é:  ['comedy', 'documentary']
+A consulta sem Radical é:  ['comedy', 'documentary']
+A consulta Expandida é:  ['comedy', 'drollery', 'clowning', 'funniness', 'documentary', 'docudrama', 'documentary_film', 'infotainment']
+127.0.0.1 - - [25/Sep/2020 11:02:28] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:02:28] "GET / HTTP/1.1" 200 -
+Os termos traduzidos são:  ['comédia', 'documentario', 'documentário', 'documental']
+A consulta inicial é:  movies about police
+A consulta Segmentada é:  ['movies', 'about', 'police']
+A consulta sem Stopwords é:  ['movies', 'police']
+A consulta sem Radical é:  ['movie', 'police']
+A consulta Expandida é:  ['movie', 'film', 'picture', 'moving_picture', 'moving-picture_show', 'motion_picture', 'motion-picture_show', 'picture_show', 'pic', 'flick', 'police', 'police_force', 'constabulary', 'law']
+127.0.0.1 - - [25/Sep/2020 11:02:37] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:02:37] "GET / HTTP/1.1" 200 -
+Os termos traduzidos são:  ['cinema', 'filme', 'filmes', 'pessoal', 'policia', 'polícia', 'patrulhar']
+A consulta inicial é:  number of movies genres
+A consulta Segmentada é:  ['number', 'of', 'movies', 'genres']
+A função de Agregação é:  count
+A consulta sem Stopwords é:  ['movies', 'genres']
+A consulta sem Radical é:  ['movie', 'genre']
+A consulta Expandida é:  ['movie', 'film', 'picture', 'moving_picture', 'moving-picture_show', 'motion_picture', 'motion-picture_show', 'picture_show', 'pic', 'flick', 'genre', 'writing_style', 'literary_genre', 'music_genre', 'musical_genre', 'musical_style']
+127.0.0.1 - - [25/Sep/2020 11:02:43] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:02:43] "GET / HTTP/1.1" 200 -
+Os termos traduzidos são:  ['cinema', 'filme', 'filmes', 'espécie', 'género', 'jaez', 'género_literário', 'gênero_literário', 'gêneros_literários']
+A consulta inicial é:  how many smallville episodes are there
+A consulta Segmentada é:  ['how_many', 'smallville', 'episodes', 'are', 'there']
+A função de Agregação é:  count
+A consulta sem Stopwords é:  ['smallville', 'episodes']
+A consulta sem Radical é:  ['smallville', 'episode']
+A consulta Expandida é:  ['episode', 'installment', 'instalment', 'sequence']
+127.0.0.1 - - [25/Sep/2020 11:02:49] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:02:49] "GET / HTTP/1.1" 200 -
+Os termos traduzidos são:  ['smallville', 'episódio']
+A consulta inicial é:  movies with more than one director
+A consulta Segmentada é:  ['movies', 'with', 'more', 'than', 'one', 'director']
+A consulta sem Stopwords é:  ['movies', 'one', 'director']
+A consulta sem Radical é:  ['movie', 'one', 'director']
+A consulta Expandida é:  ['movie', 'film', 'picture', 'moving_picture', 'moving-picture_show', 'motion_picture', 'motion-picture_show', 'picture_show', 'pic', 'flick', 'one', '1', 'I', 'ace', 'single', 'unity', 'director', 'manager', 'managing_director', 'theater_director', 'theatre_director', 'film_director', 'conductor', 'music_director']
+127.0.0.1 - - [25/Sep/2020 11:03:00] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:03:00] "GET / HTTP/1.1" 200 -
+Os termos traduzidos são:  ['cinema', 'filme', 'filmes', '1', 'um', 'one', 'administrador', 'diretor', 'gerente', 'director']
+O termo de valor é:  'angelina jolie' and 'brad pitt'
+A consulta inicial é:  movies with 
+A consulta Segmentada é:  ['movies', 'with']
+A consulta sem Stopwords é:  ['movies']
+A consulta sem Radical é:  ['movie']
+A consulta Expandida é:  ['movie', 'film', 'picture', 'moving_picture', 'moving-picture_show', 'motion_picture', 'motion-picture_show', 'picture_show', 'pic', 'flick']
+Os termos traduzidos são:  ['cinema', 'filme', 'filmes']
+127.0.0.1 - - [25/Sep/2020 11:03:10] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:03:11] "GET / HTTP/1.1" 200 -
+A consulta inicial é:  movie comedian of the 1920s and 1930s
+A consulta Segmentada é:  ['movie', 'comedian', 'of', 'the', '1920s', 'and', '1930s']
+A consulta sem Stopwords é:  ['movie', 'comedian', '1920s', '1930s']
+A consulta sem Radical é:  ['movie', 'comedian', '1920s', '1930s']
+A consulta Expandida é:  ['movie', 'film', 'picture', 'moving_picture', 'moving-picture_show', 'motion_picture', 'motion-picture_show', 'picture_show', 'pic', 'flick', 'comedian', 'comic', 'twenties', '1920s', 'thirties', '1930s']
+127.0.0.1 - - [25/Sep/2020 11:03:18] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:03:18] "GET / HTTP/1.1" 200 -
+Os termos traduzidos são:  ['cinema', 'filme', 'filmes', 'cartun', 'comediante', 'cómico', 'comedian', 'década_de_1920', 'década_de_1930']
+O termo de valor é:  'star is born'
+A consulta inicial é:  directed a 
+A consulta Segmentada é:  ['directed', 'a']
+A consulta sem Stopwords é:  ['directed']
+A consulta sem Radical é:  ['directed']
+A consulta Expandida é:  []
+127.0.0.1 - - [25/Sep/2020 11:03:24] "POST /search HTTP/1.1" 302 -
+Os termos traduzidos são:  ['directed', 'apontar', 'direcionar', 'dirigir']
+127.0.0.1 - - [25/Sep/2020 11:03:24] "GET / HTTP/1.1" 200 -
+O termo de valor é:  'the lion king'
+A consulta inicial é:  i rate 
+A consulta Segmentada é:  ['i', 'rate']
+A consulta sem Stopwords é:  ['rate']
+A consulta sem Radical é:  ['rate']
+A consulta Expandida é:  ['rate', 'charge_per_unit', 'pace']
+127.0.0.1 - - [25/Sep/2020 11:03:29] "POST /search HTTP/1.1" 302 -
+Os termos traduzidos são:  ['ritmo', 'velocidade', 'tarifa']
+127.0.0.1 - - [25/Sep/2020 11:03:29] "GET / HTTP/1.1" 200 -
+A consulta inicial é:  first episode of warrior 2019
+A consulta Segmentada é:  ['first', 'episode', 'of', 'warrior', '2019']
+A consulta sem Stopwords é:  ['first', 'episode', 'warrior', '2019']
+A consulta sem Radical é:  ['first', 'episode', 'warrior', '2019']
+A consulta Expandida é:  ['first', 'number_one', 'number_1', 'beginning', 'commencement', 'outset', 'get-go', 'start', 'kickoff', 'starting_time', 'showtime', 'offset', 'first_base', 'first-class_honours_degree', 'first_gear', 'low_gear', 'low', 'episode', 'installment', 'instalment', 'sequence', 'warrior']
+127.0.0.1 - - [25/Sep/2020 11:03:35] "POST /search HTTP/1.1" 302 -
+Os termos traduzidos são:  ['first', 'primeiro', 'episódio', 'guerreira', 'guerreiro', '2019']
+127.0.0.1 - - [25/Sep/2020 11:03:35] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [25/Sep/2020 11:03:43] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:03:43] "GET / HTTP/1.1" 200 -
+O termo de valor é:  'wayne roberts' and 'roger moore'
+A consulta inicial é:  
+A consulta Segmentada é:  []
+A consulta sem Stopwords é:  []
+A consulta sem Radical é:  []
+A consulta Expandida é:  []
+Os termos traduzidos são:  []
+O termo de valor é:  'jack and jill'
+A consulta inicial é:  cast of 
+A consulta Segmentada é:  ['cast', 'of']
+A consulta sem Stopwords é:  ['cast']
+A consulta sem Radical é:  ['cast']
+A consulta Expandida é:  ['cast', 'cast_of_characters', 'dramatis_personae', 'mold', 'mould', 'stamp', 'form', 'shape', 'plaster_cast', 'plaster_bandage', 'casting', 'roll', 'hurl']
+127.0.0.1 - - [25/Sep/2020 11:03:52] "POST /search HTTP/1.1" 302 -
+Os termos traduzidos são:  ['elenco', 'molde']
+127.0.0.1 - - [25/Sep/2020 11:03:52] "GET / HTTP/1.1" 200 -
+O termo de valor é:  'di caprio'
+A consulta inicial é:  movie director scorcese and actor 
+A consulta Segmentada é:  ['movie', 'director', 'scorcese', 'and', 'actor']
+A consulta sem Stopwords é:  ['movie', 'director', 'scorcese', 'actor']
+A consulta sem Radical é:  ['movie', 'director', 'scorcese', 'actor']
+A consulta Expandida é:  ['movie', 'film', 'picture', 'moving_picture', 'moving-picture_show', 'motion_picture', 'motion-picture_show', 'picture_show', 'pic', 'flick', 'director', 'manager', 'managing_director', 'theater_director', 'theatre_director', 'film_director', 'conductor', 'music_director', 'actor', 'histrion', 'player', 'thespian', 'role_player', 'doer', 'worker']
+127.0.0.1 - - [25/Sep/2020 11:04:10] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:04:10] "GET / HTTP/1.1" 200 -
+Os termos traduzidos são:  ['cinema', 'filme', 'filmes', 'administrador', 'diretor', 'gerente', 'director', 'scorcese', 'actor', 'actriz', 'artista', 'actor']
+A consulta inicial é:  movies best rating
+A consulta Segmentada é:  ['movies', 'best', 'rating']
+A consulta sem Stopwords é:  ['movies', 'best', 'rating']
+A consulta sem Radical é:  ['movie', 'best', 'rating']
+A consulta Expandida é:  ['movie', 'film', 'picture', 'moving_picture', 'moving-picture_show', 'motion_picture', 'motion-picture_show', 'picture_show', 'pic', 'flick', 'best', 'topper', 'Best', 'C._H._Best', 'Charles_Herbert_Best', 'evaluation', 'valuation', 'rating', 'military_rank', 'military_rating', 'paygrade']
+127.0.0.1 - - [25/Sep/2020 11:04:20] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:04:20] "GET / HTTP/1.1" 200 -
+Os termos traduzidos são:  ['cinema', 'filme', 'filmes', 'best', 'best', 'avaliação', 'avaliação_(ciência)']
+O termo de valor é:  'star wars'
+A consulta inicial é:  year first  movie
+A consulta Segmentada é:  ['year', 'first', 'movie']
+A consulta sem Stopwords é:  ['year', 'first', 'movie']
+A consulta sem Radical é:  ['year', 'first', 'movie']
+A consulta Expandida é:  ['year', 'twelvemonth', 'yr', 'class', 'first', 'number_one', 'number_1', 'beginning', 'commencement', 'outset', 'get-go', 'start', 'kickoff', 'starting_time', 'showtime', 'offset', 'first_base', 'first-class_honours_degree', 'first_gear', 'low_gear', 'low', 'movie', 'film', 'picture', 'moving_picture', 'moving-picture_show', 'motion_picture', 'motion-picture_show', 'picture_show', 'pic', 'flick']
+Os termos traduzidos são:  ['ano', 'first', 'primeiro', 'cinema', 'filme', 'filmes']
+127.0.0.1 - - [25/Sep/2020 11:04:26] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:04:26] "GET / HTTP/1.1" 200 -
+A consulta inicial é:  rating movies for genres
+A consulta Segmentada é:  ['rating', 'movies', 'for', 'genres']
+A consulta sem Stopwords é:  ['rating', 'movies', 'genres']
+A consulta sem Radical é:  ['rating', 'movie', 'genre']
+A consulta Expandida é:  ['evaluation', 'valuation', 'rating', 'military_rank', 'military_rating', 'paygrade', 'movie', 'film', 'picture', 'moving_picture', 'moving-picture_show', 'motion_picture', 'motion-picture_show', 'picture_show', 'pic', 'flick', 'genre', 'writing_style', 'literary_genre', 'music_genre', 'musical_genre', 'musical_style']
+127.0.0.1 - - [25/Sep/2020 11:04:34] "POST /search HTTP/1.1" 302 -
+Os termos traduzidos são:  ['avaliação', 'avaliação_(ciência)', 'cinema', 'filme', 'filmes', 'espécie', 'género', 'jaez', 'género_literário', 'gênero_literário', 'gêneros_literários']
+127.0.0.1 - - [25/Sep/2020 11:04:34] "GET / HTTP/1.1" 200 -
+A consulta inicial é:  number of films released per year
+A consulta Segmentada é:  ['number', 'of', 'films', 'released', 'per', 'year']
+A função de Agregação é:  count
+A consulta sem Stopwords é:  ['films', 'released', 'per', 'year']
+A consulta sem Radical é:  ['film', 'released', 'per', 'year']
+A consulta Expandida é:  ['movie', 'film', 'picture', 'moving_picture', 'moving-picture_show', 'motion_picture', 'motion-picture_show', 'picture_show', 'pic', 'flick', 'cinema', 'celluloid', 'photographic_film', 'plastic_film', 'year', 'twelvemonth', 'yr', 'class']
+127.0.0.1 - - [25/Sep/2020 11:04:41] "POST /search HTTP/1.1" 302 -
+Os termos traduzidos são:  ['cinema', 'filme', 'filmes', 'chinês', 'cine', 'soltar', 'isentar', 'liberar', 'per', 'ano']
+127.0.0.1 - - [25/Sep/2020 11:04:41] "GET / HTTP/1.1" 200 -
+A consulta inicial é:  movies with two genres
+A consulta Segmentada é:  ['movies', 'with', 'two', 'genres']
+A consulta sem Stopwords é:  ['movies', 'two', 'genres']
+A consulta sem Radical é:  ['movie', 'two', 'genre']
+A consulta Expandida é:  ['movie', 'film', 'picture', 'moving_picture', 'moving-picture_show', 'motion_picture', 'motion-picture_show', 'picture_show', 'pic', 'flick', 'two', '2', 'II', 'deuce', 'genre', 'writing_style', 'literary_genre', 'music_genre', 'musical_genre', 'musical_style']
+Os termos traduzidos são:  ['cinema', 'filme', 'filmes', 'dois', 'duas', 'espécie', 'género', 'jaez', 'género_literário', 'gênero_literário', 'gêneros_literários']
+127.0.0.1 - - [25/Sep/2020 11:04:59] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:04:59] "GET / HTTP/1.1" 200 -
+A consulta inicial é:  vikings series start date
+A consulta Segmentada é:  ['vikings', 'series', 'start', 'date']
+A consulta sem Stopwords é:  ['vikings', 'series', 'start', 'date']
+A consulta sem Radical é:  ['viking', 'series', 'start', 'date']
+A consulta Expandida é:  ['Viking', 'series', 'serial', 'serial_publication', 'start', 'beginning', 'commencement', 'first', 'outset', 'get-go', 'kickoff', 'starting_time', 'showtime', 'offset', 'starting', 'startle', 'jump', 'starting_line', 'scratch', 'scratch_line', 'starting_signal', 'head_start', 'date', 'day_of_the_month', 'escort', 'appointment', 'engagement', 'particular_date']
+127.0.0.1 - - [25/Sep/2020 11:05:06] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:05:06] "GET / HTTP/1.1" 200 -
+Os termos traduzidos são:  ['vikings', 'viquingue', 'sequência', 'série', 'folhetim_televisivo', 'começo', 'decolagem', 'início', 'princípio', 'data', 'dia', 'date']
+A consulta inicial é:  number movies types
+A consulta Segmentada é:  ['number', 'movies', 'types']
+A função de Agregação é:  count
+A consulta sem Stopwords é:  ['movies', 'types']
+A consulta sem Radical é:  ['movie', 'type']
+A consulta Expandida é:  ['movie', 'film', 'picture', 'moving_picture', 'moving-picture_show', 'motion_picture', 'motion-picture_show', 'picture_show', 'pic', 'flick', 'type', 'character', 'eccentric', 'case']
+127.0.0.1 - - [25/Sep/2020 11:05:14] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:05:14] "GET / HTTP/1.1" 200 -
+Os termos traduzidos são:  ['cinema', 'filme', 'filmes', 'classe', 'espécie', 'género', 'figura']
+O termo de valor é:  'star wars'
+A consulta inicial é:  how many  movies are there
+A consulta Segmentada é:  ['how_many', 'movies', 'are', 'there']
+A função de Agregação é:  count
+A consulta sem Stopwords é:  ['movies']
+A consulta sem Radical é:  ['movie']
+A consulta Expandida é:  ['movie', 'film', 'picture', 'moving_picture', 'moving-picture_show', 'motion_picture', 'motion-picture_show', 'picture_show', 'pic', 'flick']
+Os termos traduzidos são:  ['cinema', 'filme', 'filmes']
+127.0.0.1 - - [25/Sep/2020 11:05:20] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:05:20] "GET / HTTP/1.1" 200 -
+A consulta inicial é:  movie musical the last 5 years
+A consulta Segmentada é:  ['movie', 'musical', 'the', 'last', '5', 'years']
+A consulta sem Stopwords é:  ['movie', 'musical', 'last', '5', 'years']
+A consulta sem Radical é:  ['movie', 'musical', 'last', '5', 'year']
+A consulta Expandida é:  ['movie', 'film', 'picture', 'moving_picture', 'moving-picture_show', 'motion_picture', 'motion-picture_show', 'picture_show', 'pic', 'flick', 'musical', 'musical_comedy', 'musical_theater', 'stopping_point', 'finale', 'finis', 'finish', 'last', 'conclusion', 'close', 'death', 'end', 'final_stage', "shoemaker's_last", "cobbler's_last", 'five', '5', 'V', 'cinque', 'quint', 'quintet', 'fivesome', 'quintuplet', 'pentad', 'fin', 'Phoebe', 'Little_Phoebe', 'year', 'twelvemonth', 'yr', 'class']
+Os termos traduzidos são:  ['cinema', 'filme', 'filmes', 'musical', 'acabamento', 'conclusão', 'fim', 'last', '5', '5', 'ano']
+127.0.0.1 - - [25/Sep/2020 11:05:31] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:05:31] "GET / HTTP/1.1" 200 -
+A consulta inicial é:  horror movies after 2018
+A consulta Segmentada é:  ['horror', 'movies', 'after', '2018']
+A consulta sem Stopwords é:  ['horror', 'movies', '2018']
+A consulta sem Radical é:  ['horror', 'movie', '2018']
+A consulta Expandida é:  ['horror', 'repugnance', 'repulsion', 'revulsion', 'movie', 'film', 'picture', 'moving_picture', 'moving-picture_show', 'motion_picture', 'motion-picture_show', 'picture_show', 'pic', 'flick']
+Os termos traduzidos são:  ['medo', 'terror', 'horror', 'cinema', 'filme', 'filmes', '2018']
+127.0.0.1 - - [25/Sep/2020 11:05:38] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:05:38] "GET / HTTP/1.1" 200 -
+O termo de valor é:  'husband wife relation'
+A consulta inicial é:  movies 
+A consulta Segmentada é:  ['movies']
+A consulta sem Stopwords é:  ['movies']
+A consulta sem Radical é:  ['movie']
+A consulta Expandida é:  ['movie', 'film', 'picture', 'moving_picture', 'moving-picture_show', 'motion_picture', 'motion-picture_show', 'picture_show', 'pic', 'flick']
+127.0.0.1 - - [25/Sep/2020 11:05:46] "POST /search HTTP/1.1" 302 -
+Os termos traduzidos são:  ['cinema', 'filme', 'filmes']
+127.0.0.1 - - [25/Sep/2020 11:05:46] "GET / HTTP/1.1" 200 -
+O termo de valor é:  'the last word'
+A consulta inicial é:  actors 
+A consulta Segmentada é:  ['actors']
+A consulta sem Stopwords é:  ['actors']
+A consulta sem Radical é:  ['actor']
+A consulta Expandida é:  ['actor', 'histrion', 'player', 'thespian', 'role_player', 'doer', 'worker']
+127.0.0.1 - - [25/Sep/2020 11:05:54] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:05:54] "GET / HTTP/1.1" 200 -
+Os termos traduzidos são:  ['actor', 'actriz', 'artista', 'actor']
+A consulta inicial é:  acting and directing at the same time
+A consulta Segmentada é:  ['acting', 'and', 'directing', 'at', 'the', 'same', 'time']
+A consulta sem Stopwords é:  ['acting', 'directing', 'time']
+A consulta sem Radical é:  ['acting', 'directing', 'time']
+A consulta Expandida é:  ['acting', 'playing', 'playacting', 'performing', 'time', 'clip', 'clock_time', 'fourth_dimension', 'meter', 'metre', 'prison_term', 'sentence']
+127.0.0.1 - - [25/Sep/2020 11:06:01] "POST /search HTTP/1.1" 302 -
+Os termos traduzidos são:  ['atuação', 'interpretação', 'representação', 'executar', 'fazer', 'directing', 'apontar', 'direcionar', 'dirigir', 'vez', 'hora', 'tempo']
+127.0.0.1 - - [25/Sep/2020 11:06:01] "GET / HTTP/1.1" 200 -
+O termo de valor é:  'rachel mcadams'
+A consulta inicial é:  movies not released actresses 
+A consulta Segmentada é:  ['movies', 'not', 'released', 'actresses']
+A consulta sem Stopwords é:  ['movies', 'released', 'actresses']
+A consulta sem Radical é:  ['movie', 'released', 'actress']
+A consulta Expandida é:  ['movie', 'film', 'picture', 'moving_picture', 'moving-picture_show', 'motion_picture', 'motion-picture_show', 'picture_show', 'pic', 'flick', 'actress']
+127.0.0.1 - - [25/Sep/2020 11:06:14] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:06:14] "GET / HTTP/1.1" 200 -
+Os termos traduzidos são:  ['cinema', 'filme', 'filmes', 'soltar', 'isentar', 'liberar', 'actor', 'actriz', 'ator']
+O termo de valor é:  'mel gibson'
+A consulta inicial é:  movies director 
+A consulta Segmentada é:  ['movies', 'director']
+A consulta sem Stopwords é:  ['movies', 'director']
+A consulta sem Radical é:  ['movie', 'director']
+A consulta Expandida é:  ['movie', 'film', 'picture', 'moving_picture', 'moving-picture_show', 'motion_picture', 'motion-picture_show', 'picture_show', 'pic', 'flick', 'director', 'manager', 'managing_director', 'theater_director', 'theatre_director', 'film_director', 'conductor', 'music_director']
+127.0.0.1 - - [25/Sep/2020 11:06:26] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:06:26] "GET / HTTP/1.1" 200 -
+Os termos traduzidos são:  ['cinema', 'filme', 'filmes', 'administrador', 'diretor', 'gerente', 'director']
+A consulta inicial é:  movies without director
+A consulta Segmentada é:  ['movies', 'without', 'director']
+A consulta sem Stopwords é:  ['movies', 'without', 'director']
+A consulta sem Radical é:  ['movie', 'without', 'director']
+A consulta Expandida é:  ['movie', 'film', 'picture', 'moving_picture', 'moving-picture_show', 'motion_picture', 'motion-picture_show', 'picture_show', 'pic', 'flick', 'director', 'manager', 'managing_director', 'theater_director', 'theatre_director', 'film_director', 'conductor', 'music_director']
+Os termos traduzidos são:  ['cinema', 'filme', 'filmes', 'without', 'administrador', 'diretor', 'gerente', 'director']
+127.0.0.1 - - [25/Sep/2020 11:06:38] "POST /search HTTP/1.1" 302 -
+127.0.0.1 - - [25/Sep/2020 11:06:38] "GET / HTTP/1.1" 200 -
+
+Process finished with exit code -1
