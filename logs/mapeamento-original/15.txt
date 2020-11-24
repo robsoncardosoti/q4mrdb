@@ -1,0 +1,5 @@
+CONSULTA: actor died in 2020
+CONSULTA EXPANDIDA: [actor, histrion, player, thespian, died, die, decease, perish, in, inch, indium, In, 2020]
+BANCOS COM INFORMACOES UTEIS: {}
+RANKING DOS BANCOS: []
+Nao existem bancos com informacoes uteis para a consulta!

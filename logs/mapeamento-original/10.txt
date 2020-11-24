@@ -1,0 +1,5 @@
+CONSULTA: 'Steven Spielberg' directoring
+CONSULTA EXPANDIDA: [directoring]
+BANCOS COM INFORMACOES UTEIS: {}
+RANKING DOS BANCOS: []
+Nao existem bancos com informacoes uteis para a consulta!

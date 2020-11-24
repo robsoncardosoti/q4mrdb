@@ -1,0 +1,137 @@
+CONSULTA: movies bestrating
+CONSULTA EXPANDIDA: [movies, movie, film, picture, bestrating]
+BANCOS COM INFORMACOES UTEIS: {imdb_pt=2}
+
+PESQUISANDO O BANCO imdb_pt
+RELACIONAMENTO ENTRE AS TABELAS NO BANCO imdb_pt: {movies_genres=[genres.fk_movieGenre_genre, movies.fk_movieGenre_movie], person=[movies_actors.fk_moviesActors_actors, movies_directors.fk_directorsMovie_person], movies=[episode.fk_episode_movie, movies_actors.fk_moviesActors_movie, movies_directors.fk_directorsMovie_movie, movies_genres.fk_movieGenre_movie], genres=[movies_genres.fk_movieGenre_genre], movies_actors=[movies.fk_moviesActors_movie, person.fk_moviesActors_actors], episode=[movies.fk_episode_movie], movies_directors=[movies.fk_directorsMovie_movie, person.fk_directorsMovie_person]}
+
+MATRIZ DE PESOS
+
+MATRIZ SW:
+null	episode	genres	movies	movies_actors	movies_directors	movies_genres	person	episode.episodeid	episode.movieid	episode.seasonnumber	episode.episodenumber	genres.genre_id	genres.name	movies.movieid	movies.type	movies.title	movies.startyear	movies.endyear	movies.rating	movies_actors.movieid	movies_actors.personid	movies_directors.movieid	movies_directors.personid	movies_genres.movie_d	movies_genres.genre_id	person.personid	person.name	person.birthyear	person.deathyear	
+movies	0	0	100	0	0	0	0	0	75	0	0	0	0	75	0	0	0	0	0	75	0	75	0	70	0	0	0	0	0	
+bestrating	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	69	0	0	0	0	0	0	0	0	0	0	
+
+
+MATRIZ VW:
+null	episode.episodeid.java.lang.String	episode.movieid.java.lang.String	episode.seasonnumber.java.lang.Integer	episode.episodenumber.java.lang.Integer	genres.genre_id.java.lang.Integer	genres.name.java.lang.String	movies.movieid.java.lang.String	movies.type.java.lang.String	movies.title.java.lang.String	movies.startyear.java.lang.String	movies.endyear.java.lang.String	movies.rating.java.math.BigDecimal	movies_actors.movieid.java.lang.String	movies_actors.personid.java.lang.String	movies_directors.movieid.java.lang.String	movies_directors.personid.java.lang.String	movies_genres.movie_d.java.lang.String	movies_genres.genre_id.java.lang.Integer	person.personid.java.lang.String	person.name.java.lang.String	person.birthyear.java.lang.String	person.deathyear.java.lang.String	
+movies	65	65	0	0	0	65	65	65	65	65	65	0	65	65	65	65	65	0	65	65	65	65	
+bestrating	65	65	0	0	0	65	65	65	65	65	65	0	65	65	65	65	65	0	65	65	65	65	
+
+1º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	episode	genres	movies	movies_actors	movies_directors	movies_genres	person	episode.episodeid	episode.movieid	episode.seasonnumber	episode.episodenumber	genres.genre_id	genres.name	movies.movieid	movies.type	movies.title	movies.startyear	movies.endyear	movies.rating	movies_actors.movieid	movies_actors.personid	movies_directors.movieid	movies_directors.personid	movies_genres.movie_d	movies_genres.genre_id	person.personid	person.name	person.birthyear	person.deathyear	
+movies	0	0	100*	0	0	0	0	0	75	0	0	0	0	75	0	0	0	0	0	75	0	75	0	70	0	0	0	0	0	
+bestrating	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	69*	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 169
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+movies ---> movies
+bestrating ---> movies.rating
+
+TABELAS NECESSARIAS PARA A CONSULTA: [movies]
+
+CONSULTA SQL: select distinct movies.rating
+from movies
+
+
+RESULTADO
+-----------------------------------------------------
+movies.rating 	
+
+5.6 	
+6.1 	
+6.5 	
+6.2 	
+5.3 	
+5.5 	
+5.4 	
+5.9 	
+6.9 	
+5.2 	
+7.4 	
+5.7 	
+7.1 	
+4.6 	
+5.0 	
+5.1 	
+4.5 	
+4.2 	
+4.4 	
+4.7 	
+4.1 	
+3.7 	
+4.3 	
+6.6 	
+4.8 	
+4.0 	
+4.9 	
+2.8 	
+3.5 	
+7.6 	
+3.9 	
+3.6 	
+6.4 	
+6.3 	
+6.7 	
+5.8 	
+6.0 	
+6.8 	
+3.4 	
+null 	
+7.5 	
+7.3 	
+7.2 	
+8.1 	
+7.0 	
+8.2 	
+3.8 	
+7.8 	
+3.2 	
+8.0 	
+7.9 	
+3.3 	
+8.3 	
+3.1 	
+2.9 	
+8.6 	
+3.0 	
+7.7 	
+8.5 	
+8.7 	
+8.4 	
+8.9 	
+9.2 	
+9.0 	
+1.8 	
+1.5 	
+1.9 	
+2.0 	
+1.1 	
+2.1 	
+2.5 	
+2.4 	
+8.8 	
+9.1 	
+1.3 	
+9.3 	
+1.0 	
+2.2 	
+1.7 	
+2.6 	
+9.4 	
+1.6 	
+2.3 	
+2.7 	
+9.7 	
+1.4 	
+9.6 	
+10.0 	
+9.5 	
+9.9 	
+9.8 	
+1.2 	
+-----------------------------------------------------
+
+Tempo em millis: 9040

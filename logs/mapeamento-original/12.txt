@@ -1,0 +1,5 @@
+CONSULTA: actor dead 'Fast and Furious'
+CONSULTA EXPANDIDA: [actor, histrion, player, thespian, dead, inanimate, nonliving, non-living]
+BANCOS COM INFORMACOES UTEIS: {}
+RANKING DOS BANCOS: []
+Nao existem bancos com informacoes uteis para a consulta!

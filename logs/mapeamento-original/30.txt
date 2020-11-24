@@ -1,0 +1,24 @@
+CONSULTA: i rate 'The Lion King'
+CONSULTA EXPANDIDA: [i, iodine, iodin, I, rate, charge per unit, pace, rank]
+BANCOS COM INFORMACOES UTEIS: {imdb_pt=8}
+
+PESQUISANDO O BANCO imdb_pt
+RELACIONAMENTO ENTRE AS TABELAS NO BANCO imdb_pt: {movies_genres=[genres.fk_movieGenre_genre, movies.fk_movieGenre_movie], person=[movies_actors.fk_moviesActors_actors, movies_directors.fk_directorsMovie_person], movies=[episode.fk_episode_movie, movies_actors.fk_moviesActors_movie, movies_directors.fk_directorsMovie_movie, movies_genres.fk_movieGenre_movie], genres=[movies_genres.fk_movieGenre_genre], movies_actors=[movies.fk_moviesActors_movie, person.fk_moviesActors_actors], episode=[movies.fk_episode_movie], movies_directors=[movies.fk_directorsMovie_movie, person.fk_directorsMovie_person]}
+
+MATRIZ DE PESOS
+
+MATRIZ SW:
+null	episode	genres	movies	movies_actors	movies_directors	movies_genres	person	episode.episodeid	episode.movieid	episode.seasonnumber	episode.episodenumber	genres.genre_id	genres.name	movies.movieid	movies.type	movies.title	movies.startyear	movies.endyear	movies.rating	movies_actors.movieid	movies_actors.personid	movies_directors.movieid	movies_directors.personid	movies_genres.movie_d	movies_genres.genre_id	person.personid	person.name	person.birthyear	person.deathyear	
+i	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+rate	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+'the lion king'	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+
+
+MATRIZ VW:
+null	episode.episodeid.java.lang.String	episode.movieid.java.lang.String	episode.seasonnumber.java.lang.Integer	episode.episodenumber.java.lang.Integer	genres.genre_id.java.lang.Integer	genres.name.java.lang.String	movies.movieid.java.lang.String	movies.type.java.lang.String	movies.title.java.lang.String	movies.startyear.java.lang.String	movies.endyear.java.lang.String	movies.rating.java.math.BigDecimal	movies_actors.movieid.java.lang.String	movies_actors.personid.java.lang.String	movies_directors.movieid.java.lang.String	movies_directors.personid.java.lang.String	movies_genres.movie_d.java.lang.String	movies_genres.genre_id.java.lang.Integer	person.personid.java.lang.String	person.name.java.lang.String	person.birthyear.java.lang.String	person.deathyear.java.lang.String	
+i	65	65	0	0	0	65	65	65	65	65	65	0	65	65	65	65	65	0	65	65	65	65	
+rate	65	65	0	0	0	65	65	65	65	65	65	0	65	65	65	65	65	0	65	65	65	65	
+'the lion king'	65	65	0	0	0	65	65	65	65	65	65	0	65	65	65	65	65	0	65	65	65	65	
+
+Nenhum resultado encontrado para o banco imdb_pt
+Tempo em millis: 9116

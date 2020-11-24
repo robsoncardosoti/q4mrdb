@@ -1,0 +1,4485 @@
+CONSULTA: director movie list
+CONSULTA EXPANDIDA: [director, manager, managing director, theater director, movie, film, picture, moving picture, list, listing, tilt, inclination]
+BANCOS COM INFORMACOES UTEIS: {imdb_pt=2}
+
+PESQUISANDO O BANCO imdb_pt
+RELACIONAMENTO ENTRE AS TABELAS NO BANCO imdb_pt: {movies_genres=[genres.fk_movieGenre_genre, movies.fk_movieGenre_movie], person=[movies_actors.fk_moviesActors_actors, movies_directors.fk_directorsMovie_person], movies=[episode.fk_episode_movie, movies_actors.fk_moviesActors_movie, movies_directors.fk_directorsMovie_movie, movies_genres.fk_movieGenre_movie], genres=[movies_genres.fk_movieGenre_genre], movies_actors=[movies.fk_moviesActors_movie, person.fk_moviesActors_actors], episode=[movies.fk_episode_movie], movies_directors=[movies.fk_directorsMovie_movie, person.fk_directorsMovie_person]}
+
+MATRIZ DE PESOS
+
+MATRIZ SW:
+null	episode	genres	movies	movies_actors	movies_directors	movies_genres	person	episode.episodeid	episode.movieid	episode.seasonnumber	episode.episodenumber	genres.genre_id	genres.name	movies.movieid	movies.type	movies.title	movies.startyear	movies.endyear	movies.rating	movies_actors.movieid	movies_actors.personid	movies_directors.movieid	movies_directors.personid	movies_genres.movie_d	movies_genres.genre_id	person.personid	person.name	person.birthyear	person.deathyear	
+director	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+movie	0	0	85	0	0	0	0	0	82	0	0	0	0	82	0	0	0	0	0	82	0	82	0	75	0	0	0	0	0	
+list	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	66	0	0	0	0	0	0	0	0	0	0	0	0	0	
+
+
+MATRIZ VW:
+null	episode.episodeid.java.lang.String	episode.movieid.java.lang.String	episode.seasonnumber.java.lang.Integer	episode.episodenumber.java.lang.Integer	genres.genre_id.java.lang.Integer	genres.name.java.lang.String	movies.movieid.java.lang.String	movies.type.java.lang.String	movies.title.java.lang.String	movies.startyear.java.lang.String	movies.endyear.java.lang.String	movies.rating.java.math.BigDecimal	movies_actors.movieid.java.lang.String	movies_actors.personid.java.lang.String	movies_directors.movieid.java.lang.String	movies_directors.personid.java.lang.String	movies_genres.movie_d.java.lang.String	movies_genres.genre_id.java.lang.Integer	person.personid.java.lang.String	person.name.java.lang.String	person.birthyear.java.lang.String	person.deathyear.java.lang.String	
+director	65	65	0	0	0	65	65	65	65	65	65	0	65	65	65	65	65	0	65	65	65	65	
+movie	65	65	0	0	0	65	65	65	65	65	65	0	65	65	65	65	65	0	65	65	65	65	
+list	65	65	0	0	0	65	65	65	65	65	65	0	65	65	65	65	65	0	65	65	65	65	
+
+1º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	episode	genres	movies	movies_actors	movies_directors	movies_genres	person	episode.episodeid	episode.movieid	episode.seasonnumber	episode.episodenumber	genres.genre_id	genres.name	movies.movieid	movies.type	movies.title	movies.startyear	movies.endyear	movies.rating	movies_actors.movieid	movies_actors.personid	movies_directors.movieid	movies_directors.personid	movies_genres.movie_d	movies_genres.genre_id	person.personid	person.name	person.birthyear	person.deathyear	
+director*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+movie	0	0	85*	0	0	0	0	0	82	0	0	0	0	82	0	0	0	0	0	82	0	82	0	75	0	0	0	0	0	
+list	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	66*	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 151
+
+MAPEAMENTO VW:
+null	episode.episodeid.java.lang.String	episode.movieid.java.lang.String	episode.seasonnumber.java.lang.Integer	episode.episodenumber.java.lang.Integer	genres.genre_id.java.lang.Integer	genres.name.java.lang.String	movies.movieid.java.lang.String	movies.type.java.lang.String	movies.title.java.lang.String	movies.startyear.java.lang.String	movies.endyear.java.lang.String	movies.rating.java.math.BigDecimal	movies_actors.movieid.java.lang.String	movies_actors.personid.java.lang.String	movies_directors.movieid.java.lang.String	movies_directors.personid.java.lang.String	movies_genres.movie_d.java.lang.String	movies_genres.genre_id.java.lang.Integer	person.personid.java.lang.String	person.name.java.lang.String	person.birthyear.java.lang.String	person.deathyear.java.lang.String	
+director	67	67	0	0	0	67	80*	80	80	80	80	0	67	67	67	67	67	0	67	67	67	67	
+movie*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+list*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 80
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+movie ---> movies
+list ---> movies.title
+director ---> movies.movieid.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [movies]
+
+CONSULTA SQL: select distinct movies.title
+from movies
+where movies.movieid like '%director%' 
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+2º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	episode	genres	movies	movies_actors	movies_directors	movies_genres	person	episode.episodeid	episode.movieid	episode.seasonnumber	episode.episodenumber	genres.genre_id	genres.name	movies.movieid	movies.type	movies.title	movies.startyear	movies.endyear	movies.rating	movies_actors.movieid	movies_actors.personid	movies_directors.movieid	movies_directors.personid	movies_genres.movie_d	movies_genres.genre_id	person.personid	person.name	person.birthyear	person.deathyear	
+director*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+movie	0	0	85*	0	0	0	0	0	82	0	0	0	0	82	0	0	0	0	0	82	0	82	0	75	0	0	0	0	0	
+list	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	66*	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 151
+
+MAPEAMENTO VW:
+null	episode.episodeid.java.lang.String	episode.movieid.java.lang.String	episode.seasonnumber.java.lang.Integer	episode.episodenumber.java.lang.Integer	genres.genre_id.java.lang.Integer	genres.name.java.lang.String	movies.movieid.java.lang.String	movies.type.java.lang.String	movies.title.java.lang.String	movies.startyear.java.lang.String	movies.endyear.java.lang.String	movies.rating.java.math.BigDecimal	movies_actors.movieid.java.lang.String	movies_actors.personid.java.lang.String	movies_directors.movieid.java.lang.String	movies_directors.personid.java.lang.String	movies_genres.movie_d.java.lang.String	movies_genres.genre_id.java.lang.Integer	person.personid.java.lang.String	person.name.java.lang.String	person.birthyear.java.lang.String	person.deathyear.java.lang.String	
+director	67	67	0	0	0	67	-100	80*	80	80	80	0	67	67	67	67	67	0	67	67	67	67	
+movie*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+list*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 80
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+movie ---> movies
+list ---> movies.title
+director ---> movies.type.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [movies]
+
+CONSULTA SQL: select distinct movies.title
+from movies
+where movies.type like '%director%' 
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+3º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	episode	genres	movies	movies_actors	movies_directors	movies_genres	person	episode.episodeid	episode.movieid	episode.seasonnumber	episode.episodenumber	genres.genre_id	genres.name	movies.movieid	movies.type	movies.title	movies.startyear	movies.endyear	movies.rating	movies_actors.movieid	movies_actors.personid	movies_directors.movieid	movies_directors.personid	movies_genres.movie_d	movies_genres.genre_id	person.personid	person.name	person.birthyear	person.deathyear	
+director*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+movie	0	0	85*	0	0	0	0	0	82	0	0	0	0	82	0	0	0	0	0	82	0	82	0	75	0	0	0	0	0	
+list	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	66*	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 151
+
+MAPEAMENTO VW:
+null	episode.episodeid.java.lang.String	episode.movieid.java.lang.String	episode.seasonnumber.java.lang.Integer	episode.episodenumber.java.lang.Integer	genres.genre_id.java.lang.Integer	genres.name.java.lang.String	movies.movieid.java.lang.String	movies.type.java.lang.String	movies.title.java.lang.String	movies.startyear.java.lang.String	movies.endyear.java.lang.String	movies.rating.java.math.BigDecimal	movies_actors.movieid.java.lang.String	movies_actors.personid.java.lang.String	movies_directors.movieid.java.lang.String	movies_directors.personid.java.lang.String	movies_genres.movie_d.java.lang.String	movies_genres.genre_id.java.lang.Integer	person.personid.java.lang.String	person.name.java.lang.String	person.birthyear.java.lang.String	person.deathyear.java.lang.String	
+director	67	67	0	0	0	67	-100	-100	80*	80	80	0	67	67	67	67	67	0	67	67	67	67	
+movie*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+list*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 80
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+movie ---> movies
+list ---> movies.title
+director ---> movies.title.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [movies]
+
+CONSULTA SQL: select distinct movies.movieid, movies.type, movies.startyear, movies.endyear, movies.rating
+from movies
+where movies.title like '%director%' 
+
+
+RESULTADO
+-----------------------------------------------------
+movies.movieid 	movies.type 	movies.startyear 	movies.endyear 	movies.rating 	
+
+tt0002145 	short 	1912 	null 	8.7 	
+tt0042701 	movie 	1953 	null 	null 	
+tt0047768 	tvSeries 	1955 	1956 	7.2 	
+tt0047998 	movie 	1955 	null 	7.5 	
+tt0071163 	movie 	1975 	null 	7.3 	
+tt0091518 	movie 	1986 	null 	null 	
+tt0124142 	videoGame 	1996 	null 	5.9 	
+tt0133662 	video 	1992 	null 	null 	
+tt0143105 	movie 	1997 	null 	8.7 	
+tt0167017 	video 	1997 	null 	8.2 	
+tt0173713 	short 	1968 	null 	4.6 	
+tt0205181 	short 	1991 	null 	null 	
+tt0206002 	short 	1962 	null 	null 	
+tt0206601 	tvEpisode 	1969 	null 	6.7 	
+tt0207738 	movie 	1993 	null 	6.7 	
+tt0211733 	tvMovie 	1974 	null 	6.4 	
+tt0224861 	tvSeries 	1997 	null 	7.3 	
+tt0231183 	short 	1949 	null 	5.8 	
+tt0232603 	short 	1951 	null 	6.4 	
+tt0241377 	tvMovie 	1998 	null 	null 	
+tt0241887 	short 	1954 	null 	null 	
+tt0246601 	movie 	1995 	null 	7.1 	
+tt0261208 	short 	1998 	null 	null 	
+tt0263412 	movie 	2000 	null 	6.6 	
+tt0266468 	short 	2000 	null 	8.4 	
+tt0276944 	movie 	1971 	null 	null 	
+tt0302480 	video 	2001 	null 	7.1 	
+tt0322031 	video 	1997 	null 	6.7 	
+tt0340076 	short 	2002 	null 	null 	
+tt0347962 	short 	1951 	null 	null 	
+tt0358257 	video 	2002 	null 	8.0 	
+tt0360768 	short 	2001 	null 	8.1 	
+tt0361550 	short 	1912 	null 	null 	
+tt0362552 	video 	2003 	null 	6.2 	
+tt0368703 	video 	2002 	null 	6.4 	
+tt0370230 	tvSeries 	1999 	null 	null 	
+tt0371914 	movie 	2003 	null 	null 	
+tt0373793 	tvMovie 	1989 	null 	8.1 	
+tt0374602 	video 	2003 	null 	5.7 	
+tt0374603 	video 	2003 	null 	4.7 	
+tt0374616 	movie 	2003 	null 	5.4 	
+tt0376750 	movie 	1966 	null 	7.1 	
+tt0376776 	movie 	1965 	null 	5.8 	
+tt0384700 	video 	2003 	null 	8.7 	
+tt0385657 	short 	2003 	null 	null 	
+tt0386123 	video 	2003 	null 	8.4 	
+tt0386124 	video 	2003 	null 	8.4 	
+tt0388677 	short 	2003 	null 	6.2 	
+tt0389392 	video 	1999 	null 	7.2 	
+tt0389393 	video 	1999 	null 	6.4 	
+tt0391929 	video 	1996 	null 	5.0 	
+tt0396983 	tvSeries 	2004 	2004 	7.8 	
+tt0404888 	video 	2003 	null 	6.3 	
+tt0407487 	video 	2004 	null 	7.2 	
+tt0409085 	video 	2003 	null 	null 	
+tt0410118 	video 	2000 	null 	6.1 	
+tt0418576 	short 	1917 	null 	null 	
+tt0420323 	video 	2005 	null 	8.2 	
+tt0424451 	videoGame 	2003 	null 	7.5 	
+tt0425469 	short 	1990 	null 	null 	
+tt0429819 	video 	2004 	null 	6.6 	
+tt0433624 	movie 	2006 	null 	6.2 	
+tt0440271 	video 	2004 	null 	null 	
+tt0457116 	video 	2004 	null 	6.8 	
+tt0458640 	video 	2004 	null 	null 	
+tt0463053 	video 	2005 	null 	null 	
+tt0463497 	video 	1999 	null 	null 	
+tt0470554 	video 	2000 	null 	null 	
+tt0470995 	movie 	2006 	null 	4.5 	
+tt0471433 	video 	2005 	null 	7.6 	
+tt0473733 	video 	2005 	null 	8.1 	
+tt0475009 	video 	2005 	null 	7.4 	
+tt0475573 	video 	2004 	null 	6.3 	
+tt0483489 	video 	2005 	null 	8.9 	
+tt0488705 	short 	1970 	null 	null 	
+tt0490272 	tvMovie 	2005 	null 	6.2 	
+tt0495226 	tvMovie 	1995 	null 	7.6 	
+tt0496498 	short 	1901 	null 	null 	
+tt0558980 	tvEpisode 	1977 	null 	null 	
+tt0560757 	tvEpisode 	1999 	null 	null 	
+tt0575806 	tvEpisode 	2003 	null 	null 	
+tt0577773 	tvEpisode 	1979 	null 	7.2 	
+tt0593295 	tvEpisode 	1990 	null 	6.4 	
+tt0604212 	tvEpisode 	1968 	null 	null 	
+tt0614544 	tvEpisode 	1955 	null 	null 	
+tt0636775 	tvEpisode 	1984 	null 	7.1 	
+tt0639961 	tvEpisode 	1959 	null 	8.0 	
+tt0655284 	tvEpisode 	2004 	null 	7.2 	
+tt0665673 	tvEpisode 	1998 	null 	7.2 	
+tt0667230 	tvEpisode 	1975 	null 	null 	
+tt0672699 	tvEpisode 	1999 	null 	8.8 	
+tt0679198 	tvEpisode 	1959 	null 	null 	
+tt0694143 	tvEpisode 	1976 	null 	7.4 	
+tt0719227 	tvEpisode 	1974 	null 	null 	
+tt0723938 	tvEpisode 	1992 	null 	7.4 	
+tt0742221 	tvEpisode 	1997 	null 	null 	
+tt0752079 	tvEpisode 	\N 	null 	null 	
+tt0757820 	tvEpisode 	1998 	null 	null 	
+tt0768113 	video 	2004 	null 	6.3 	
+tt0770100 	tvEpisode 	1955 	null 	6.7 	
+tt0778646 	tvShort 	1982 	null 	7.8 	
+tt0778671 	movie 	2006 	null 	3.3 	
+tt0781093 	video 	2006 	null 	null 	
+tt0790684 	tvMovie 	1990 	null 	6.8 	
+tt0790813 	movie 	2008 	null 	5.1 	
+tt0794223 	tvEpisode 	2001 	null 	null 	
+tt0795534 	video 	2002 	null 	6.9 	
+tt0799706 	tvSeries 	2000 	null 	null 	
+tt0808669 	tvEpisode 	2001 	null 	8.7 	
+tt0810069 	tvShort 	2006 	null 	null 	
+tt0810835 	short 	2006 	null 	6.8 	
+tt0815475 	video 	2006 	null 	7.5 	
+tt0817532 	tvMiniSeries 	2002 	null 	7.5 	
+tt0818757 	video 	2004 	null 	null 	
+tt0820880 	video 	2004 	null 	null 	
+tt0825098 	tvEpisode 	2005 	null 	null 	
+tt0828397 	video 	2006 	null 	6.4 	
+tt0832063 	tvEpisode 	1954 	null 	null 	
+tt0836929 	tvEpisode 	1964 	null 	null 	
+tt0837058 	tvEpisode 	2006 	null 	6.6 	
+tt0837652 	tvEpisode 	2003 	null 	null 	
+tt0840916 	tvEpisode 	1956 	null 	8.7 	
+tt0843896 	tvSeries 	2007 	null 	7.0 	
+tt0848582 	video 	2002 	null 	null 	
+tt0850933 	tvEpisode 	2005 	null 	7.2 	
+tt0869053 	video 	2005 	null 	null 	
+tt0869155 	movie 	2006 	null 	6.7 	
+tt0870465 	tvEpisode 	1999 	null 	null 	
+tt0884494 	tvEpisode 	2006 	null 	null 	
+tt0887171 	movie 	2006 	null 	7.0 	
+tt0888698 	video 	2006 	null 	8.5 	
+tt0892405 	video 	2006 	null 	null 	
+tt0914440 	tvEpisode 	1952 	null 	null 	
+tt0945568 	short 	2007 	null 	8.0 	
+tt0968662 	tvEpisode 	2004 	null 	9.3 	
+tt0980290 	tvEpisode 	2007 	null 	null 	
+tt0983956 	tvSeries 	2006 	null 	null 	
+tt0985595 	video 	2002 	null 	null 	
+tt0993776 	movie 	2007 	null 	6.9 	
+tt0996381 	tvMovie 	2004 	null 	null 	
+tt0996436 	tvShort 	2007 	null 	null 	
+tt0997044 	video 	2006 	null 	6.8 	
+tt10003452 	video 	2019 	null 	null 	
+tt10004922 	video 	2019 	null 	null 	
+tt10009978 	movie 	2019 	null 	6.0 	
+tt10021094 	tvEpisode 	2019 	null 	null 	
+tt10023274 	movie 	2020 	null 	null 	
+tt10031968 	tvEpisode 	2010 	null 	null 	
+tt10044588 	tvEpisode 	1979 	null 	null 	
+tt10055270 	video 	2019 	null 	null 	
+tt10065858 	tvEpisode 	2017 	null 	null 	
+tt10085394 	tvEpisode 	2019 	null 	null 	
+tt10086642 	tvEpisode 	2018 	null 	null 	
+tt10109778 	tvEpisode 	2018 	null 	null 	
+tt10110174 	tvEpisode 	2019 	null 	null 	
+tt10117856 	tvEpisode 	2012 	null 	null 	
+tt10125052 	movie 	\N 	null 	null 	
+tt10133352 	movie 	2018 	null 	null 	
+tt1014642 	tvEpisode 	2007 	null 	null 	
+tt10156030 	short 	2018 	null 	null 	
+tt10185838 	short 	2019 	null 	null 	
+tt10196372 	tvEpisode 	2019 	null 	null 	
+tt10202440 	short 	1994 	null 	null 	
+tt10203264 	short 	2019 	null 	null 	
+tt10206462 	tvEpisode 	2019 	null 	7.6 	
+tt10228242 	short 	2018 	null 	null 	
+tt10241474 	tvEpisode 	2011 	null 	null 	
+tt10250588 	tvEpisode 	2015 	null 	null 	
+tt10263630 	tvEpisode 	2012 	null 	null 	
+tt10265148 	tvEpisode 	2010 	null 	null 	
+tt10275186 	short 	2019 	null 	null 	
+tt1028208 	tvEpisode 	2007 	null 	null 	
+tt10288946 	short 	2019 	null 	null 	
+tt10288960 	tvEpisode 	2019 	null 	null 	
+tt1029108 	short 	2002 	null 	null 	
+tt1029436 	video 	2007 	null 	8.0 	
+tt10294646 	tvSeries 	1966 	1968 	null 	
+tt10313192 	movie 	2019 	null 	6.4 	
+tt10322544 	movie 	\N 	null 	null 	
+tt10328046 	movie 	2020 	null 	null 	
+tt10338164 	tvEpisode 	2019 	null 	null 	
+tt10341262 	tvMiniSeries 	2019 	2019 	null 	
+tt10345486 	tvEpisode 	2019 	null 	null 	
+tt1035445 	video 	2007 	null 	6.8 	
+tt10368836 	video 	2017 	null 	null 	
+tt1037189 	tvEpisode 	1999 	null 	null 	
+tt1037541 	tvEpisode 	2002 	null 	5.4 	
+tt10375814 	movie 	2017 	null 	null 	
+tt10403652 	tvEpisode 	2019 	null 	7.8 	
+tt10407898 	video 	2018 	null 	null 	
+tt10414650 	tvEpisode 	2018 	null 	null 	
+tt10415006 	tvEpisode 	2019 	null 	null 	
+tt10422584 	tvEpisode 	1994 	null 	null 	
+tt10422586 	tvEpisode 	1994 	null 	null 	
+tt1042681 	tvEpisode 	2007 	null 	null 	
+tt10428964 	video 	2018 	null 	null 	
+tt1043212 	tvEpisode 	2007 	null 	6.6 	
+tt1043213 	tvEpisode 	2007 	null 	8.6 	
+tt1043214 	tvEpisode 	2007 	null 	null 	
+tt1043215 	tvEpisode 	2007 	null 	null 	
+tt1043217 	tvEpisode 	2007 	null 	null 	
+tt1043218 	tvEpisode 	2007 	null 	null 	
+tt1043219 	tvEpisode 	2007 	null 	null 	
+tt10436724 	tvEpisode 	1999 	null 	null 	
+tt10451288 	tvEpisode 	2002 	null 	null 	
+tt10451306 	tvEpisode 	2002 	null 	null 	
+tt10452288 	tvEpisode 	2019 	null 	null 	
+tt10468678 	tvEpisode 	2019 	null 	null 	
+tt10468692 	tvEpisode 	2019 	null 	null 	
+tt10468694 	tvEpisode 	2019 	null 	null 	
+tt1047001 	video 	2007 	null 	null 	
+tt10477528 	tvSeries 	2019 	null 	7.8 	
+tt10478368 	video 	1986 	null 	null 	
+tt10479006 	tvEpisode 	2018 	null 	null 	
+tt10479116 	tvEpisode 	2018 	null 	null 	
+tt10483764 	tvSeries 	\N 	null 	null 	
+tt10484238 	tvEpisode 	2018 	null 	null 	
+tt10484256 	tvEpisode 	2018 	null 	null 	
+tt10484264 	tvEpisode 	2018 	null 	null 	
+tt10484296 	tvEpisode 	2018 	null 	null 	
+tt10487740 	tvEpisode 	2018 	null 	null 	
+tt10487756 	tvEpisode 	2018 	null 	null 	
+tt10487782 	tvEpisode 	2018 	null 	null 	
+tt10487796 	tvEpisode 	2018 	null 	null 	
+tt10487800 	tvEpisode 	2018 	null 	null 	
+tt10487806 	tvEpisode 	2018 	null 	null 	
+tt10487810 	tvEpisode 	2018 	null 	null 	
+tt10487814 	tvEpisode 	2018 	null 	null 	
+tt10487826 	tvEpisode 	2018 	null 	null 	
+tt10487832 	tvEpisode 	2018 	null 	null 	
+tt10487998 	tvEpisode 	2018 	null 	null 	
+tt10488794 	video 	1982 	null 	null 	
+tt10494102 	tvEpisode 	2019 	null 	null 	
+tt10494156 	tvEpisode 	2019 	null 	null 	
+tt10494474 	video 	1986 	null 	null 	
+tt10509358 	tvEpisode 	2019 	null 	null 	
+tt1051030 	tvEpisode 	2007 	null 	6.9 	
+tt1051842 	video 	2007 	null 	null 	
+tt10519296 	tvEpisode 	2019 	null 	8.5 	
+tt1052047 	video 	2008 	null 	5.6 	
+tt10543872 	tvEpisode 	2019 	null 	7.3 	
+tt10545220 	video 	2012 	null 	null 	
+tt10568030 	tvEpisode 	2019 	null 	null 	
+tt10568096 	tvEpisode 	2019 	null 	null 	
+tt10568182 	tvEpisode 	2019 	null 	null 	
+tt10574122 	short 	2019 	null 	null 	
+tt10575012 	video 	2018 	null 	null 	
+tt10577888 	tvEpisode 	2019 	null 	null 	
+tt10578074 	tvEpisode 	2019 	null 	6.6 	
+tt10583256 	tvEpisode 	2019 	null 	null 	
+tt10592932 	short 	2016 	null 	null 	
+tt10612860 	tvEpisode 	2019 	null 	null 	
+tt10613544 	tvEpisode 	2019 	null 	null 	
+tt10616302 	tvEpisode 	2019 	null 	null 	
+tt10617132 	tvEpisode 	2019 	null 	5.0 	
+tt10632926 	tvMovie 	2019 	null 	null 	
+tt10633604 	tvEpisode 	2015 	null 	null 	
+tt10643480 	tvEpisode 	2016 	null 	null 	
+tt10648268 	movie 	2018 	null 	3.5 	
+tt10653112 	tvEpisode 	2013 	null 	null 	
+tt10653272 	tvEpisode 	2019 	null 	null 	
+tt10671398 	movie 	2019 	null 	null 	
+tt10672480 	tvEpisode 	2019 	null 	null 	
+tt10691374 	tvEpisode 	2018 	null 	null 	
+tt10715052 	tvEpisode 	2000 	null 	null 	
+tt10725930 	tvEpisode 	2019 	null 	null 	
+tt1072981 	tvEpisode 	2007 	null 	null 	
+tt1072982 	tvEpisode 	2007 	null 	null 	
+tt1072983 	tvEpisode 	2007 	null 	9.2 	
+tt10742010 	video 	2006 	null 	null 	
+tt10746354 	tvEpisode 	2019 	null 	null 	
+tt10746724 	video 	2006 	null 	null 	
+tt10746778 	video 	2006 	null 	null 	
+tt10746974 	tvEpisode 	2019 	null 	6.7 	
+tt10757302 	video 	2006 	null 	null 	
+tt10757384 	video 	2006 	null 	null 	
+tt10757430 	video 	2006 	null 	null 	
+tt10760568 	tvEpisode 	2019 	null 	8.8 	
+tt10761720 	short 	2019 	null 	null 	
+tt1076405 	tvEpisode 	2006 	null 	2.8 	
+tt10773066 	video 	2006 	null 	null 	
+tt10787836 	tvEpisode 	2019 	null 	null 	
+tt10794030 	tvEpisode 	2019 	null 	7.3 	
+tt10803256 	tvEpisode 	2019 	null 	null 	
+tt10805150 	tvEpisode 	\N 	null 	null 	
+tt10840624 	tvEpisode 	2019 	null 	null 	
+tt10845414 	short 	2019 	null 	null 	
+tt10856504 	tvEpisode 	2019 	null 	null 	
+tt1086792 	tvMovie 	2007 	null 	null 	
+tt10869602 	short 	2018 	null 	null 	
+tt10891870 	short 	2019 	null 	null 	
+tt10918476 	tvEpisode 	2019 	null 	5.5 	
+tt1092056 	short 	2007 	null 	null 	
+tt10925098 	tvEpisode 	2019 	null 	null 	
+tt10931852 	tvEpisode 	2019 	null 	null 	
+tt10945706 	tvEpisode 	2015 	null 	null 	
+tt10959320 	tvEpisode 	2019 	null 	8.0 	
+tt10963310 	tvEpisode 	2019 	null 	null 	
+tt10975532 	tvEpisode 	2018 	null 	null 	
+tt10978600 	tvEpisode 	2019 	null 	null 	
+tt10978746 	tvEpisode 	2020 	null 	7.4 	
+tt10980098 	tvEpisode 	2020 	null 	8.1 	
+tt10984962 	tvEpisode 	2019 	null 	null 	
+tt1100731 	tvEpisode 	1963 	null 	null 	
+tt11008846 	tvEpisode 	2019 	null 	null 	
+tt11012762 	tvEpisode 	2019 	null 	null 	
+tt11015606 	movie 	2020 	null 	null 	
+tt11038324 	tvEpisode 	2019 	null 	null 	
+tt11041026 	tvEpisode 	2019 	null 	null 	
+tt11056134 	video 	2018 	null 	null 	
+tt11056522 	video 	2018 	null 	null 	
+tt11058036 	tvEpisode 	2019 	null 	null 	
+tt11063976 	tvEpisode 	2019 	null 	null 	
+tt11078246 	video 	2009 	null 	null 	
+tt11078622 	short 	2019 	null 	null 	
+tt11089432 	tvEpisode 	2019 	null 	null 	
+tt11090894 	movie 	2019 	null 	6.4 	
+tt11092126 	tvEpisode 	2019 	null 	null 	
+tt1111150 	tvEpisode 	1995 	null 	null 	
+tt11119592 	tvEpisode 	2019 	null 	null 	
+tt11120866 	video 	2017 	null 	null 	
+tt11125604 	video 	2019 	null 	null 	
+tt11132590 	tvEpisode 	2019 	null 	null 	
+tt11139194 	tvEpisode 	2019 	null 	null 	
+tt11146800 	tvEpisode 	2018 	null 	null 	
+tt11156512 	tvEpisode 	2019 	null 	6.0 	
+tt11182454 	tvEpisode 	\N 	null 	null 	
+tt11191880 	short 	2019 	null 	null 	
+tt11198194 	short 	2019 	null 	null 	
+tt11201538 	tvEpisode 	2019 	null 	null 	
+tt11202162 	tvEpisode 	2019 	null 	5.2 	
+tt11209788 	video 	2019 	null 	null 	
+tt11209880 	video 	2019 	null 	null 	
+tt11235342 	tvEpisode 	2019 	null 	null 	
+tt11237680 	tvEpisode 	2019 	null 	null 	
+tt11242062 	tvEpisode 	2019 	null 	null 	
+tt11250586 	tvEpisode 	2019 	null 	null 	
+tt11263850 	tvEpisode 	2014 	null 	null 	
+tt1126489 	video 	2007 	null 	null 	
+tt11266806 	tvEpisode 	2007 	null 	null 	
+tt11267012 	short 	2009 	null 	null 	
+tt11274226 	tvEpisode 	2019 	null 	null 	
+tt11280402 	tvEpisode 	2019 	null 	null 	
+tt11296564 	tvEpisode 	2019 	null 	null 	
+tt11302374 	tvEpisode 	2019 	null 	null 	
+tt11305686 	video 	2019 	null 	null 	
+tt11306036 	tvEpisode 	2019 	null 	null 	
+tt11310088 	tvEpisode 	2019 	null 	null 	
+tt11312990 	short 	2019 	null 	null 	
+tt11314662 	short 	\N 	null 	null 	
+tt11336168 	video 	2019 	null 	null 	
+tt1133670 	tvEpisode 	2007 	null 	null 	
+tt11342708 	tvEpisode 	2019 	null 	null 	
+tt11350944 	tvEpisode 	2019 	null 	null 	
+tt1137444 	video 	2004 	null 	5.8 	
+tt11376710 	tvEpisode 	2019 	null 	null 	
+tt11387626 	short 	2019 	null 	null 	
+tt11390560 	movie 	2019 	null 	null 	
+tt1139263 	tvEpisode 	2007 	null 	null 	
+tt11398200 	movie 	\N 	null 	null 	
+tt11405722 	tvEpisode 	2019 	null 	null 	
+tt11412570 	short 	2019 	null 	null 	
+tt11455868 	tvEpisode 	2017 	null 	null 	
+tt11462280 	tvEpisode 	2013 	null 	null 	
+tt11463890 	tvEpisode 	2019 	null 	6.1 	
+tt11467688 	tvEpisode 	2019 	null 	null 	
+tt1147568 	movie 	2005 	null 	null 	
+tt1149393 	video 	2006 	null 	null 	
+tt11498052 	video 	2019 	null 	null 	
+tt11519448 	movie 	2020 	null 	null 	
+tt11534324 	movie 	\N 	null 	null 	
+tt11536478 	tvEpisode 	2003 	null 	null 	
+tt11548052 	movie 	2021 	null 	null 	
+tt11569390 	tvEpisode 	2020 	null 	null 	
+tt1160376 	movie 	2010 	null 	6.4 	
+tt11611240 	tvEpisode 	2020 	null 	null 	
+tt11613830 	tvEpisode 	2020 	null 	null 	
+tt11617660 	tvEpisode 	2018 	null 	null 	
+tt11628172 	tvEpisode 	2020 	null 	7.2 	
+tt1163225 	video 	2001 	null 	null 	
+tt11651042 	video 	2020 	null 	null 	
+tt11652620 	tvEpisode 	2020 	null 	null 	
+tt11662650 	tvEpisode 	2019 	null 	null 	
+tt11668072 	tvEpisode 	2020 	null 	null 	
+tt11678810 	tvEpisode 	2020 	null 	null 	
+tt11683686 	tvEpisode 	2020 	null 	null 	
+tt11686034 	tvEpisode 	2017 	null 	null 	
+tt11686390 	tvEpisode 	2020 	null 	null 	
+tt11711784 	tvEpisode 	2015 	null 	null 	
+tt11711818 	tvEpisode 	2014 	null 	null 	
+tt11732714 	tvEpisode 	1955 	null 	null 	
+tt11737764 	movie 	2018 	null 	null 	
+tt1174306 	tvEpisode 	2007 	null 	null 	
+tt1175979 	tvEpisode 	2007 	null 	null 	
+tt1175983 	tvEpisode 	2007 	null 	null 	
+tt1175985 	tvEpisode 	2007 	null 	null 	
+tt1175987 	tvEpisode 	2007 	null 	null 	
+tt11760416 	tvEpisode 	2020 	null 	null 	
+tt1176418 	video 	2007 	null 	7.2 	
+tt11771746 	tvSeries 	2020 	null 	null 	
+tt11774690 	tvEpisode 	2020 	null 	null 	
+tt11775974 	tvEpisode 	2014 	null 	null 	
+tt11776002 	tvEpisode 	2014 	null 	null 	
+tt11776034 	tvEpisode 	2014 	null 	null 	
+tt11776050 	tvEpisode 	2014 	null 	null 	
+tt11776076 	tvEpisode 	2014 	null 	null 	
+tt11776098 	tvEpisode 	2014 	null 	null 	
+tt11776124 	tvEpisode 	2014 	null 	null 	
+tt11776186 	tvEpisode 	2014 	null 	null 	
+tt11776224 	tvEpisode 	2014 	null 	null 	
+tt11776242 	tvEpisode 	2014 	null 	null 	
+tt11776248 	tvEpisode 	2014 	null 	null 	
+tt11776262 	tvEpisode 	2014 	null 	null 	
+tt11779096 	movie 	2019 	null 	null 	
+tt11782768 	tvEpisode 	2015 	null 	null 	
+tt11782834 	tvEpisode 	2015 	null 	null 	
+tt11782870 	tvEpisode 	2015 	null 	null 	
+tt11782956 	tvEpisode 	2015 	null 	null 	
+tt11783002 	tvEpisode 	2015 	null 	null 	
+tt11783028 	tvEpisode 	2015 	null 	null 	
+tt11783030 	tvEpisode 	2015 	null 	null 	
+tt11783078 	tvEpisode 	2015 	null 	null 	
+tt11784880 	tvEpisode 	2015 	null 	null 	
+tt11796434 	tvEpisode 	2020 	null 	null 	
+tt11802018 	tvEpisode 	2020 	null 	null 	
+tt11814438 	tvEpisode 	2020 	null 	null 	
+tt11820826 	tvEpisode 	2008 	null 	null 	
+tt11820848 	tvEpisode 	2008 	null 	null 	
+tt11834692 	tvEpisode 	2019 	null 	null 	
+tt11838724 	tvEpisode 	2016 	null 	null 	
+tt11838792 	tvEpisode 	2016 	null 	null 	
+tt11845348 	short 	\N 	null 	null 	
+tt11847844 	video 	2020 	null 	null 	
+tt11849552 	tvEpisode 	2020 	null 	null 	
+tt11859958 	video 	2020 	null 	null 	
+tt11864810 	tvEpisode 	2020 	null 	6.6 	
+tt11866536 	tvEpisode 	2020 	null 	null 	
+tt11871878 	tvEpisode 	2008 	null 	null 	
+tt11872314 	tvEpisode 	2020 	null 	null 	
+tt1188335 	tvEpisode 	2008 	null 	null 	
+tt11890774 	tvSeries 	2020 	null 	null 	
+tt11897506 	tvEpisode 	2019 	null 	null 	
+tt1189822 	tvEpisode 	2008 	null 	null 	
+tt1190045 	tvEpisode 	2008 	null 	7.6 	
+tt1190047 	tvEpisode 	2008 	null 	null 	
+tt11912784 	tvEpisode 	2019 	null 	null 	
+tt11914004 	tvEpisode 	2015 	null 	null 	
+tt11919780 	video 	2020 	null 	null 	
+tt11921200 	tvEpisode 	2020 	null 	5.1 	
+tt11927896 	tvEpisode 	2020 	null 	null 	
+tt11935062 	tvEpisode 	2019 	null 	null 	
+tt11935074 	tvEpisode 	2019 	null 	null 	
+tt11935078 	tvEpisode 	2019 	null 	null 	
+tt11935086 	tvEpisode 	2019 	null 	null 	
+tt11935100 	tvEpisode 	2019 	null 	null 	
+tt11935106 	tvEpisode 	2019 	null 	null 	
+tt1195314 	tvEpisode 	2008 	null 	7.6 	
+tt11957462 	tvEpisode 	2020 	null 	null 	
+tt11967972 	tvEpisode 	2018 	null 	null 	
+tt11986014 	tvEpisode 	2018 	null 	null 	
+tt11996530 	tvEpisode 	2010 	null 	null 	
+tt12006890 	tvEpisode 	2019 	null 	null 	
+tt12007324 	tvEpisode 	2020 	null 	null 	
+tt12007440 	tvEpisode 	2020 	null 	null 	
+tt1201914 	tvEpisode 	2008 	null 	7.6 	
+tt12026934 	tvEpisode 	2020 	null 	null 	
+tt12029464 	tvEpisode 	2006 	null 	null 	
+tt12030168 	tvEpisode 	2006 	null 	null 	
+tt12033226 	tvEpisode 	\N 	null 	null 	
+tt12037782 	video 	2020 	null 	null 	
+tt12039078 	tvEpisode 	2020 	null 	6.7 	
+tt12044082 	video 	2017 	null 	null 	
+tt1204621 	tvEpisode 	2007 	null 	null 	
+tt1204624 	tvEpisode 	2007 	null 	null 	
+tt12047710 	video 	2018 	null 	null 	
+tt12047810 	video 	2018 	null 	null 	
+tt12054482 	tvEpisode 	2009 	null 	null 	
+tt12060484 	short 	2014 	null 	null 	
+tt12065114 	tvEpisode 	2020 	null 	null 	
+tt12067562 	movie 	2020 	null 	null 	
+tt12070206 	tvEpisode 	2019 	null 	null 	
+tt12070278 	tvEpisode 	2020 	null 	null 	
+tt12070346 	tvEpisode 	2020 	null 	null 	
+tt12070444 	tvEpisode 	2015 	null 	null 	
+tt12070572 	tvEpisode 	2015 	null 	null 	
+tt12071250 	tvEpisode 	2018 	null 	null 	
+tt12071310 	tvEpisode 	2018 	null 	null 	
+tt12071372 	tvEpisode 	2019 	null 	null 	
+tt12071436 	tvEpisode 	2016 	null 	null 	
+tt12071808 	tvEpisode 	2017 	null 	null 	
+tt12074748 	tvEpisode 	2017 	null 	null 	
+tt12075998 	tvEpisode 	2018 	null 	null 	
+tt12076026 	tvEpisode 	2018 	null 	null 	
+tt12076192 	tvEpisode 	2019 	null 	null 	
+tt12076196 	tvEpisode 	2019 	null 	null 	
+tt12076212 	tvEpisode 	2019 	null 	null 	
+tt12076236 	tvEpisode 	2019 	null 	null 	
+tt12076242 	tvEpisode 	2019 	null 	null 	
+tt12077914 	tvEpisode 	2020 	null 	null 	
+tt12078932 	movie 	\N 	null 	null 	
+tt1211185 	tvEpisode 	1995 	null 	null 	
+tt12112964 	tvEpisode 	2019 	null 	null 	
+tt12112988 	tvEpisode 	2019 	null 	null 	
+tt12113344 	tvEpisode 	2017 	null 	null 	
+tt12121016 	tvEpisode 	2019 	null 	null 	
+tt1212968 	tvEpisode 	1968 	null 	7.9 	
+tt1213477 	tvEpisode 	2008 	null 	null 	
+tt12137778 	tvEpisode 	2017 	null 	null 	
+tt12144770 	tvSpecial 	2020 	null 	null 	
+tt12146456 	movie 	\N 	null 	null 	
+tt1216442 	tvEpisode 	2008 	null 	7.6 	
+tt12164896 	tvEpisode 	2020 	null 	null 	
+tt12170122 	tvEpisode 	2020 	null 	null 	
+tt1217399 	tvEpisode 	2008 	null 	null 	
+tt12200208 	movie 	1947 	null 	null 	
+tt12206132 	tvEpisode 	2020 	null 	null 	
+tt12227178 	tvEpisode 	2020 	null 	null 	
+tt1222774 	tvEpisode 	2007 	null 	null 	
+tt1223079 	movie 	2008 	null 	3.6 	
+tt12238604 	video 	2017 	null 	null 	
+tt12255406 	tvEpisode 	2019 	null 	null 	
+tt12270430 	tvEpisode 	2020 	null 	null 	
+tt12279604 	short 	2020 	null 	null 	
+tt1229043 	tvEpisode 	\N 	null 	null 	
+tt12292548 	video 	1990 	null 	null 	
+tt1229630 	tvEpisode 	2007 	null 	null 	
+tt12297388 	tvEpisode 	2020 	null 	null 	
+tt12300102 	tvEpisode 	1978 	null 	null 	
+tt12306570 	tvEpisode 	2020 	null 	null 	
+tt12311664 	video 	2020 	null 	null 	
+tt12312442 	tvEpisode 	2020 	null 	null 	
+tt12313920 	tvEpisode 	2020 	null 	null 	
+tt1233104 	tvEpisode 	2008 	null 	null 	
+tt1233536 	movie 	2008 	null 	1.3 	
+tt12358586 	movie 	2008 	null 	7.0 	
+tt12358704 	tvEpisode 	2020 	null 	null 	
+tt1236128 	tvEpisode 	2008 	null 	null 	
+tt12404818 	short 	2019 	null 	null 	
+tt12415412 	tvEpisode 	2016 	null 	null 	
+tt12421630 	movie 	2020 	null 	null 	
+tt12422578 	tvEpisode 	2020 	null 	null 	
+tt12423262 	tvEpisode 	2018 	null 	null 	
+tt1242666 	video 	2008 	null 	null 	
+tt1243213 	movie 	2008 	null 	8.0 	
+tt12439008 	tvEpisode 	2020 	null 	null 	
+tt12441520 	video 	2020 	null 	null 	
+tt12458606 	tvEpisode 	2020 	null 	null 	
+tt12458642 	tvEpisode 	2020 	null 	null 	
+tt12458712 	tvEpisode 	2020 	null 	null 	
+tt12458810 	tvEpisode 	2020 	null 	null 	
+tt12462702 	tvEpisode 	2018 	null 	null 	
+tt12465410 	tvEpisode 	\N 	null 	null 	
+tt1247167 	video 	1996 	null 	null 	
+tt12485912 	tvEpisode 	2020 	null 	null 	
+tt12501294 	tvEpisode 	2014 	null 	null 	
+tt12503244 	tvEpisode 	2010 	null 	null 	
+tt12511248 	short 	2024 	null 	null 	
+tt12518556 	tvEpisode 	2020 	null 	null 	
+tt1252376 	video 	2005 	null 	7.3 	
+tt12524210 	movie 	2019 	null 	null 	
+tt12529676 	movie 	2020 	null 	null 	
+tt12536944 	tvEpisode 	2019 	null 	null 	
+tt12536980 	tvEpisode 	2019 	null 	null 	
+tt12542106 	tvEpisode 	2020 	null 	null 	
+tt12544044 	tvEpisode 	\N 	null 	null 	
+tt12544952 	tvEpisode 	\N 	null 	null 	
+tt12545042 	tvEpisode 	\N 	null 	null 	
+tt12545052 	tvEpisode 	\N 	null 	null 	
+tt12546038 	tvEpisode 	2018 	null 	null 	
+tt12555982 	short 	2018 	null 	null 	
+tt12558202 	video 	2005 	null 	null 	
+tt12559894 	tvEpisode 	2020 	null 	null 	
+tt12568876 	tvEpisode 	2014 	null 	null 	
+tt12571452 	tvEpisode 	2020 	null 	null 	
+tt12572606 	video 	2020 	null 	null 	
+tt12575982 	short 	2020 	null 	null 	
+tt12581040 	movie 	2018 	null 	null 	
+tt1258428 	tvEpisode 	2008 	null 	null 	
+tt12598984 	video 	2019 	null 	null 	
+tt1260341 	video 	2007 	null 	5.7 	
+tt12604558 	tvEpisode 	2016 	null 	null 	
+tt12615464 	tvEpisode 	2016 	null 	null 	
+tt12616470 	tvEpisode 	2017 	null 	null 	
+tt12616610 	tvEpisode 	2017 	null 	null 	
+tt12616704 	tvEpisode 	2017 	null 	null 	
+tt12616774 	tvEpisode 	2015 	null 	null 	
+tt12617204 	tvEpisode 	2018 	null 	null 	
+tt12617214 	tvEpisode 	2020 	null 	null 	
+tt12617342 	tvEpisode 	2018 	null 	null 	
+tt12617414 	tvEpisode 	2019 	null 	null 	
+tt12617424 	tvEpisode 	2019 	null 	null 	
+tt12617502 	tvEpisode 	2019 	null 	null 	
+tt12617538 	tvEpisode 	2019 	null 	null 	
+tt12617656 	tvEpisode 	2020 	null 	null 	
+tt12617668 	tvEpisode 	2020 	null 	null 	
+tt12617704 	tvEpisode 	2020 	null 	null 	
+tt12623784 	tvEpisode 	2020 	null 	null 	
+tt12624738 	tvEpisode 	2020 	null 	null 	
+tt12625360 	movie 	2018 	null 	null 	
+tt1262792 	tvEpisode 	2008 	null 	null 	
+tt12629778 	tvEpisode 	2016 	null 	null 	
+tt12635750 	tvEpisode 	2017 	null 	null 	
+tt12635794 	tvEpisode 	2019 	null 	null 	
+tt12636996 	tvEpisode 	2018 	null 	null 	
+tt12637122 	tvEpisode 	2020 	null 	null 	
+tt12648816 	tvEpisode 	2018 	null 	null 	
+tt12649378 	tvEpisode 	2020 	null 	null 	
+tt12651876 	tvEpisode 	2020 	null 	null 	
+tt12652456 	tvEpisode 	2020 	null 	null 	
+tt12662726 	tvEpisode 	2019 	null 	null 	
+tt12663590 	movie 	2020 	null 	null 	
+tt12665806 	tvEpisode 	2019 	null 	null 	
+tt12666074 	tvEpisode 	2020 	null 	null 	
+tt12673582 	tvEpisode 	2020 	null 	null 	
+tt12676730 	video 	2014 	null 	null 	
+tt12678018 	tvEpisode 	2016 	null 	null 	
+tt12684228 	tvEpisode 	2018 	null 	null 	
+tt12686824 	video 	2020 	null 	null 	
+tt12700460 	tvEpisode 	2013 	null 	null 	
+tt12701062 	tvEpisode 	2018 	null 	null 	
+tt12701936 	video 	2013 	null 	null 	
+tt1270225 	tvEpisode 	2008 	null 	null 	
+tt1270745 	tvEpisode 	\N 	null 	null 	
+tt12715520 	tvEpisode 	2020 	null 	null 	
+tt12721942 	tvEpisode 	2020 	null 	null 	
+tt12725796 	tvEpisode 	2020 	null 	null 	
+tt12728008 	tvEpisode 	2020 	null 	null 	
+tt12728212 	tvEpisode 	2006 	null 	null 	
+tt12730774 	short 	2020 	null 	null 	
+tt12733684 	tvEpisode 	2020 	null 	null 	
+tt12753376 	short 	1914 	null 	null 	
+tt12763490 	short 	2019 	null 	null 	
+tt12774064 	tvEpisode 	2020 	null 	null 	
+tt12774082 	tvEpisode 	2020 	null 	null 	
+tt12774832 	video 	2004 	null 	null 	
+tt12775424 	movie 	2020 	null 	null 	
+tt12780090 	tvEpisode 	2020 	null 	null 	
+tt12780106 	tvEpisode 	2020 	null 	null 	
+tt12780108 	tvEpisode 	2020 	null 	null 	
+tt12792072 	tvSeries 	2015 	null 	null 	
+tt1279651 	tvEpisode 	1961 	null 	null 	
+tt12798636 	tvEpisode 	2020 	null 	null 	
+tt12799900 	tvEpisode 	2019 	null 	null 	
+tt12805364 	video 	2017 	null 	null 	
+tt12806692 	video 	2005 	null 	null 	
+tt12807582 	video 	2019 	null 	null 	
+tt1282218 	video 	2003 	null 	6.2 	
+tt12849284 	short 	2017 	null 	null 	
+tt12854070 	video 	2018 	null 	null 	
+tt12861010 	tvEpisode 	2020 	null 	null 	
+tt12861126 	tvEpisode 	2020 	null 	null 	
+tt12870060 	tvEpisode 	2020 	null 	null 	
+tt12875758 	tvEpisode 	2019 	null 	null 	
+tt12875804 	tvEpisode 	2020 	null 	null 	
+tt12881866 	tvEpisode 	2020 	null 	null 	
+tt12888910 	tvEpisode 	2010 	null 	null 	
+tt12901346 	tvEpisode 	2020 	null 	null 	
+tt12909260 	movie 	2020 	null 	null 	
+tt12915702 	tvEpisode 	2020 	null 	null 	
+tt12930742 	tvEpisode 	2020 	null 	null 	
+tt12934712 	tvEpisode 	2012 	null 	null 	
+tt12942994 	tvEpisode 	2018 	null 	null 	
+tt12974160 	tvEpisode 	2020 	null 	null 	
+tt12974182 	tvEpisode 	2020 	null 	null 	
+tt12974190 	tvEpisode 	2020 	null 	null 	
+tt1297752 	tvEpisode 	1971 	null 	null 	
+tt1308180 	video 	2008 	null 	null 	
+tt1309071 	tvEpisode 	2008 	null 	null 	
+tt1313205 	tvEpisode 	2008 	null 	null 	
+tt1314547 	tvEpisode 	2007 	null 	null 	
+tt1315276 	tvEpisode 	2007 	null 	null 	
+tt1317575 	tvEpisode 	2008 	null 	null 	
+tt1340642 	short 	2008 	null 	null 	
+tt1343395 	video 	2009 	null 	null 	
+tt1355694 	short 	2009 	null 	null 	
+tt1358031 	tvEpisode 	1959 	null 	null 	
+tt1358032 	tvEpisode 	1959 	null 	null 	
+tt1369833 	video 	2007 	null 	null 	
+tt1370177 	short 	2007 	null 	null 	
+tt1371623 	movie 	2009 	null 	5.3 	
+tt1378180 	short 	2008 	null 	null 	
+tt1379672 	video 	2008 	null 	7.6 	
+tt1384941 	tvEpisode 	2007 	null 	null 	
+tt1413286 	tvEpisode 	2009 	null 	null 	
+tt1414293 	movie 	2009 	null 	null 	
+tt1415964 	tvEpisode 	1979 	null 	null 	
+tt1430639 	movie 	\N 	null 	null 	
+tt1434530 	tvEpisode 	1981 	null 	null 	
+tt1437764 	tvEpisode 	2009 	null 	null 	
+tt1445683 	movie 	2009 	null 	6.4 	
+tt1454262 	tvSeries 	2009 	2018 	6.8 	
+tt1455461 	tvEpisode 	2009 	null 	null 	
+tt1462805 	video 	2004 	null 	6.4 	
+tt1463535 	tvEpisode 	2009 	null 	null 	
+tt1467318 	tvEpisode 	2008 	null 	null 	
+tt1475807 	tvEpisode 	2009 	null 	null 	
+tt1481571 	movie 	2009 	null 	null 	
+tt1487895 	video 	2008 	null 	null 	
+tt1488563 	video 	2007 	null 	7.8 	
+tt1494203 	tvSeries 	2009 	2010 	null 	
+tt1499449 	short 	2009 	null 	7.0 	
+tt1500121 	short 	2009 	null 	null 	
+tt1500799 	tvEpisode 	2006 	null 	7.0 	
+tt1504679 	video 	2009 	null 	null 	
+tt1524039 	short 	2009 	null 	null 	
+tt1532982 	tvEpisode 	2009 	null 	null 	
+tt1533204 	tvEpisode 	2009 	null 	null 	
+tt1541826 	tvEpisode 	2010 	null 	null 	
+tt1547044 	short 	2009 	null 	6.5 	
+tt1553181 	short 	2008 	null 	null 	
+tt1559381 	tvEpisode 	2009 	null 	null 	
+tt1562890 	short 	2006 	null 	6.8 	
+tt1574146 	tvEpisode 	2009 	null 	null 	
+tt1574742 	tvEpisode 	2003 	null 	null 	
+tt1593851 	tvEpisode 	2008 	null 	null 	
+tt1593861 	tvEpisode 	2008 	null 	null 	
+tt1593933 	tvEpisode 	2009 	null 	null 	
+tt1593972 	tvEpisode 	2009 	null 	null 	
+tt1599287 	short 	2009 	null 	null 	
+tt1600042 	tvMovie 	2010 	null 	6.2 	
+tt1602001 	video 	2010 	null 	6.0 	
+tt1603816 	movie 	1951 	null 	null 	
+tt1606597 	video 	2010 	null 	9.0 	
+tt1608785 	video 	2008 	null 	null 	
+tt1609112 	video 	2008 	null 	null 	
+tt1635002 	tvSeries 	2010 	null 	null 	
+tt1652661 	tvEpisode 	2010 	null 	null 	
+tt1652965 	tvEpisode 	2010 	null 	null 	
+tt1656884 	tvEpisode 	2010 	null 	null 	
+tt1661120 	tvSeries 	2010 	null 	null 	
+tt1662157 	tvEpisode 	2010 	null 	null 	
+tt1664611 	tvEpisode 	2010 	null 	null 	
+tt1665165 	tvEpisode 	2009 	null 	null 	
+tt1666605 	short 	2003 	null 	null 	
+tt1667185 	tvEpisode 	2010 	null 	null 	
+tt1667477 	short 	2010 	null 	null 	
+tt1670833 	tvEpisode 	2010 	null 	null 	
+tt1670847 	tvEpisode 	2010 	null 	null 	
+tt1673157 	tvEpisode 	1993 	null 	null 	
+tt1674226 	movie 	2010 	null 	null 	
+tt1682819 	tvEpisode 	2010 	null 	1.0 	
+tt1706752 	tvEpisode 	1965 	null 	null 	
+tt1720085 	short 	2006 	null 	null 	
+tt1728475 	tvEpisode 	1961 	null 	null 	
+tt1749906 	tvEpisode 	2010 	null 	null 	
+tt1750475 	tvEpisode 	2006 	null 	null 	
+tt1753719 	video 	2010 	null 	null 	
+tt1753851 	short 	2010 	null 	null 	
+tt1758123 	tvEpisode 	2010 	null 	null 	
+tt1769648 	tvSeries 	1997 	null 	null 	
+tt1773463 	movie 	2010 	null 	4.0 	
+tt1773729 	short 	2010 	null 	null 	
+tt1781921 	short 	2009 	null 	null 	
+tt1787671 	video 	2010 	null 	7.7 	
+tt1789744 	short 	2001 	null 	null 	
+tt1792611 	tvMovie 	1993 	null 	null 	
+tt1804718 	tvSeries 	2010 	null 	8.0 	
+tt1805523 	video 	2010 	null 	null 	
+tt1809363 	short 	2010 	null 	7.0 	
+tt1815120 	tvEpisode 	2011 	null 	null 	
+tt1815957 	movie 	2012 	null 	null 	
+tt1817765 	short 	2011 	null 	null 	
+tt1824183 	movie 	2007 	null 	null 	
+tt1824574 	tvEpisode 	2011 	null 	null 	
+tt1825986 	short 	2010 	null 	null 	
+tt1830574 	short 	2010 	null 	null 	
+tt1830847 	tvMovie 	1966 	null 	null 	
+tt1840308 	short 	2011 	null 	null 	
+tt1845915 	tvEpisode 	2011 	null 	null 	
+tt1846491 	short 	2012 	null 	4.5 	
+tt1846732 	movie 	2011 	null 	4.8 	
+tt1854315 	video 	2009 	null 	6.2 	
+tt1857802 	movie 	2011 	null 	null 	
+tt1862497 	short 	2011 	null 	null 	
+tt1869706 	short 	2009 	null 	null 	
+tt1870533 	movie 	1969 	null 	null 	
+tt1878881 	videoGame 	2010 	null 	8.5 	
+tt1882061 	video 	2010 	null 	null 	
+tt1882062 	video 	2010 	null 	null 	
+tt1915763 	tvEpisode 	1979 	null 	null 	
+tt1918672 	short 	2009 	null 	null 	
+tt1919144 	video 	2010 	null 	8.2 	
+tt1925534 	short 	1910 	null 	null 	
+tt1927549 	tvEpisode 	2010 	null 	null 	
+tt1927881 	tvEpisode 	2011 	null 	null 	
+tt1934237 	video 	2011 	null 	null 	
+tt1950226 	movie 	2010 	null 	null 	
+tt1956504 	tvShort 	2011 	null 	null 	
+tt1961303 	movie 	2014 	null 	null 	
+tt1964867 	short 	2011 	null 	null 	
+tt1980266 	short 	2011 	null 	null 	
+tt1981425 	tvEpisode 	2009 	null 	null 	
+tt1982476 	tvEpisode 	2009 	null 	null 	
+tt1995305 	movie 	2011 	null 	null 	
+tt1999252 	short 	2011 	null 	null 	
+tt2004225 	short 	2006 	null 	null 	
+tt2005168 	short 	2011 	null 	null 	
+tt2005371 	movie 	2011 	null 	null 	
+tt2011161 	short 	2010 	null 	null 	
+tt2011237 	short 	2010 	null 	null 	
+tt2011290 	short 	2010 	null 	null 	
+tt2014230 	tvMovie 	2009 	null 	7.8 	
+tt2015422 	movie 	2011 	null 	5.4 	
+tt2041972 	tvEpisode 	2010 	null 	null 	
+tt2041973 	tvEpisode 	2010 	null 	null 	
+tt2046120 	movie 	\N 	null 	null 	
+tt2053331 	short 	2011 	null 	7.1 	
+tt2057757 	tvEpisode 	2011 	null 	null 	
+tt2076228 	tvEpisode 	2010 	null 	7.8 	
+tt2077292 	tvEpisode 	2011 	null 	null 	
+tt2089142 	tvEpisode 	\N 	null 	null 	
+tt2095483 	tvEpisode 	2011 	null 	8.0 	
+tt2097676 	tvEpisode 	2010 	null 	null 	
+tt2106273 	tvSeries 	2012 	2013 	4.6 	
+tt2111437 	tvSpecial 	1998 	null 	null 	
+tt2133614 	tvEpisode 	2010 	null 	null 	
+tt2134211 	tvEpisode 	2011 	null 	null 	
+tt2140507 	movie 	2017 	null 	6.5 	
+tt2143774 	video 	2010 	null 	null 	
+tt2156117 	tvEpisode 	2011 	null 	7.0 	
+tt2158795 	movie 	2009 	null 	null 	
+tt2161738 	tvEpisode 	1983 	null 	7.6 	
+tt2168184 	tvEpisode 	2011 	null 	null 	
+tt2168358 	tvSpecial 	1990 	null 	null 	
+tt2168412 	tvSpecial 	1982 	null 	null 	
+tt2168678 	tvSpecial 	1994 	null 	null 	
+tt2172917 	short 	2011 	null 	null 	
+tt2172927 	short 	2010 	null 	null 	
+tt2175899 	movie 	2008 	null 	7.0 	
+tt2176602 	tvEpisode 	2007 	null 	null 	
+tt2181912 	movie 	2010 	null 	6.2 	
+tt2185000 	tvEpisode 	2012 	null 	null 	
+tt2186640 	short 	2012 	null 	null 	
+tt2188148 	tvSpecial 	2000 	null 	null 	
+tt2193788 	short 	2012 	null 	null 	
+tt2199603 	video 	2012 	null 	6.7 	
+tt2202485 	short 	2012 	null 	null 	
+tt2202557 	video 	2011 	null 	null 	
+tt2207144 	movie 	2012 	null 	7.0 	
+tt2210843 	video 	2012 	null 	9.2 	
+tt2221288 	tvEpisode 	2012 	null 	null 	
+tt2222244 	tvEpisode 	2012 	null 	null 	
+tt2223034 	tvEpisode 	2012 	null 	null 	
+tt2224456 	movie 	2008 	null 	null 	
+tt2235924 	short 	2012 	null 	7.7 	
+tt2236540 	tvEpisode 	2012 	null 	null 	
+tt2240066 	tvEpisode 	2012 	null 	9.4 	
+tt2242312 	tvEpisode 	2012 	null 	null 	
+tt2244859 	short 	2011 	null 	null 	
+tt2250818 	video 	2012 	null 	null 	
+tt2260040 	video 	2011 	null 	null 	
+tt2265247 	short 	1971 	null 	6.2 	
+tt2266568 	tvEpisode 	2012 	null 	null 	
+tt2273591 	short 	2012 	null 	7.6 	
+tt2283047 	video 	2011 	null 	null 	
+tt2290773 	movie 	2021 	null 	null 	
+tt2291306 	video 	2012 	null 	null 	
+tt2292547 	short 	2011 	null 	null 	
+tt2315774 	tvSeries 	2012 	null 	null 	
+tt2320041 	tvMovie 	2012 	null 	null 	
+tt2321173 	movie 	2008 	null 	null 	
+tt2342065 	movie 	2012 	null 	9.1 	
+tt2356598 	tvMovie 	2012 	null 	9.4 	
+tt2363970 	video 	2010 	null 	8.9 	
+tt2364153 	tvEpisode 	2012 	null 	7.0 	
+tt2385400 	video 	2008 	null 	null 	
+tt2386163 	tvEpisode 	2010 	null 	null 	
+tt2387598 	short 	2012 	null 	null 	
+tt2393839 	video 	2011 	null 	9.2 	
+tt2393999 	tvSpecial 	1981 	null 	null 	
+tt2394001 	tvSpecial 	1991 	null 	null 	
+tt2395191 	video 	2012 	null 	null 	
+tt2396329 	video 	2011 	null 	7.1 	
+tt2396453 	video 	2011 	null 	null 	
+tt2396487 	video 	2010 	null 	null 	
+tt2398225 	video 	2010 	null 	null 	
+tt2419744 	short 	2012 	null 	7.5 	
+tt2443868 	tvEpisode 	2010 	null 	null 	
+tt2448532 	short 	2012 	null 	null 	
+tt2455512 	short 	2012 	null 	null 	
+tt2463294 	tvEpisode 	2012 	null 	null 	
+tt2464982 	tvEpisode 	2012 	null 	null 	
+tt2484082 	video 	2003 	null 	null 	
+tt2528974 	video 	2012 	null 	9.1 	
+tt2531070 	video 	2004 	null 	null 	
+tt2531390 	tvEpisode 	2012 	null 	null 	
+tt2531406 	tvEpisode 	2012 	null 	null 	
+tt2554296 	tvEpisode 	2012 	null 	null 	
+tt2558896 	tvEpisode 	2003 	null 	null 	
+tt2562958 	short 	2011 	null 	null 	
+tt2579384 	tvEpisode 	1996 	null 	null 	
+tt2594152 	video 	2012 	null 	null 	
+tt2614918 	video 	2009 	null 	null 	
+tt2647204 	video 	2009 	null 	null 	
+tt2648020 	tvEpisode 	2013 	null 	9.4 	
+tt2672954 	tvEpisode 	2012 	null 	null 	
+tt2672962 	tvEpisode 	2012 	null 	null 	
+tt2672964 	tvEpisode 	2012 	null 	null 	
+tt2672966 	tvEpisode 	2012 	null 	null 	
+tt2672968 	tvEpisode 	2012 	null 	null 	
+tt2672970 	tvEpisode 	2012 	null 	null 	
+tt2672974 	tvEpisode 	2012 	null 	null 	
+tt2672980 	tvEpisode 	2012 	null 	null 	
+tt2673724 	movie 	2013 	null 	7.0 	
+tt2697510 	tvEpisode 	2013 	null 	null 	
+tt2708280 	tvSeries 	2013 	null 	null 	
+tt2709730 	tvEpisode 	2012 	null 	9.4 	
+tt2715028 	tvSpecial 	1993 	null 	null 	
+tt2720380 	tvEpisode 	2013 	null 	null 	
+tt2729960 	video 	2012 	null 	null 	
+tt2731834 	tvEpisode 	2012 	null 	null 	
+tt2759252 	tvSpecial 	2012 	null 	null 	
+tt2759258 	tvSpecial 	2013 	null 	null 	
+tt2767266 	movie 	2013 	null 	6.2 	
+tt2793476 	short 	2012 	null 	null 	
+tt2812322 	tvEpisode 	2012 	null 	null 	
+tt2830172 	short 	2005 	null 	null 	
+tt2836216 	tvEpisode 	2012 	null 	null 	
+tt2841376 	tvSeries 	2013 	null 	null 	
+tt2848886 	tvEpisode 	2013 	null 	null 	
+tt2849712 	tvEpisode 	2013 	null 	null 	
+tt2882440 	tvEpisode 	2013 	null 	null 	
+tt2887076 	tvEpisode 	2012 	null 	null 	
+tt2887126 	tvEpisode 	2012 	null 	null 	
+tt2906678 	tvSeries 	2009 	null 	null 	
+tt2910138 	movie 	2013 	null 	null 	
+tt2910498 	tvEpisode 	2013 	null 	null 	
+tt2910988 	tvEpisode 	2013 	null 	null 	
+tt2919016 	video 	2013 	null 	9.0 	
+tt2920300 	tvSeries 	2013 	null 	null 	
+tt2926926 	movie 	2013 	null 	3.8 	
+tt2942888 	short 	2012 	null 	null 	
+tt2995838 	movie 	2013 	null 	7.4 	
+tt3002862 	tvEpisode 	2007 	null 	null 	
+tt3002994 	tvEpisode 	2007 	null 	null 	
+tt3012508 	movie 	2013 	null 	null 	
+tt3016942 	short 	2013 	null 	null 	
+tt3018090 	tvEpisode 	2008 	null 	null 	
+tt3018358 	tvEpisode 	2010 	null 	null 	
+tt3031750 	short 	2013 	null 	null 	
+tt3040668 	short 	2013 	null 	null 	
+tt3063064 	movie 	2013 	null 	null 	
+tt3073904 	short 	2014 	null 	8.7 	
+tt3075714 	tvEpisode 	2008 	null 	null 	
+tt3075720 	tvEpisode 	2009 	null 	null 	
+tt3078848 	movie 	2002 	null 	null 	
+tt3084764 	tvEpisode 	1993 	null 	null 	
+tt3102924 	movie 	2014 	null 	4.9 	
+tt3105390 	short 	2014 	null 	null 	
+tt3107498 	short 	2007 	null 	null 	
+tt3127570 	tvEpisode 	2013 	null 	null 	
+tt3145134 	short 	1968 	null 	null 	
+tt3145494 	tvEpisode 	2014 	null 	null 	
+tt3153882 	tvEpisode 	2013 	null 	null 	
+tt3165004 	short 	2013 	null 	null 	
+tt3174872 	tvEpisode 	2013 	null 	null 	
+tt3176820 	short 	2013 	null 	8.6 	
+tt3186180 	movie 	2015 	null 	null 	
+tt3186788 	movie 	2013 	null 	5.6 	
+tt3198848 	tvEpisode 	2012 	null 	null 	
+tt3201872 	video 	2013 	null 	null 	
+tt3220416 	tvEpisode 	2011 	null 	null 	
+tt3231268 	tvEpisode 	2012 	null 	null 	
+tt3235100 	movie 	2013 	null 	null 	
+tt3255234 	tvEpisode 	2013 	null 	null 	
+tt3258904 	tvEpisode 	2013 	null 	null 	
+tt3264292 	tvEpisode 	2012 	null 	null 	
+tt3267188 	tvSeries 	2008 	null 	null 	
+tt3268396 	tvEpisode 	2013 	null 	null 	
+tt3270038 	tvEpisode 	2013 	null 	7.8 	
+tt3271112 	video 	2013 	null 	null 	
+tt3277030 	video 	2013 	null 	null 	
+tt3279080 	video 	2013 	null 	null 	
+tt3282524 	tvEpisode 	2013 	null 	null 	
+tt3285312 	movie 	\N 	null 	null 	
+tt3294732 	movie 	2016 	null 	6.1 	
+tt3315084 	tvEpisode 	2013 	null 	null 	
+tt3321154 	tvEpisode 	2013 	null 	null 	
+tt3324706 	video 	2007 	null 	null 	
+tt3325276 	tvEpisode 	2013 	null 	null 	
+tt3327322 	tvEpisode 	2013 	null 	null 	
+tt3332310 	tvEpisode 	2013 	null 	null 	
+tt3332348 	tvEpisode 	2013 	null 	null 	
+tt3334118 	tvEpisode 	2014 	null 	8.2 	
+tt3340694 	video 	2012 	null 	null 	
+tt3340710 	video 	2012 	null 	null 	
+tt3340724 	video 	2012 	null 	null 	
+tt3343742 	tvEpisode 	2013 	null 	null 	
+tt3345448 	video 	2013 	null 	null 	
+tt3347218 	video 	2013 	null 	null 	
+tt3347276 	video 	2013 	null 	null 	
+tt3348418 	tvEpisode 	2013 	null 	null 	
+tt3353870 	tvEpisode 	2013 	null 	6.9 	
+tt3359582 	tvEpisode 	2010 	null 	null 	
+tt3373908 	video 	2010 	null 	null 	
+tt3387708 	tvEpisode 	2013 	null 	null 	
+tt3395170 	tvEpisode 	2012 	null 	null 	
+tt3396980 	tvEpisode 	2013 	null 	null 	
+tt3404324 	video 	2013 	null 	null 	
+tt3416410 	tvEpisode 	2005 	null 	null 	
+tt3435762 	tvEpisode 	2010 	null 	null 	
+tt3438146 	tvEpisode 	2012 	null 	null 	
+tt3438152 	tvEpisode 	2012 	null 	null 	
+tt3464566 	tvEpisode 	2013 	null 	null 	
+tt3467350 	tvEpisode 	2014 	null 	6.8 	
+tt3471206 	movie 	\N 	null 	null 	
+tt3501374 	tvEpisode 	2012 	null 	null 	
+tt3513394 	tvEpisode 	1958 	null 	null 	
+tt3523624 	movie 	2009 	null 	null 	
+tt3529654 	tvEpisode 	2013 	null 	null 	
+tt3531218 	tvEpisode 	2013 	null 	null 	
+tt3534066 	short 	2009 	null 	null 	
+tt3545936 	tvSpecial 	2014 	null 	null 	
+tt3550158 	movie 	1991 	null 	7.2 	
+tt3552146 	tvSeries 	2013 	null 	null 	
+tt3558634 	tvEpisode 	2016 	null 	null 	
+tt3561088 	tvEpisode 	2013 	null 	null 	
+tt3564048 	tvSeries 	2014 	null 	6.8 	
+tt3574370 	tvEpisode 	2009 	null 	null 	
+tt3591486 	short 	2014 	null 	null 	
+tt3594972 	tvSeries 	2014 	null 	null 	
+tt3595002 	tvSeries 	2014 	null 	8.9 	
+tt3601596 	tvEpisode 	2013 	null 	null 	
+tt3601620 	tvEpisode 	2013 	null 	null 	
+tt3601652 	tvEpisode 	2013 	null 	null 	
+tt3601668 	tvEpisode 	2013 	null 	null 	
+tt3611072 	tvEpisode 	2014 	null 	null 	
+tt3640446 	tvSpecial 	2009 	null 	null 	
+tt3646414 	movie 	2009 	null 	null 	
+tt3651332 	tvEpisode 	2014 	null 	null 	
+tt3659888 	tvEpisode 	2008 	null 	null 	
+tt3670020 	tvEpisode 	2007 	null 	null 	
+tt3672718 	movie 	2012 	null 	null 	
+tt3679822 	short 	2013 	null 	null 	
+tt3680524 	videoGame 	2014 	null 	6.8 	
+tt3682032 	tvEpisode 	2012 	null 	null 	
+tt3692790 	short 	2014 	null 	null 	
+tt3708586 	short 	1908 	null 	null 	
+tt3714426 	movie 	2015 	null 	null 	
+tt3729980 	movie 	2018 	null 	5.5 	
+tt3738010 	tvEpisode 	2014 	null 	null 	
+tt3752746 	tvSeries 	2014 	2015 	9.0 	
+tt3759706 	short 	2014 	null 	null 	
+tt3764672 	short 	2013 	null 	null 	
+tt3777898 	short 	2014 	null 	null 	
+tt3779134 	video 	2014 	null 	null 	
+tt3779160 	video 	2014 	null 	null 	
+tt3788988 	tvEpisode 	2006 	null 	null 	
+tt3789930 	short 	2014 	null 	null 	
+tt3799656 	short 	2004 	null 	null 	
+tt3809800 	video 	2014 	null 	null 	
+tt3810736 	movie 	2014 	null 	null 	
+tt3840120 	short 	2014 	null 	null 	
+tt3840130 	short 	2014 	null 	null 	
+tt3868026 	tvEpisode 	2013 	null 	null 	
+tt3956186 	movie 	2017 	null 	3.1 	
+tt3972352 	tvEpisode 	2014 	null 	null 	
+tt4024072 	short 	2004 	null 	null 	
+tt4035342 	tvEpisode 	2012 	null 	null 	
+tt4050460 	video 	2014 	null 	null 	
+tt4067404 	short 	2003 	null 	null 	
+tt4070016 	tvEpisode 	2014 	null 	null 	
+tt4070020 	tvEpisode 	2014 	null 	null 	
+tt4071182 	tvEpisode 	2014 	null 	null 	
+tt4071184 	tvEpisode 	2014 	null 	null 	
+tt4071186 	tvEpisode 	2014 	null 	null 	
+tt4079186 	short 	2010 	null 	null 	
+tt4121840 	tvEpisode 	2014 	null 	null 	
+tt4132808 	tvEpisode 	2014 	null 	null 	
+tt4145340 	tvEpisode 	2014 	null 	null 	
+tt4150388 	short 	2012 	null 	null 	
+tt4160192 	video 	2014 	null 	6.8 	
+tt4198418 	tvMovie 	2014 	null 	null 	
+tt4208134 	tvEpisode 	2014 	null 	null 	
+tt4208144 	tvEpisode 	2014 	null 	null 	
+tt4224410 	short 	2012 	null 	null 	
+tt4228466 	video 	2014 	null 	null 	
+tt4250194 	video 	2014 	null 	null 	
+tt4270824 	short 	2013 	null 	null 	
+tt4273244 	tvEpisode 	2014 	null 	6.8 	
+tt4295226 	movie 	2015 	null 	7.2 	
+tt4323532 	video 	2014 	null 	7.8 	
+tt4335624 	tvEpisode 	2015 	null 	null 	
+tt4335638 	tvEpisode 	2015 	null 	null 	
+tt4366040 	tvEpisode 	2013 	null 	null 	
+tt4393364 	movie 	\N 	null 	null 	
+tt4416674 	video 	2013 	null 	6.8 	
+tt4430288 	tvEpisode 	2013 	null 	null 	
+tt4430290 	tvEpisode 	2013 	null 	null 	
+tt4430296 	tvEpisode 	2013 	null 	null 	
+tt4430302 	tvEpisode 	2013 	null 	null 	
+tt4430304 	tvEpisode 	2013 	null 	null 	
+tt4430306 	tvEpisode 	2013 	null 	null 	
+tt4440668 	tvEpisode 	2015 	null 	null 	
+tt4441534 	tvEpisode 	2014 	null 	null 	
+tt4445546 	short 	2015 	null 	null 	
+tt4449620 	tvEpisode 	2014 	null 	null 	
+tt4453122 	tvEpisode 	2014 	null 	null 	
+tt4453126 	tvEpisode 	2014 	null 	null 	
+tt4453152 	video 	2014 	null 	7.2 	
+tt4459556 	short 	\N 	null 	null 	
+tt4459784 	tvMovie 	2014 	null 	null 	
+tt4471718 	tvEpisode 	2015 	null 	null 	
+tt4477616 	tvEpisode 	1994 	null 	null 	
+tt4477658 	tvEpisode 	1994 	null 	null 	
+tt4477698 	tvEpisode 	1995 	null 	null 	
+tt4477706 	tvEpisode 	1995 	null 	null 	
+tt4477716 	tvEpisode 	1995 	null 	null 	
+tt4477728 	tvEpisode 	1995 	null 	null 	
+tt4477736 	tvEpisode 	1995 	null 	null 	
+tt4477810 	tvEpisode 	1995 	null 	null 	
+tt4477814 	tvEpisode 	1995 	null 	null 	
+tt4477870 	tvEpisode 	1995 	null 	null 	
+tt4477944 	tvEpisode 	1995 	null 	null 	
+tt4478192 	tvEpisode 	1999 	null 	null 	
+tt4478196 	tvEpisode 	1999 	null 	null 	
+tt4478202 	tvEpisode 	1999 	null 	null 	
+tt4478214 	tvEpisode 	1999 	null 	null 	
+tt4478226 	tvEpisode 	1999 	null 	null 	
+tt4478256 	tvEpisode 	2000 	null 	null 	
+tt4478270 	tvEpisode 	2000 	null 	null 	
+tt4478276 	tvEpisode 	2000 	null 	null 	
+tt4478290 	tvEpisode 	2000 	null 	null 	
+tt4478310 	tvEpisode 	2001 	null 	null 	
+tt4478346 	tvEpisode 	2002 	null 	null 	
+tt4478350 	tvEpisode 	2003 	null 	null 	
+tt4478358 	tvEpisode 	2003 	null 	null 	
+tt4478390 	tvEpisode 	2003 	null 	null 	
+tt4478402 	tvEpisode 	2003 	null 	null 	
+tt4478410 	tvEpisode 	2003 	null 	null 	
+tt4478420 	tvEpisode 	2003 	null 	null 	
+tt4478428 	tvEpisode 	2003 	null 	null 	
+tt4478432 	tvEpisode 	2003 	null 	null 	
+tt4478444 	tvEpisode 	2003 	null 	null 	
+tt4478450 	tvEpisode 	2003 	null 	null 	
+tt4478472 	tvEpisode 	2003 	null 	null 	
+tt4478488 	tvEpisode 	2003 	null 	null 	
+tt4481862 	tvEpisode 	2014 	null 	6.8 	
+tt4483862 	movie 	2011 	null 	8.2 	
+tt4498398 	short 	2014 	null 	null 	
+tt4504466 	tvEpisode 	2015 	null 	null 	
+tt4505424 	tvMovie 	1949 	null 	null 	
+tt4506496 	short 	2015 	null 	null 	
+tt4507088 	tvEpisode 	2011 	null 	null 	
+tt4530316 	movie 	2015 	null 	7.3 	
+tt4540988 	tvEpisode 	2015 	null 	null 	
+tt4541840 	tvEpisode 	2015 	null 	null 	
+tt4566056 	short 	2015 	null 	null 	
+tt4566514 	tvEpisode 	2014 	null 	null 	
+tt4577338 	tvEpisode 	2015 	null 	8.1 	
+tt4592088 	tvEpisode 	2015 	null 	null 	
+tt4596854 	video 	2011 	null 	null 	
+tt4596890 	video 	2012 	null 	null 	
+tt4599218 	tvEpisode 	2015 	null 	null 	
+tt4613258 	video 	2014 	null 	null 	
+tt4627768 	short 	2014 	null 	null 	
+tt4630816 	tvEpisode 	2015 	null 	null 	
+tt4633196 	tvEpisode 	2015 	null 	null 	
+tt4633684 	video 	2011 	null 	null 	
+tt4635986 	tvEpisode 	2013 	null 	null 	
+tt4636010 	video 	2007 	null 	7.2 	
+tt4637376 	movie 	1994 	null 	7.6 	
+tt4637984 	tvEpisode 	2013 	null 	null 	
+tt4648458 	tvEpisode 	2015 	null 	null 	
+tt4670310 	tvEpisode 	2015 	null 	null 	
+tt4674530 	tvSeries 	2015 	null 	null 	
+tt4674534 	tvEpisode 	2015 	null 	null 	
+tt4677718 	tvEpisode 	2011 	null 	null 	
+tt4693872 	tvEpisode 	2015 	null 	null 	
+tt4715082 	movie 	2015 	null 	5.8 	
+tt4716696 	short 	2015 	null 	4.8 	
+tt4724910 	tvEpisode 	2015 	null 	null 	
+tt4727932 	tvEpisode 	2015 	null 	null 	
+tt4728258 	tvEpisode 	2015 	null 	null 	
+tt4733270 	short 	2015 	null 	null 	
+tt4749210 	tvEpisode 	2015 	null 	7.7 	
+tt4762912 	tvEpisode 	2012 	null 	null 	
+tt4762926 	tvEpisode 	2012 	null 	null 	
+tt4762940 	tvEpisode 	2012 	null 	null 	
+tt4763008 	tvEpisode 	2014 	null 	null 	
+tt4763010 	tvEpisode 	2014 	null 	null 	
+tt4779566 	video 	2015 	null 	null 	
+tt4786508 	tvEpisode 	2015 	null 	null 	
+tt4792288 	tvEpisode 	2015 	null 	null 	
+tt4807698 	tvEpisode 	2015 	null 	null 	
+tt4809114 	tvEpisode 	2014 	null 	null 	
+tt4810348 	tvEpisode 	2015 	null 	null 	
+tt4813126 	short 	2015 	null 	6.4 	
+tt4829540 	tvEpisode 	2015 	null 	null 	
+tt4848466 	tvEpisode 	2013 	null 	null 	
+tt4852448 	tvSpecial 	2015 	null 	null 	
+tt4852598 	tvEpisode 	2010 	null 	null 	
+tt4860460 	tvEpisode 	2014 	null 	null 	
+tt4883942 	movie 	2016 	null 	null 	
+tt4914172 	tvEpisode 	2001 	null 	null 	
+tt4930768 	tvEpisode 	2014 	null 	null 	
+tt4935210 	tvEpisode 	2013 	null 	null 	
+tt4941526 	tvEpisode 	2014 	null 	null 	
+tt4942054 	tvEpisode 	2015 	null 	null 	
+tt4944284 	tvEpisode 	2015 	null 	null 	
+tt4950544 	tvEpisode 	2015 	null 	null 	
+tt4951158 	tvEpisode 	2015 	null 	null 	
+tt4956284 	short 	2015 	null 	null 	
+tt4963308 	tvEpisode 	2014 	null 	null 	
+tt4965690 	tvEpisode 	2014 	null 	null 	
+tt4975482 	movie 	2013 	null 	null 	
+tt4983342 	short 	2015 	null 	null 	
+tt4991532 	tvEpisode 	2015 	null 	null 	
+tt4991544 	tvEpisode 	2015 	null 	null 	
+tt5005404 	video 	2015 	null 	null 	
+tt5040054 	movie 	2017 	null 	8.4 	
+tt5049904 	tvSeries 	2010 	null 	null 	
+tt5063114 	video 	2014 	null 	null 	
+tt5065724 	short 	2012 	null 	7.2 	
+tt5073572 	tvEpisode 	2015 	null 	null 	
+tt5076706 	movie 	\N 	null 	null 	
+tt5077428 	tvEpisode 	2010 	null 	null 	
+tt5081210 	tvEpisode 	2013 	null 	null 	
+tt5093196 	movie 	2016 	null 	null 	
+tt5093970 	short 	2016 	null 	null 	
+tt5105212 	movie 	2015 	null 	null 	
+tt5112850 	tvEpisode 	2012 	null 	null 	
+tt5122420 	short 	2015 	null 	null 	
+tt5130504 	movie 	2014 	null 	6.2 	
+tt5135540 	tvEpisode 	2016 	null 	9.2 	
+tt5139196 	short 	2015 	null 	null 	
+tt5143640 	tvEpisode 	2015 	null 	null 	
+tt5147654 	tvEpisode 	2012 	null 	null 	
+tt5155304 	tvEpisode 	2016 	null 	9.3 	
+tt5160558 	video 	2008 	null 	null 	
+tt5166750 	tvEpisode 	2010 	null 	null 	
+tt5168364 	tvEpisode 	2015 	null 	7.1 	
+tt5172786 	tvEpisode 	2012 	null 	null 	
+tt5178612 	tvEpisode 	2015 	null 	null 	
+tt5178864 	short 	2015 	null 	null 	
+tt5192090 	short 	2015 	null 	8.3 	
+tt5208396 	tvEpisode 	1968 	null 	null 	
+tt5208404 	tvEpisode 	1968 	null 	null 	
+tt5214332 	tvEpisode 	2015 	null 	null 	
+tt5215064 	video 	2015 	null 	null 	
+tt5219394 	video 	2006 	null 	null 	
+tt5225690 	tvEpisode 	2015 	null 	null 	
+tt5228218 	short 	2015 	null 	null 	
+tt5234140 	tvEpisode 	2015 	null 	null 	
+tt5234870 	video 	2004 	null 	7.4 	
+tt5239594 	tvEpisode 	2016 	null 	null 	
+tt5241894 	short 	2014 	null 	null 	
+tt5246438 	tvSeries 	2016 	null 	7.2 	
+tt5248814 	video 	2002 	null 	null 	
+tt5261268 	video 	2011 	null 	null 	
+tt5272162 	video 	2015 	null 	6.7 	
+tt5279294 	tvEpisode 	2016 	null 	7.0 	
+tt5282100 	video 	2008 	null 	7.8 	
+tt5286088 	video 	2012 	null 	null 	
+tt5286790 	short 	1973 	null 	null 	
+tt5294902 	video 	2012 	null 	7.0 	
+tt5303412 	short 	2013 	null 	null 	
+tt5304944 	video 	2001 	null 	null 	
+tt5308574 	video 	2004 	null 	null 	
+tt5315504 	tvEpisode 	2016 	null 	7.9 	
+tt5332860 	tvEpisode 	2007 	null 	null 	
+tt5332862 	tvEpisode 	2007 	null 	null 	
+tt5332864 	tvEpisode 	2007 	null 	null 	
+tt5333430 	tvSeries 	2014 	null 	8.7 	
+tt5334252 	tvEpisode 	2015 	null 	null 	
+tt5337010 	tvEpisode 	2016 	null 	null 	
+tt5337400 	video 	2010 	null 	null 	
+tt5340844 	tvEpisode 	2016 	null 	null 	
+tt5340928 	video 	2007 	null 	null 	
+tt5341016 	tvEpisode 	1960 	null 	null 	
+tt5342092 	tvEpisode 	2014 	null 	null 	
+tt5346412 	video 	2002 	null 	null 	
+tt5350552 	video 	2015 	null 	null 	
+tt5362264 	tvEpisode 	2016 	null 	null 	
+tt5368366 	video 	2010 	null 	null 	
+tt5370606 	video 	2012 	null 	null 	
+tt5424580 	video 	1998 	null 	null 	
+tt5434186 	tvEpisode 	2016 	null 	null 	
+tt5434214 	tvEpisode 	2016 	null 	null 	
+tt5434252 	tvEpisode 	2016 	null 	null 	
+tt5435216 	video 	1988 	null 	null 	
+tt5440498 	tvEpisode 	2002 	null 	null 	
+tt5446304 	tvEpisode 	2016 	null 	null 	
+tt5449016 	video 	2005 	null 	null 	
+tt5454634 	tvEpisode 	2015 	null 	null 	
+tt5458446 	video 	2002 	null 	5.6 	
+tt5459844 	tvEpisode 	2016 	null 	null 	
+tt5473654 	tvEpisode 	2016 	null 	null 	
+tt5474192 	video 	2002 	null 	null 	
+tt5478738 	video 	2012 	null 	null 	
+tt5478968 	tvEpisode 	2016 	null 	null 	
+tt5481910 	video 	2010 	null 	null 	
+tt5495936 	video 	2011 	null 	null 	
+tt5497816 	short 	2016 	null 	null 	
+tt5502004 	video 	2008 	null 	null 	
+tt5505966 	video 	2013 	null 	null 	
+tt5508190 	video 	2012 	null 	null 	
+tt5512618 	tvEpisode 	2015 	null 	null 	
+tt5516530 	tvEpisode 	2016 	null 	null 	
+tt5522046 	tvEpisode 	2016 	null 	null 	
+tt5523492 	short 	2016 	null 	null 	
+tt5528304 	video 	2011 	null 	8.3 	
+tt5543416 	movie 	2016 	null 	7.5 	
+tt5574350 	video 	2003 	null 	null 	
+tt5582584 	tvEpisode 	2016 	null 	8.3 	
+tt5583470 	video 	2011 	null 	null 	
+tt5586564 	tvMovie 	\N 	null 	null 	
+tt5594402 	tvEpisode 	2015 	null 	null 	
+tt5600822 	tvSpecial 	2016 	null 	null 	
+tt5608378 	tvEpisode 	2016 	null 	null 	
+tt5608496 	video 	1989 	null 	null 	
+tt5613782 	short 	2015 	null 	null 	
+tt5638936 	video 	2009 	null 	5.6 	
+tt5642174 	tvEpisode 	2015 	null 	null 	
+tt5642880 	tvEpisode 	2015 	null 	null 	
+tt5649886 	short 	2014 	null 	null 	
+tt5651652 	tvEpisode 	2003 	null 	null 	
+tt5656926 	movie 	2016 	null 	8.8 	
+tt5657396 	tvEpisode 	2003 	null 	null 	
+tt5657492 	tvEpisode 	2012 	null 	null 	
+tt5661068 	tvEpisode 	2014 	null 	null 	
+tt5664106 	tvEpisode 	2015 	null 	null 	
+tt5669796 	tvEpisode 	2002 	null 	null 	
+tt5669886 	tvEpisode 	2002 	null 	null 	
+tt5678018 	movie 	2016 	null 	null 	
+tt5687972 	tvEpisode 	2016 	null 	null 	
+tt5689006 	video 	2016 	null 	null 	
+tt5689122 	tvEpisode 	2014 	null 	null 	
+tt5689126 	tvEpisode 	2014 	null 	null 	
+tt5689130 	tvEpisode 	2014 	null 	null 	
+tt5693586 	tvEpisode 	2009 	null 	null 	
+tt5706626 	tvEpisode 	2009 	null 	null 	
+tt5711130 	movie 	2015 	null 	null 	
+tt5724100 	tvEpisode 	2016 	null 	null 	
+tt5745228 	movie 	2013 	null 	9.0 	
+tt5751532 	tvEpisode 	2011 	null 	null 	
+tt5755738 	tvEpisode 	2015 	null 	null 	
+tt5758100 	tvEpisode 	2015 	null 	null 	
+tt5762744 	tvEpisode 	2012 	null 	null 	
+tt5764546 	tvEpisode 	2009 	null 	null 	
+tt5775452 	tvEpisode 	2016 	null 	null 	
+tt5793098 	video 	2016 	null 	null 	
+tt5793170 	tvEpisode 	1989 	null 	null 	
+tt5794818 	tvEpisode 	2016 	null 	7.2 	
+tt5801998 	tvEpisode 	2011 	null 	null 	
+tt5808668 	tvEpisode 	2015 	null 	null 	
+tt5820618 	tvEpisode 	2016 	null 	null 	
+tt5820700 	tvEpisode 	2016 	null 	null 	
+tt5824050 	short 	2016 	null 	null 	
+tt5824352 	tvEpisode 	1965 	null 	null 	
+tt5828032 	tvEpisode 	2010 	null 	null 	
+tt5828160 	video 	2015 	null 	null 	
+tt5836118 	tvEpisode 	2016 	null 	null 	
+tt5836120 	tvEpisode 	2016 	null 	null 	
+tt5841682 	tvEpisode 	2010 	null 	null 	
+tt5841750 	tvEpisode 	2010 	null 	null 	
+tt5841758 	tvEpisode 	2010 	null 	null 	
+tt5841782 	tvEpisode 	2010 	null 	null 	
+tt5848008 	tvEpisode 	2011 	null 	null 	
+tt5848022 	short 	2016 	null 	5.9 	
+tt5862384 	tvEpisode 	2016 	null 	null 	
+tt5864698 	tvEpisode 	2016 	null 	null 	
+tt5874708 	tvEpisode 	2005 	null 	null 	
+tt5875734 	short 	\N 	null 	null 	
+tt5877722 	tvEpisode 	2001 	null 	null 	
+tt5877750 	tvEpisode 	2001 	null 	null 	
+tt5878046 	tvEpisode 	2000 	null 	null 	
+tt5878062 	tvEpisode 	2000 	null 	null 	
+tt5880492 	tvSeries 	\N 	null 	null 	
+tt5884372 	tvEpisode 	2016 	null 	null 	
+tt5885534 	tvEpisode 	1997 	null 	null 	
+tt5885552 	tvEpisode 	1997 	null 	null 	
+tt5885636 	tvEpisode 	1999 	null 	null 	
+tt5885642 	tvEpisode 	1999 	null 	null 	
+tt5885670 	tvEpisode 	1998 	null 	null 	
+tt5885678 	tvEpisode 	1998 	null 	null 	
+tt5887054 	tvSpecial 	2016 	null 	null 	
+tt5892630 	tvEpisode 	1996 	null 	null 	
+tt5892648 	tvEpisode 	1996 	null 	null 	
+tt5910838 	short 	2013 	null 	null 	
+tt5914496 	movie 	2016 	null 	5.9 	
+tt5917144 	video 	2012 	null 	null 	
+tt5921706 	video 	2016 	null 	null 	
+tt5933030 	video 	2015 	null 	null 	
+tt5951506 	tvEpisode 	1994 	null 	null 	
+tt5952128 	tvEpisode 	1994 	null 	null 	
+tt5954428 	tvEpisode 	1995 	null 	null 	
+tt5954492 	tvEpisode 	1995 	null 	null 	
+tt5957648 	tvEpisode 	1993 	null 	null 	
+tt5965550 	tvEpisode 	2016 	null 	null 	
+tt5965552 	tvEpisode 	2016 	null 	null 	
+tt5965568 	tvEpisode 	2016 	null 	null 	
+tt5965624 	tvEpisode 	2016 	null 	null 	
+tt5965632 	tvEpisode 	2016 	null 	null 	
+tt5974732 	video 	2016 	null 	null 	
+tt5978098 	tvEpisode 	1992 	null 	null 	
+tt5978120 	tvEpisode 	1992 	null 	null 	
+tt5992666 	short 	2016 	null 	null 	
+tt5995490 	video 	2004 	null 	null 	
+tt6004472 	tvEpisode 	2005 	null 	null 	
+tt6004480 	tvEpisode 	2005 	null 	null 	
+tt6004496 	tvEpisode 	2005 	null 	null 	
+tt6004516 	tvEpisode 	2005 	null 	null 	
+tt6011028 	tvSeries 	2016 	null 	null 	
+tt6018604 	tvMovie 	2016 	null 	null 	
+tt6024872 	tvEpisode 	1991 	null 	null 	
+tt6027840 	tvEpisode 	2016 	null 	null 	
+tt6033930 	video 	2008 	null 	null 	
+tt6034752 	tvEpisode 	2011 	null 	null 	
+tt6043928 	video 	2016 	null 	null 	
+tt6045696 	short 	2016 	null 	null 	
+tt6055040 	video 	2003 	null 	null 	
+tt6060246 	tvEpisode 	\N 	null 	null 	
+tt6064078 	tvEpisode 	2016 	null 	null 	
+tt6064652 	movie 	2016 	null 	4.6 	
+tt6065320 	short 	2013 	null 	null 	
+tt6085768 	short 	2016 	null 	7.3 	
+tt6086252 	tvEpisode 	1989 	null 	null 	
+tt6088618 	tvEpisode 	1989 	null 	null 	
+tt6098778 	movie 	\N 	null 	null 	
+tt6107844 	short 	2016 	null 	null 	
+tt6110834 	tvEpisode 	2016 	null 	8.2 	
+tt6111160 	movie 	2016 	null 	null 	
+tt6112866 	tvEpisode 	2003 	null 	null 	
+tt6126608 	short 	2016 	null 	null 	
+tt6129714 	tvEpisode 	2013 	null 	null 	
+tt6139686 	tvEpisode 	2016 	null 	null 	
+tt6144136 	tvSeries 	2016 	null 	null 	
+tt6146594 	tvEpisode 	2013 	null 	null 	
+tt6151484 	tvEpisode 	2016 	null 	7.8 	
+tt6158836 	tvEpisode 	2016 	null 	null 	
+tt6170548 	tvEpisode 	2016 	null 	null 	
+tt6172258 	tvEpisode 	1998 	null 	null 	
+tt6182030 	tvEpisode 	1988 	null 	null 	
+tt6182104 	video 	2004 	null 	6.0 	
+tt6182154 	tvEpisode 	1987 	null 	null 	
+tt6187850 	tvEpisode 	1987 	null 	null 	
+tt6187992 	tvEpisode 	1986 	null 	null 	
+tt6188678 	tvEpisode 	1986 	null 	null 	
+tt6207442 	tvEpisode 	1985 	null 	null 	
+tt6207576 	tvEpisode 	1985 	null 	null 	
+tt6208348 	tvEpisode 	1984 	null 	null 	
+tt6210066 	tvEpisode 	1984 	null 	null 	
+tt6220340 	tvEpisode 	2016 	null 	null 	
+tt6227764 	tvEpisode 	1990 	null 	null 	
+tt6233862 	tvEpisode 	2016 	null 	8.4 	
+tt6247104 	tvEpisode 	2016 	null 	null 	
+tt6261488 	video 	2016 	null 	null 	
+tt6264688 	video 	2016 	null 	8.6 	
+tt6272398 	movie 	2002 	null 	null 	
+tt6275380 	tvEpisode 	2016 	null 	null 	
+tt6281698 	tvEpisode 	2016 	null 	null 	
+tt6294350 	tvEpisode 	2006 	null 	null 	
+tt6297862 	tvEpisode 	2003 	null 	null 	
+tt6303440 	tvEpisode 	2016 	null 	null 	
+tt6303532 	tvEpisode 	2016 	null 	null 	
+tt6305198 	tvSeries 	2016 	null 	null 	
+tt6332722 	tvEpisode 	2016 	null 	null 	
+tt6332932 	video 	2016 	null 	null 	
+tt6342248 	video 	2014 	null 	null 	
+tt6346036 	video 	2015 	null 	null 	
+tt6365546 	tvEpisode 	2016 	null 	null 	
+tt6379722 	tvEpisode 	2017 	null 	null 	
+tt6382994 	short 	2016 	null 	null 	
+tt6384392 	tvEpisode 	\N 	null 	null 	
+tt6385916 	short 	2016 	null 	null 	
+tt6398942 	tvEpisode 	2016 	null 	null 	
+tt6404318 	tvEpisode 	2016 	null 	null 	
+tt6410154 	tvEpisode 	2016 	null 	null 	
+tt6412918 	tvEpisode 	2017 	null 	null 	
+tt6412936 	tvEpisode 	2017 	null 	null 	
+tt6414900 	movie 	2016 	null 	null 	
+tt6415298 	tvEpisode 	2017 	null 	5.8 	
+tt6424632 	tvEpisode 	2012 	null 	7.4 	
+tt6424700 	tvEpisode 	2011 	null 	7.4 	
+tt6435048 	video 	2002 	null 	null 	
+tt6466724 	tvEpisode 	2017 	null 	null 	
+tt6466796 	tvEpisode 	2017 	null 	null 	
+tt6480418 	short 	1975 	null 	null 	
+tt6486646 	video 	2017 	null 	null 	
+tt6487754 	video 	2017 	null 	null 	
+tt6488096 	short 	2015 	null 	null 	
+tt6490060 	tvEpisode 	2016 	null 	null 	
+tt6520374 	tvEpisode 	2017 	null 	null 	
+tt6524326 	short 	2017 	null 	null 	
+tt6533252 	tvSeries 	2017 	null 	null 	
+tt6534980 	tvEpisode 	2016 	null 	null 	
+tt6541186 	video 	2006 	null 	null 	
+tt6543210 	tvEpisode 	2017 	null 	null 	
+tt6569284 	tvEpisode 	2016 	null 	null 	
+tt6569436 	tvEpisode 	2016 	null 	null 	
+tt6569446 	tvEpisode 	2016 	null 	null 	
+tt6569454 	tvEpisode 	2017 	null 	null 	
+tt6569458 	tvEpisode 	2017 	null 	null 	
+tt6571056 	tvEpisode 	2017 	null 	7.4 	
+tt6576908 	short 	2017 	null 	null 	
+tt6579362 	tvEpisode 	2016 	null 	null 	
+tt6603734 	tvEpisode 	2017 	null 	null 	
+tt6608896 	video 	2017 	null 	null 	
+tt6609564 	movie 	2018 	null 	null 	
+tt6623316 	movie 	2017 	null 	null 	
+tt6628594 	tvMovie 	1976 	null 	null 	
+tt6643988 	tvEpisode 	2016 	null 	null 	
+tt6648280 	tvEpisode 	2017 	null 	null 	
+tt6649542 	tvEpisode 	2017 	null 	null 	
+tt6649584 	tvEpisode 	2017 	null 	null 	
+tt6649788 	video 	2007 	null 	null 	
+tt6663736 	tvMovie 	1972 	null 	null 	
+tt6667818 	tvEpisode 	2017 	null 	null 	
+tt6674182 	movie 	2017 	null 	null 	
+tt6679686 	tvEpisode 	2017 	null 	null 	
+tt6697310 	tvEpisode 	2017 	null 	null 	
+tt6712592 	tvEpisode 	2015 	null 	null 	
+tt6715014 	video 	2017 	null 	null 	
+tt6715306 	movie 	\N 	null 	null 	
+tt6769418 	video 	2015 	null 	null 	
+tt6786656 	tvEpisode 	2017 	null 	null 	
+tt6788152 	tvEpisode 	2017 	null 	null 	
+tt6793868 	tvEpisode 	2017 	null 	null 	
+tt6797868 	short 	2017 	null 	null 	
+tt6798334 	tvEpisode 	2017 	null 	null 	
+tt6801058 	tvEpisode 	2017 	null 	null 	
+tt6817410 	movie 	2017 	null 	null 	
+tt6834292 	video 	2008 	null 	null 	
+tt6840622 	tvSpecial 	2017 	null 	null 	
+tt6860452 	tvEpisode 	2017 	null 	null 	
+tt6869634 	tvEpisode 	2015 	null 	null 	
+tt6874998 	tvEpisode 	2017 	null 	null 	
+tt6875954 	video 	1999 	null 	null 	
+tt6876190 	tvEpisode 	2017 	null 	8.9 	
+tt6897758 	short 	2014 	null 	null 	
+tt6907976 	tvEpisode 	2017 	null 	null 	
+tt6908330 	tvEpisode 	2017 	null 	null 	
+tt6928548 	short 	2017 	null 	null 	
+tt6930720 	short 	2016 	null 	null 	
+tt6933224 	video 	2017 	null 	null 	
+tt6939252 	short 	2017 	null 	8.5 	
+tt6943678 	tvEpisode 	2015 	null 	null 	
+tt6955838 	tvEpisode 	2017 	null 	null 	
+tt6956852 	video 	2003 	null 	7.9 	
+tt6957332 	short 	2017 	null 	null 	
+tt6966912 	tvEpisode 	2017 	null 	null 	
+tt6969784 	tvEpisode 	1971 	null 	null 	
+tt6971178 	video 	2010 	null 	null 	
+tt6999130 	tvEpisode 	2001 	null 	null 	
+tt7018406 	tvEpisode 	2012 	null 	null 	
+tt7023910 	tvEpisode 	\N 	null 	null 	
+tt7026006 	tvEpisode 	2017 	null 	null 	
+tt7033620 	tvEpisode 	2015 	null 	null 	
+tt7035002 	video 	2001 	null 	null 	
+tt7037640 	movie 	2012 	null 	null 	
+tt7039508 	tvEpisode 	2016 	null 	null 	
+tt7040576 	short 	2017 	null 	null 	
+tt7045536 	video 	2017 	null 	null 	
+tt7049754 	tvEpisode 	2017 	null 	null 	
+tt7052012 	tvSeries 	2013 	null 	9.2 	
+tt7054944 	video 	2009 	null 	null 	
+tt7058758 	video 	2008 	null 	null 	
+tt7060432 	tvEpisode 	2017 	null 	null 	
+tt7064522 	tvEpisode 	2017 	null 	null 	
+tt7066044 	video 	2003 	null 	null 	
+tt7069284 	tvEpisode 	2017 	null 	8.2 	
+tt7073636 	videoGame 	2013 	null 	null 	
+tt7083724 	tvEpisode 	2017 	null 	null 	
+tt7096216 	tvEpisode 	2017 	null 	null 	
+tt7141052 	movie 	\N 	null 	null 	
+tt7150020 	tvEpisode 	2017 	null 	null 	
+tt7153826 	short 	2014 	null 	null 	
+tt7155954 	tvEpisode 	2014 	null 	null 	
+tt7168008 	tvEpisode 	2017 	null 	7.8 	
+tt7197422 	short 	2017 	null 	7.8 	
+tt7199784 	short 	2011 	null 	null 	
+tt7203240 	video 	2017 	null 	null 	
+tt7214460 	short 	2009 	null 	null 	
+tt7225124 	video 	2017 	null 	null 	
+tt7239512 	video 	2017 	null 	null 	
+tt7243286 	tvEpisode 	2000 	null 	null 	
+tt7248636 	video 	2017 	null 	null 	
+tt7248658 	short 	2017 	null 	8.2 	
+tt7256254 	tvMovie 	\N 	null 	null 	
+tt7256688 	movie 	2017 	null 	null 	
+tt7273070 	videoGame 	2017 	null 	null 	
+tt7282828 	tvEpisode 	2017 	null 	7.2 	
+tt7285434 	short 	2018 	null 	null 	
+tt7291122 	tvEpisode 	2017 	null 	5.6 	
+tt7294040 	tvEpisode 	2016 	null 	null 	
+tt7294674 	movie 	2006 	null 	null 	
+tt7301166 	tvEpisode 	2016 	null 	null 	
+tt7301172 	tvEpisode 	2017 	null 	null 	
+tt7332092 	tvEpisode 	2010 	null 	null 	
+tt7335458 	video 	2017 	null 	null 	
+tt7335572 	video 	2017 	null 	null 	
+tt7345360 	tvEpisode 	2004 	null 	null 	
+tt7361276 	tvEpisode 	1991 	null 	null 	
+tt7372970 	video 	2017 	null 	null 	
+tt7373222 	video 	2017 	null 	null 	
+tt7385336 	tvEpisode 	2016 	null 	null 	
+tt7412262 	tvMovie 	2017 	null 	null 	
+tt7413754 	video 	2017 	null 	5.9 	
+tt7414672 	tvEpisode 	2017 	null 	null 	
+tt7414704 	tvEpisode 	2017 	null 	null 	
+tt7449244 	movie 	\N 	null 	null 	
+tt7453678 	tvSeries 	\N 	null 	null 	
+tt7456204 	short 	2017 	null 	7.6 	
+tt7456714 	tvEpisode 	2017 	null 	null 	
+tt7464920 	tvMovie 	2017 	null 	null 	
+tt7484572 	tvEpisode 	2013 	null 	null 	
+tt7485426 	tvEpisode 	2013 	null 	null 	
+tt7489284 	tvEpisode 	2017 	null 	null 	
+tt7494812 	tvEpisode 	\N 	null 	null 	
+tt7497158 	tvEpisode 	2017 	null 	null 	
+tt7516510 	video 	2017 	null 	null 	
+tt7525204 	tvEpisode 	2017 	null 	7.6 	
+tt7525214 	tvEpisode 	2017 	null 	6.6 	
+tt7525220 	tvEpisode 	2017 	null 	6.8 	
+tt7526064 	tvEpisode 	2017 	null 	null 	
+tt7532542 	tvEpisode 	2017 	null 	null 	
+tt7533412 	tvMiniSeries 	2017 	null 	null 	
+tt7534616 	short 	2018 	null 	null 	
+tt7535436 	tvEpisode 	2017 	null 	6.7 	
+tt7547660 	tvEpisode 	2017 	null 	null 	
+tt7550030 	short 	2017 	null 	8.2 	
+tt7567580 	tvEpisode 	2017 	null 	null 	
+tt7576568 	tvEpisode 	2017 	null 	null 	
+tt7576578 	tvEpisode 	2017 	null 	null 	
+tt7580708 	movie 	2017 	null 	null 	
+tt7596290 	tvEpisode 	2016 	null 	null 	
+tt7618852 	tvEpisode 	2017 	null 	null 	
+tt7633680 	video 	2017 	null 	null 	
+tt7638964 	tvEpisode 	2018 	null 	8.2 	
+tt7641488 	tvEpisode 	2017 	null 	null 	
+tt7647834 	tvEpisode 	2008 	null 	null 	
+tt7654278 	video 	2013 	null 	null 	
+tt7655234 	video 	2015 	null 	null 	
+tt7675508 	tvEpisode 	2017 	null 	null 	
+tt7675516 	tvEpisode 	2017 	null 	null 	
+tt7692972 	tvEpisode 	2017 	null 	null 	
+tt7709574 	video 	2017 	null 	5.7 	
+tt7718486 	tvEpisode 	2017 	null 	null 	
+tt7720138 	tvEpisode 	2017 	null 	null 	
+tt7736858 	tvEpisode 	2016 	null 	null 	
+tt7736978 	tvEpisode 	2016 	null 	null 	
+tt7737042 	tvEpisode 	2016 	null 	null 	
+tt7737400 	tvEpisode 	2017 	null 	null 	
+tt7737446 	tvEpisode 	2017 	null 	null 	
+tt7737478 	tvEpisode 	2017 	null 	null 	
+tt7737774 	video 	2017 	null 	null 	
+tt7744254 	video 	2003 	null 	1.5 	
+tt7752672 	tvEpisode 	2017 	null 	null 	
+tt7757896 	video 	2017 	null 	null 	
+tt7758714 	tvEpisode 	2015 	null 	null 	
+tt7778878 	tvEpisode 	2016 	null 	null 	
+tt7779446 	video 	2010 	null 	null 	
+tt7790778 	tvEpisode 	2017 	null 	null 	
+tt7797302 	tvEpisode 	2005 	null 	null 	
+tt7813936 	tvEpisode 	2017 	null 	null 	
+tt7825564 	tvEpisode 	2017 	null 	null 	
+tt7825576 	tvEpisode 	2017 	null 	6.9 	
+tt7834580 	video 	2007 	null 	null 	
+tt7847512 	tvEpisode 	2018 	null 	null 	
+tt7869860 	tvEpisode 	2018 	null 	null 	
+tt7874682 	tvEpisode 	2018 	null 	null 	
+tt7893752 	tvEpisode 	2018 	null 	null 	
+tt7899622 	tvEpisode 	2018 	null 	null 	
+tt7900256 	tvEpisode 	2018 	null 	null 	
+tt7903290 	tvEpisode 	2018 	null 	null 	
+tt7904504 	tvEpisode 	2018 	null 	5.0 	
+tt7904860 	tvEpisode 	2018 	null 	null 	
+tt7907914 	tvEpisode 	2018 	null 	null 	
+tt7918072 	tvEpisode 	2017 	null 	null 	
+tt7918194 	movie 	2018 	null 	null 	
+tt7923774 	tvEpisode 	2018 	null 	null 	
+tt7929266 	tvEpisode 	2018 	null 	null 	
+tt7932052 	tvEpisode 	2018 	null 	null 	
+tt7932070 	tvEpisode 	2018 	null 	null 	
+tt7932078 	tvEpisode 	2018 	null 	null 	
+tt7935590 	video 	2016 	null 	8.7 	
+tt7943824 	movie 	\N 	null 	null 	
+tt7946776 	tvEpisode 	1990 	null 	null 	
+tt7949878 	video 	2017 	null 	null 	
+tt7950538 	tvEpisode 	2015 	null 	null 	
+tt7951558 	video 	2018 	null 	null 	
+tt7952856 	tvEpisode 	2014 	null 	null 	
+tt7965048 	video 	2013 	null 	null 	
+tt7984708 	tvEpisode 	2018 	null 	null 	
+tt8000146 	movie 	2018 	null 	8.9 	
+tt8004690 	tvEpisode 	2018 	null 	null 	
+tt8010768 	tvEpisode 	2015 	null 	null 	
+tt8012102 	tvEpisode 	2018 	null 	null 	
+tt8033900 	tvEpisode 	2016 	null 	null 	
+tt8041848 	tvEpisode 	2018 	null 	6.7 	
+tt8045530 	tvEpisode 	2017 	null 	null 	
+tt8047700 	tvEpisode 	2017 	null 	null 	
+tt8050076 	tvEpisode 	2017 	null 	null 	
+tt8051152 	tvEpisode 	2018 	null 	null 	
+tt8054914 	video 	2018 	null 	null 	
+tt8064904 	tvEpisode 	2016 	null 	null 	
+tt8067842 	short 	2017 	null 	null 	
+tt8080556 	movie 	2018 	null 	7.4 	
+tt8092788 	video 	2016 	null 	null 	
+tt8097254 	tvEpisode 	2018 	null 	null 	
+tt8101294 	tvEpisode 	2018 	null 	8.9 	
+tt8102088 	video 	2018 	null 	null 	
+tt8115562 	short 	2017 	null 	null 	
+tt8122820 	tvEpisode 	2016 	null 	null 	
+tt8128906 	tvEpisode 	2018 	null 	4.8 	
+tt8129698 	tvEpisode 	2018 	null 	null 	
+tt8129940 	tvEpisode 	2016 	null 	null 	
+tt8130070 	tvEpisode 	2016 	null 	null 	
+tt8136166 	tvEpisode 	2017 	null 	null 	
+tt8146694 	tvMovie 	2013 	null 	null 	
+tt8150718 	tvMovie 	2018 	null 	null 	
+tt8151644 	short 	2018 	null 	null 	
+tt8154462 	tvEpisode 	2017 	null 	null 	
+tt8169024 	tvEpisode 	2018 	null 	7.9 	
+tt8169730 	tvEpisode 	2018 	null 	null 	
+tt8169732 	tvEpisode 	2018 	null 	null 	
+tt8169742 	tvEpisode 	2018 	null 	7.0 	
+tt8169748 	tvEpisode 	2018 	null 	8.6 	
+tt8175006 	tvEpisode 	2018 	null 	7.9 	
+tt8176828 	tvEpisode 	1969 	null 	null 	
+tt8179336 	tvEpisode 	2018 	null 	7.9 	
+tt8210210 	tvSeries 	2017 	null 	8.6 	
+tt8210418 	tvEpisode 	2017 	null 	null 	
+tt8211016 	tvEpisode 	2018 	null 	6.7 	
+tt8211164 	tvEpisode 	2018 	null 	8.2 	
+tt8211220 	tvEpisode 	2018 	null 	null 	
+tt8215094 	tvEpisode 	2018 	null 	null 	
+tt8226404 	short 	2019 	null 	null 	
+tt8226524 	video 	2008 	null 	1.0 	
+tt8235220 	tvEpisode 	2018 	null 	null 	
+tt8235572 	short 	2017 	null 	8.9 	
+tt8241354 	tvEpisode 	2017 	null 	null 	
+tt8245168 	short 	2017 	null 	null 	
+tt8246084 	video 	2012 	null 	null 	
+tt8251090 	tvEpisode 	2017 	null 	null 	
+tt8251096 	tvEpisode 	2017 	null 	null 	
+tt8251114 	tvEpisode 	2018 	null 	null 	
+tt8264596 	tvEpisode 	2018 	null 	null 	
+tt8267902 	short 	2018 	null 	null 	
+tt8272448 	video 	2017 	null 	null 	
+tt8290746 	video 	2016 	null 	null 	
+tt8295544 	tvEpisode 	1998 	null 	null 	
+tt8306116 	movie 	2017 	null 	null 	
+tt8310654 	tvEpisode 	2018 	null 	null 	
+tt8327538 	movie 	2018 	null 	null 	
+tt8328560 	short 	2018 	null 	null 	
+tt8351166 	tvEpisode 	2016 	null 	null 	
+tt8355470 	short 	2018 	null 	null 	
+tt8363946 	tvEpisode 	2018 	null 	null 	
+tt8363970 	tvEpisode 	2018 	null 	null 	
+tt8391144 	tvEpisode 	2018 	null 	null 	
+tt8398738 	tvEpisode 	2018 	null 	null 	
+tt8399558 	video 	2017 	null 	null 	
+tt8427908 	tvMovie 	2018 	null 	null 	
+tt8429144 	short 	2018 	null 	null 	
+tt8431040 	video 	2003 	null 	null 	
+tt8456994 	tvEpisode 	2003 	null 	null 	
+tt8465592 	tvEpisode 	\N 	null 	null 	
+tt8480784 	tvEpisode 	2018 	null 	null 	
+tt8502260 	tvEpisode 	2018 	null 	null 	
+tt8502270 	tvEpisode 	2018 	null 	null 	
+tt8502280 	tvEpisode 	2018 	null 	null 	
+tt8509650 	tvEpisode 	2018 	null 	null 	
+tt8509660 	tvEpisode 	2018 	null 	null 	
+tt8516744 	tvEpisode 	2018 	null 	null 	
+tt8518000 	tvEpisode 	2018 	null 	null 	
+tt8518070 	tvEpisode 	2018 	null 	null 	
+tt8519566 	short 	2018 	null 	null 	
+tt8533938 	tvEpisode 	2016 	null 	null 	
+tt8548252 	tvEpisode 	2018 	null 	null 	
+tt8549152 	tvEpisode 	2018 	null 	null 	
+tt8559812 	tvEpisode 	2018 	null 	null 	
+tt8560770 	tvEpisode 	2015 	null 	null 	
+tt8586528 	tvEpisode 	2018 	null 	null 	
+tt8589986 	short 	2018 	null 	null 	
+tt8592992 	tvEpisode 	2018 	null 	null 	
+tt8601614 	tvEpisode 	2017 	null 	null 	
+tt8601638 	tvEpisode 	2015 	null 	null 	
+tt8621482 	tvSeries 	2018 	null 	null 	
+tt8628364 	tvEpisode 	2015 	null 	null 	
+tt8628496 	tvEpisode 	2018 	null 	null 	
+tt8633884 	short 	2018 	null 	null 	
+tt8637284 	tvEpisode 	2015 	null 	null 	
+tt8637972 	tvEpisode 	2017 	null 	null 	
+tt8641114 	tvEpisode 	2018 	null 	null 	
+tt8642258 	tvEpisode 	2006 	null 	null 	
+tt8647350 	tvEpisode 	2017 	null 	null 	
+tt8656578 	short 	2018 	null 	null 	
+tt8660960 	video 	2018 	null 	null 	
+tt8672806 	tvEpisode 	2015 	null 	null 	
+tt8697090 	tvEpisode 	2018 	null 	null 	
+tt8704670 	tvEpisode 	2018 	null 	6.1 	
+tt8704704 	tvEpisode 	2018 	null 	7.4 	
+tt8704730 	tvEpisode 	2018 	null 	6.2 	
+tt8705738 	video 	2003 	null 	null 	
+tt8723504 	tvEpisode 	2015 	null 	null 	
+tt8723536 	tvEpisode 	2015 	null 	null 	
+tt8725538 	tvEpisode 	2017 	null 	null 	
+tt8725680 	tvEpisode 	2017 	null 	null 	
+tt8725708 	tvEpisode 	2017 	null 	null 	
+tt8725814 	tvEpisode 	2017 	null 	null 	
+tt8725828 	tvEpisode 	2017 	null 	null 	
+tt8728534 	video 	2016 	null 	null 	
+tt8747150 	video 	2009 	null 	null 	
+tt8750812 	tvEpisode 	2017 	null 	null 	
+tt8750816 	tvEpisode 	2017 	null 	null 	
+tt8750820 	tvEpisode 	2017 	null 	null 	
+tt8760142 	tvEpisode 	2018 	null 	null 	
+tt8769924 	tvEpisode 	2018 	null 	null 	
+tt8785064 	video 	2011 	null 	null 	
+tt8789460 	tvEpisode 	2018 	null 	null 	
+tt8790224 	tvEpisode 	\N 	null 	null 	
+tt8790228 	tvEpisode 	\N 	null 	null 	
+tt8790230 	tvEpisode 	\N 	null 	null 	
+tt8790234 	tvEpisode 	\N 	null 	null 	
+tt8790236 	tvEpisode 	\N 	null 	null 	
+tt8790238 	tvEpisode 	\N 	null 	null 	
+tt8793410 	video 	2002 	null 	null 	
+tt8815298 	tvEpisode 	2018 	null 	null 	
+tt8827226 	tvEpisode 	2018 	null 	null 	
+tt8827942 	tvEpisode 	2014 	null 	null 	
+tt8833674 	tvEpisode 	2017 	null 	null 	
+tt8833996 	tvEpisode 	2017 	null 	null 	
+tt8834298 	tvEpisode 	1994 	null 	null 	
+tt8854890 	tvEpisode 	2018 	null 	null 	
+tt8855090 	tvEpisode 	2018 	null 	null 	
+tt8859500 	tvEpisode 	2018 	null 	null 	
+tt8870692 	video 	2006 	null 	null 	
+tt8875988 	video 	2017 	null 	null 	
+tt8888468 	video 	1979 	null 	null 	
+tt8890954 	tvEpisode 	2018 	null 	6.3 	
+tt8904312 	video 	2010 	null 	null 	
+tt8907368 	tvEpisode 	2016 	null 	null 	
+tt8908062 	tvEpisode 	2017 	null 	null 	
+tt8911340 	tvEpisode 	2018 	null 	null 	
+tt8912240 	video 	2017 	null 	null 	
+tt8928270 	video 	2009 	null 	null 	
+tt8929302 	short 	2015 	null 	null 	
+tt8929922 	short 	2018 	null 	null 	
+tt8931946 	short 	2018 	null 	null 	
+tt8933428 	video 	1993 	null 	null 	
+tt8946586 	video 	2018 	null 	null 	
+tt8971560 	tvEpisode 	2018 	null 	null 	
+tt8985252 	tvEpisode 	2015 	null 	null 	
+tt9014376 	tvEpisode 	1982 	null 	null 	
+tt9025386 	video 	2014 	null 	null 	
+tt9028106 	tvEpisode 	2014 	null 	null 	
+tt9028478 	tvEpisode 	2011 	null 	null 	
+tt9028780 	tvEpisode 	2016 	null 	null 	
+tt9028812 	tvEpisode 	2016 	null 	null 	
+tt9035590 	tvShort 	2016 	null 	null 	
+tt9050222 	tvEpisode 	2018 	null 	null 	
+tt9056952 	tvEpisode 	2018 	null 	null 	
+tt9059650 	tvSeries 	2018 	null 	null 	
+tt9059712 	tvEpisode 	2018 	null 	null 	
+tt9059854 	tvEpisode 	2018 	null 	null 	
+tt9077932 	tvEpisode 	1988 	null 	null 	
+tt9088552 	tvEpisode 	2015 	null 	null 	
+tt9138380 	short 	2019 	null 	null 	
+tt9139368 	tvEpisode 	2018 	null 	null 	
+tt9140634 	tvSeries 	2018 	null 	7.0 	
+tt9142222 	video 	2018 	null 	6.2 	
+tt9165606 	tvEpisode 	2017 	null 	null 	
+tt9165840 	tvEpisode 	2017 	null 	null 	
+tt9182468 	tvEpisode 	2018 	null 	null 	
+tt9182500 	tvEpisode 	2018 	null 	null 	
+tt9202890 	short 	2018 	null 	null 	
+tt9209702 	movie 	2017 	null 	null 	
+tt9213770 	tvEpisode 	2017 	null 	null 	
+tt9214442 	tvEpisode 	2018 	null 	null 	
+tt9214462 	tvEpisode 	2018 	null 	null 	
+tt9247138 	video 	2018 	null 	null 	
+tt9247386 	movie 	\N 	null 	null 	
+tt9252180 	tvEpisode 	2018 	null 	null 	
+tt9266996 	short 	2012 	null 	null 	
+tt9286132 	short 	2018 	null 	null 	
+tt9293502 	tvEpisode 	2018 	null 	null 	
+tt9307694 	tvEpisode 	2018 	null 	null 	
+tt9309228 	tvSpecial 	2018 	null 	null 	
+tt9313448 	tvEpisode 	2018 	null 	null 	
+tt9314718 	video 	2018 	null 	null 	
+tt9362970 	short 	2017 	null 	null 	
+tt9363216 	short 	2018 	null 	null 	
+tt9363222 	short 	2018 	null 	null 	
+tt9376258 	video 	2008 	null 	null 	
+tt9381494 	tvEpisode 	2018 	null 	null 	
+tt9387254 	tvEpisode 	2017 	null 	null 	
+tt9403342 	short 	2018 	null 	null 	
+tt9407698 	tvEpisode 	2014 	null 	null 	
+tt9418972 	tvEpisode 	2016 	null 	null 	
+tt9419620 	short 	2018 	null 	null 	
+tt9420518 	tvSeries 	2017 	2017 	null 	
+tt9424968 	short 	2017 	null 	null 	
+tt9429242 	tvEpisode 	2018 	null 	null 	
+tt9435660 	tvEpisode 	2018 	null 	null 	
+tt9452612 	tvEpisode 	2018 	null 	null 	
+tt9459606 	short 	2016 	null 	null 	
+tt9475338 	tvEpisode 	2012 	null 	null 	
+tt9483994 	tvEpisode 	2018 	null 	null 	
+tt9487524 	tvEpisode 	2018 	null 	5.7 	
+tt9510428 	tvEpisode 	2017 	null 	null 	
+tt9515388 	video 	2018 	null 	null 	
+tt9516288 	tvEpisode 	2018 	null 	null 	
+tt9539646 	tvEpisode 	2019 	null 	8.2 	
+tt9541038 	short 	2005 	null 	null 	
+tt9567188 	tvMovie 	2018 	null 	null 	
+tt9586834 	tvEpisode 	2015 	null 	null 	
+tt9594756 	tvEpisode 	2014 	null 	null 	
+tt9596382 	tvEpisode 	2017 	null 	null 	
+tt9600664 	tvEpisode 	2016 	null 	null 	
+tt9608914 	tvEpisode 	2016 	null 	null 	
+tt9612212 	tvEpisode 	2019 	null 	6.3 	
+tt9619704 	tvEpisode 	2014 	null 	null 	
+tt9625288 	tvEpisode 	2018 	null 	8.6 	
+tt9626276 	tvEpisode 	2014 	null 	null 	
+tt9640348 	short 	2013 	null 	null 	
+tt9653014 	tvEpisode 	2019 	null 	null 	
+tt9653094 	tvEpisode 	2019 	null 	6.5 	
+tt9657902 	tvSeries 	2017 	null 	null 	
+tt9660864 	tvEpisode 	2018 	null 	null 	
+tt9670170 	tvEpisode 	2019 	null 	6.7 	
+tt9674368 	tvEpisode 	2007 	null 	null 	
+tt9683068 	tvEpisode 	2019 	null 	null 	
+tt9683840 	tvEpisode 	2019 	null 	null 	
+tt9687932 	tvEpisode 	2019 	null 	null 	
+tt9697972 	tvEpisode 	2018 	null 	null 	
+tt9697974 	tvEpisode 	2018 	null 	null 	
+tt9697980 	tvEpisode 	2018 	null 	null 	
+tt9697982 	tvEpisode 	2018 	null 	null 	
+tt9697986 	tvEpisode 	2018 	null 	null 	
+tt9697994 	tvEpisode 	2018 	null 	null 	
+tt9697996 	tvEpisode 	2018 	null 	null 	
+tt9698000 	tvEpisode 	2018 	null 	null 	
+tt9698006 	tvEpisode 	2018 	null 	null 	
+tt9698016 	tvEpisode 	2018 	null 	null 	
+tt9698022 	tvEpisode 	2018 	null 	null 	
+tt9698030 	tvEpisode 	2018 	null 	null 	
+tt9698038 	tvEpisode 	2018 	null 	null 	
+tt9701320 	tvSeries 	\N 	null 	null 	
+tt9727802 	short 	2015 	null 	null 	
+tt9728750 	tvEpisode 	2019 	null 	null 	
+tt9732374 	movie 	2019 	null 	null 	
+tt9734260 	tvEpisode 	2019 	null 	null 	
+tt9735688 	tvEpisode 	2019 	null 	null 	
+tt9737508 	video 	2013 	null 	null 	
+tt9772582 	video 	2011 	null 	null 	
+tt9795574 	short 	2018 	null 	null 	
+tt9795708 	short 	2019 	null 	null 	
+tt9805250 	tvSeries 	2019 	null 	null 	
+tt9814144 	tvEpisode 	2019 	null 	null 	
+tt9827576 	tvEpisode 	2019 	null 	null 	
+tt9827942 	tvEpisode 	2017 	null 	null 	
+tt9831118 	tvMiniSeries 	2018 	2018 	null 	
+tt9858550 	tvEpisode 	2019 	null 	null 	
+tt9866508 	video 	2004 	null 	null 	
+tt9870976 	tvEpisode 	2012 	null 	null 	
+tt9871120 	tvEpisode 	2013 	null 	null 	
+tt9876188 	tvEpisode 	2014 	null 	null 	
+tt9877358 	video 	2000 	null 	null 	
+tt9889550 	tvEpisode 	2019 	null 	null 	
+tt9893704 	short 	2019 	null 	null 	
+tt9893928 	video 	2019 	null 	null 	
+tt9898224 	video 	2019 	null 	null 	
+-----------------------------------------------------
+
+4º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	episode	genres	movies	movies_actors	movies_directors	movies_genres	person	episode.episodeid	episode.movieid	episode.seasonnumber	episode.episodenumber	genres.genre_id	genres.name	movies.movieid	movies.type	movies.title	movies.startyear	movies.endyear	movies.rating	movies_actors.movieid	movies_actors.personid	movies_directors.movieid	movies_directors.personid	movies_genres.movie_d	movies_genres.genre_id	person.personid	person.name	person.birthyear	person.deathyear	
+director*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+movie	0	0	85*	0	0	0	0	0	82	0	0	0	0	82	0	0	0	0	0	82	0	82	0	75	0	0	0	0	0	
+list	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	66*	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 151
+
+MAPEAMENTO VW:
+null	episode.episodeid.java.lang.String	episode.movieid.java.lang.String	episode.seasonnumber.java.lang.Integer	episode.episodenumber.java.lang.Integer	genres.genre_id.java.lang.Integer	genres.name.java.lang.String	movies.movieid.java.lang.String	movies.type.java.lang.String	movies.title.java.lang.String	movies.startyear.java.lang.String	movies.endyear.java.lang.String	movies.rating.java.math.BigDecimal	movies_actors.movieid.java.lang.String	movies_actors.personid.java.lang.String	movies_directors.movieid.java.lang.String	movies_directors.personid.java.lang.String	movies_genres.movie_d.java.lang.String	movies_genres.genre_id.java.lang.Integer	person.personid.java.lang.String	person.name.java.lang.String	person.birthyear.java.lang.String	person.deathyear.java.lang.String	
+director	67	67	0	0	0	67	-100	-100	-100	80*	80	0	67	67	67	67	67	0	67	67	67	67	
+movie*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+list*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 80
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+movie ---> movies
+list ---> movies.title
+director ---> movies.startyear.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [movies]
+
+CONSULTA SQL: select distinct movies.title
+from movies
+where movies.startyear like '%director%' 
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+5º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	episode	genres	movies	movies_actors	movies_directors	movies_genres	person	episode.episodeid	episode.movieid	episode.seasonnumber	episode.episodenumber	genres.genre_id	genres.name	movies.movieid	movies.type	movies.title	movies.startyear	movies.endyear	movies.rating	movies_actors.movieid	movies_actors.personid	movies_directors.movieid	movies_directors.personid	movies_genres.movie_d	movies_genres.genre_id	person.personid	person.name	person.birthyear	person.deathyear	
+director*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+movie	0	0	85*	0	0	0	0	0	82	0	0	0	0	82	0	0	0	0	0	82	0	82	0	75	0	0	0	0	0	
+list	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	66*	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 151
+
+MAPEAMENTO VW:
+null	episode.episodeid.java.lang.String	episode.movieid.java.lang.String	episode.seasonnumber.java.lang.Integer	episode.episodenumber.java.lang.Integer	genres.genre_id.java.lang.Integer	genres.name.java.lang.String	movies.movieid.java.lang.String	movies.type.java.lang.String	movies.title.java.lang.String	movies.startyear.java.lang.String	movies.endyear.java.lang.String	movies.rating.java.math.BigDecimal	movies_actors.movieid.java.lang.String	movies_actors.personid.java.lang.String	movies_directors.movieid.java.lang.String	movies_directors.personid.java.lang.String	movies_genres.movie_d.java.lang.String	movies_genres.genre_id.java.lang.Integer	person.personid.java.lang.String	person.name.java.lang.String	person.birthyear.java.lang.String	person.deathyear.java.lang.String	
+director	67	67	0	0	0	67	-100	-100	-100	-100	80*	0	67	67	67	67	67	0	67	67	67	67	
+movie*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+list*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 80
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+movie ---> movies
+list ---> movies.title
+director ---> movies.endyear.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [movies]
+
+CONSULTA SQL: select distinct movies.title
+from movies
+where movies.endyear like '%director%' 
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+6º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	episode	genres	movies	movies_actors	movies_directors	movies_genres	person	episode.episodeid	episode.movieid	episode.seasonnumber	episode.episodenumber	genres.genre_id	genres.name	movies.movieid	movies.type	movies.title	movies.startyear	movies.endyear	movies.rating	movies_actors.movieid	movies_actors.personid	movies_directors.movieid	movies_directors.personid	movies_genres.movie_d	movies_genres.genre_id	person.personid	person.name	person.birthyear	person.deathyear	
+director*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+movie	0	0	-100	0	0	0	0	0	-100	0	0	0	0	82*	0	0	0	0	0	82	0	82	0	75	0	0	0	0	0	
+list	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	66*	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 148
+
+MAPEAMENTO VW:
+null	episode.episodeid.java.lang.String	episode.movieid.java.lang.String	episode.seasonnumber.java.lang.Integer	episode.episodenumber.java.lang.Integer	genres.genre_id.java.lang.Integer	genres.name.java.lang.String	movies.movieid.java.lang.String	movies.type.java.lang.String	movies.title.java.lang.String	movies.startyear.java.lang.String	movies.endyear.java.lang.String	movies.rating.java.math.BigDecimal	movies_actors.movieid.java.lang.String	movies_actors.personid.java.lang.String	movies_directors.movieid.java.lang.String	movies_directors.personid.java.lang.String	movies_genres.movie_d.java.lang.String	movies_genres.genre_id.java.lang.Integer	person.personid.java.lang.String	person.name.java.lang.String	person.birthyear.java.lang.String	person.deathyear.java.lang.String	
+director	71	71	0	0	0	71	80*	80	80	80	80	0	71	71	71	71	71	0	71	71	71	71	
+movie*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+list*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 80
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+movie ---> movies.movieid
+list ---> movies.title
+director ---> movies.movieid.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [movies]
+
+CONSULTA SQL: select distinct movies.title
+from movies
+where movies.movieid like '%director%' 
+
+
+-----------------------------------------------------
+Interpretacao ja executada!
+-----------------------------------------------------
+
+7º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	episode	genres	movies	movies_actors	movies_directors	movies_genres	person	episode.episodeid	episode.movieid	episode.seasonnumber	episode.episodenumber	genres.genre_id	genres.name	movies.movieid	movies.type	movies.title	movies.startyear	movies.endyear	movies.rating	movies_actors.movieid	movies_actors.personid	movies_directors.movieid	movies_directors.personid	movies_genres.movie_d	movies_genres.genre_id	person.personid	person.name	person.birthyear	person.deathyear	
+director*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+movie	0	0	-100	0	0	0	0	0	-100	0	0	0	0	82*	0	0	0	0	0	82	0	82	0	75	0	0	0	0	0	
+list	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	66*	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 148
+
+MAPEAMENTO VW:
+null	episode.episodeid.java.lang.String	episode.movieid.java.lang.String	episode.seasonnumber.java.lang.Integer	episode.episodenumber.java.lang.Integer	genres.genre_id.java.lang.Integer	genres.name.java.lang.String	movies.movieid.java.lang.String	movies.type.java.lang.String	movies.title.java.lang.String	movies.startyear.java.lang.String	movies.endyear.java.lang.String	movies.rating.java.math.BigDecimal	movies_actors.movieid.java.lang.String	movies_actors.personid.java.lang.String	movies_directors.movieid.java.lang.String	movies_directors.personid.java.lang.String	movies_genres.movie_d.java.lang.String	movies_genres.genre_id.java.lang.Integer	person.personid.java.lang.String	person.name.java.lang.String	person.birthyear.java.lang.String	person.deathyear.java.lang.String	
+director	71	71	0	0	0	71	-100	80*	80	80	80	0	71	71	71	71	71	0	71	71	71	71	
+movie*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+list*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 80
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+movie ---> movies.movieid
+list ---> movies.title
+director ---> movies.type.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [movies]
+
+CONSULTA SQL: select distinct movies.movieid, movies.title
+from movies
+where movies.type like '%director%' 
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+8º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	episode	genres	movies	movies_actors	movies_directors	movies_genres	person	episode.episodeid	episode.movieid	episode.seasonnumber	episode.episodenumber	genres.genre_id	genres.name	movies.movieid	movies.type	movies.title	movies.startyear	movies.endyear	movies.rating	movies_actors.movieid	movies_actors.personid	movies_directors.movieid	movies_directors.personid	movies_genres.movie_d	movies_genres.genre_id	person.personid	person.name	person.birthyear	person.deathyear	
+director*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+movie	0	0	-100	0	0	0	0	0	-100	0	0	0	0	82*	0	0	0	0	0	82	0	82	0	75	0	0	0	0	0	
+list	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	66*	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 148
+
+MAPEAMENTO VW:
+null	episode.episodeid.java.lang.String	episode.movieid.java.lang.String	episode.seasonnumber.java.lang.Integer	episode.episodenumber.java.lang.Integer	genres.genre_id.java.lang.Integer	genres.name.java.lang.String	movies.movieid.java.lang.String	movies.type.java.lang.String	movies.title.java.lang.String	movies.startyear.java.lang.String	movies.endyear.java.lang.String	movies.rating.java.math.BigDecimal	movies_actors.movieid.java.lang.String	movies_actors.personid.java.lang.String	movies_directors.movieid.java.lang.String	movies_directors.personid.java.lang.String	movies_genres.movie_d.java.lang.String	movies_genres.genre_id.java.lang.Integer	person.personid.java.lang.String	person.name.java.lang.String	person.birthyear.java.lang.String	person.deathyear.java.lang.String	
+director	71	71	0	0	0	71	-100	-100	80*	80	80	0	71	71	71	71	71	0	71	71	71	71	
+movie*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+list*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 80
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+movie ---> movies.movieid
+list ---> movies.title
+director ---> movies.title.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [movies]
+
+CONSULTA SQL: select distinct movies.movieid
+from movies
+where movies.title like '%director%' 
+
+
+RESULTADO
+-----------------------------------------------------
+movies.movieid 	
+
+tt0002145 	
+tt0042701 	
+tt0047768 	
+tt0047998 	
+tt0071163 	
+tt0091518 	
+tt0124142 	
+tt0133662 	
+tt0143105 	
+tt0167017 	
+tt0173713 	
+tt0205181 	
+tt0206002 	
+tt0206601 	
+tt0207738 	
+tt0211733 	
+tt0224861 	
+tt0231183 	
+tt0232603 	
+tt0241377 	
+tt0241887 	
+tt0246601 	
+tt0261208 	
+tt0263412 	
+tt0266468 	
+tt0276944 	
+tt0302480 	
+tt0322031 	
+tt0340076 	
+tt0347962 	
+tt0358257 	
+tt0360768 	
+tt0361550 	
+tt0362552 	
+tt0368703 	
+tt0370230 	
+tt0371914 	
+tt0373793 	
+tt0374602 	
+tt0374603 	
+tt0374616 	
+tt0376750 	
+tt0376776 	
+tt0384700 	
+tt0385657 	
+tt0386123 	
+tt0386124 	
+tt0388677 	
+tt0389392 	
+tt0389393 	
+tt0391929 	
+tt0396983 	
+tt0404888 	
+tt0407487 	
+tt0409085 	
+tt0410118 	
+tt0418576 	
+tt0420323 	
+tt0424451 	
+tt0425469 	
+tt0429819 	
+tt0433624 	
+tt0440271 	
+tt0457116 	
+tt0458640 	
+tt0463053 	
+tt0463497 	
+tt0470554 	
+tt0470995 	
+tt0471433 	
+tt0473733 	
+tt0475009 	
+tt0475573 	
+tt0483489 	
+tt0488705 	
+tt0490272 	
+tt0495226 	
+tt0496498 	
+tt0558980 	
+tt0560757 	
+tt0575806 	
+tt0577773 	
+tt0593295 	
+tt0604212 	
+tt0614544 	
+tt0636775 	
+tt0639961 	
+tt0655284 	
+tt0665673 	
+tt0667230 	
+tt0672699 	
+tt0679198 	
+tt0694143 	
+tt0719227 	
+tt0723938 	
+tt0742221 	
+tt0752079 	
+tt0757820 	
+tt0768113 	
+tt0770100 	
+tt0778646 	
+tt0778671 	
+tt0781093 	
+tt0790684 	
+tt0790813 	
+tt0794223 	
+tt0795534 	
+tt0799706 	
+tt0808669 	
+tt0810069 	
+tt0810835 	
+tt0815475 	
+tt0817532 	
+tt0818757 	
+tt0820880 	
+tt0825098 	
+tt0828397 	
+tt0832063 	
+tt0836929 	
+tt0837058 	
+tt0837652 	
+tt0840916 	
+tt0843896 	
+tt0848582 	
+tt0850933 	
+tt0869053 	
+tt0869155 	
+tt0870465 	
+tt0884494 	
+tt0887171 	
+tt0888698 	
+tt0892405 	
+tt0914440 	
+tt0945568 	
+tt0968662 	
+tt0980290 	
+tt0983956 	
+tt0985595 	
+tt0993776 	
+tt0996381 	
+tt0996436 	
+tt0997044 	
+tt10003452 	
+tt10004922 	
+tt10009978 	
+tt10021094 	
+tt10023274 	
+tt10031968 	
+tt10044588 	
+tt10055270 	
+tt10065858 	
+tt10085394 	
+tt10086642 	
+tt10109778 	
+tt10110174 	
+tt10117856 	
+tt10125052 	
+tt10133352 	
+tt1014642 	
+tt10156030 	
+tt10185838 	
+tt10196372 	
+tt10202440 	
+tt10203264 	
+tt10206462 	
+tt10228242 	
+tt10241474 	
+tt10250588 	
+tt10263630 	
+tt10265148 	
+tt10275186 	
+tt1028208 	
+tt10288946 	
+tt10288960 	
+tt1029108 	
+tt1029436 	
+tt10294646 	
+tt10313192 	
+tt10322544 	
+tt10328046 	
+tt10338164 	
+tt10341262 	
+tt10345486 	
+tt1035445 	
+tt10368836 	
+tt1037189 	
+tt1037541 	
+tt10375814 	
+tt10403652 	
+tt10407898 	
+tt10414650 	
+tt10415006 	
+tt10422584 	
+tt10422586 	
+tt1042681 	
+tt10428964 	
+tt1043212 	
+tt1043213 	
+tt1043214 	
+tt1043215 	
+tt1043217 	
+tt1043218 	
+tt1043219 	
+tt10436724 	
+tt10451288 	
+tt10451306 	
+tt10452288 	
+tt10468678 	
+tt10468692 	
+tt10468694 	
+tt1047001 	
+tt10477528 	
+tt10478368 	
+tt10479006 	
+tt10479116 	
+tt10483764 	
+tt10484238 	
+tt10484256 	
+tt10484264 	
+tt10484296 	
+tt10487740 	
+tt10487756 	
+tt10487782 	
+tt10487796 	
+tt10487800 	
+tt10487806 	
+tt10487810 	
+tt10487814 	
+tt10487826 	
+tt10487832 	
+tt10487998 	
+tt10488794 	
+tt10494102 	
+tt10494156 	
+tt10494474 	
+tt10509358 	
+tt1051030 	
+tt1051842 	
+tt10519296 	
+tt1052047 	
+tt10543872 	
+tt10545220 	
+tt10568030 	
+tt10568096 	
+tt10568182 	
+tt10574122 	
+tt10575012 	
+tt10577888 	
+tt10578074 	
+tt10583256 	
+tt10592932 	
+tt10612860 	
+tt10613544 	
+tt10616302 	
+tt10617132 	
+tt10632926 	
+tt10633604 	
+tt10643480 	
+tt10648268 	
+tt10653112 	
+tt10653272 	
+tt10671398 	
+tt10672480 	
+tt10691374 	
+tt10715052 	
+tt10725930 	
+tt1072981 	
+tt1072982 	
+tt1072983 	
+tt10742010 	
+tt10746354 	
+tt10746724 	
+tt10746778 	
+tt10746974 	
+tt10757302 	
+tt10757384 	
+tt10757430 	
+tt10760568 	
+tt10761720 	
+tt1076405 	
+tt10773066 	
+tt10787836 	
+tt10794030 	
+tt10803256 	
+tt10805150 	
+tt10840624 	
+tt10845414 	
+tt10856504 	
+tt1086792 	
+tt10869602 	
+tt10891870 	
+tt10918476 	
+tt1092056 	
+tt10925098 	
+tt10931852 	
+tt10945706 	
+tt10959320 	
+tt10963310 	
+tt10975532 	
+tt10978600 	
+tt10978746 	
+tt10980098 	
+tt10984962 	
+tt1100731 	
+tt11008846 	
+tt11012762 	
+tt11015606 	
+tt11038324 	
+tt11041026 	
+tt11056134 	
+tt11056522 	
+tt11058036 	
+tt11063976 	
+tt11078246 	
+tt11078622 	
+tt11089432 	
+tt11090894 	
+tt11092126 	
+tt1111150 	
+tt11119592 	
+tt11120866 	
+tt11125604 	
+tt11132590 	
+tt11139194 	
+tt11146800 	
+tt11156512 	
+tt11182454 	
+tt11191880 	
+tt11198194 	
+tt11201538 	
+tt11202162 	
+tt11209788 	
+tt11209880 	
+tt11235342 	
+tt11237680 	
+tt11242062 	
+tt11250586 	
+tt11263850 	
+tt1126489 	
+tt11266806 	
+tt11267012 	
+tt11274226 	
+tt11280402 	
+tt11296564 	
+tt11302374 	
+tt11305686 	
+tt11306036 	
+tt11310088 	
+tt11312990 	
+tt11314662 	
+tt11336168 	
+tt1133670 	
+tt11342708 	
+tt11350944 	
+tt1137444 	
+tt11376710 	
+tt11387626 	
+tt11390560 	
+tt1139263 	
+tt11398200 	
+tt11405722 	
+tt11412570 	
+tt11455868 	
+tt11462280 	
+tt11463890 	
+tt11467688 	
+tt1147568 	
+tt1149393 	
+tt11498052 	
+tt11519448 	
+tt11534324 	
+tt11536478 	
+tt11548052 	
+tt11569390 	
+tt1160376 	
+tt11611240 	
+tt11613830 	
+tt11617660 	
+tt11628172 	
+tt1163225 	
+tt11651042 	
+tt11652620 	
+tt11662650 	
+tt11668072 	
+tt11678810 	
+tt11683686 	
+tt11686034 	
+tt11686390 	
+tt11711784 	
+tt11711818 	
+tt11732714 	
+tt11737764 	
+tt1174306 	
+tt1175979 	
+tt1175983 	
+tt1175985 	
+tt1175987 	
+tt11760416 	
+tt1176418 	
+tt11771746 	
+tt11774690 	
+tt11775974 	
+tt11776002 	
+tt11776034 	
+tt11776050 	
+tt11776076 	
+tt11776098 	
+tt11776124 	
+tt11776186 	
+tt11776224 	
+tt11776242 	
+tt11776248 	
+tt11776262 	
+tt11779096 	
+tt11782768 	
+tt11782834 	
+tt11782870 	
+tt11782956 	
+tt11783002 	
+tt11783028 	
+tt11783030 	
+tt11783078 	
+tt11784880 	
+tt11796434 	
+tt11802018 	
+tt11814438 	
+tt11820826 	
+tt11820848 	
+tt11834692 	
+tt11838724 	
+tt11838792 	
+tt11845348 	
+tt11847844 	
+tt11849552 	
+tt11859958 	
+tt11864810 	
+tt11866536 	
+tt11871878 	
+tt11872314 	
+tt1188335 	
+tt11890774 	
+tt11897506 	
+tt1189822 	
+tt1190045 	
+tt1190047 	
+tt11912784 	
+tt11914004 	
+tt11919780 	
+tt11921200 	
+tt11927896 	
+tt11935062 	
+tt11935074 	
+tt11935078 	
+tt11935086 	
+tt11935100 	
+tt11935106 	
+tt1195314 	
+tt11957462 	
+tt11967972 	
+tt11986014 	
+tt11996530 	
+tt12006890 	
+tt12007324 	
+tt12007440 	
+tt1201914 	
+tt12026934 	
+tt12029464 	
+tt12030168 	
+tt12033226 	
+tt12037782 	
+tt12039078 	
+tt12044082 	
+tt1204621 	
+tt1204624 	
+tt12047710 	
+tt12047810 	
+tt12054482 	
+tt12060484 	
+tt12065114 	
+tt12067562 	
+tt12070206 	
+tt12070278 	
+tt12070346 	
+tt12070444 	
+tt12070572 	
+tt12071250 	
+tt12071310 	
+tt12071372 	
+tt12071436 	
+tt12071808 	
+tt12074748 	
+tt12075998 	
+tt12076026 	
+tt12076192 	
+tt12076196 	
+tt12076212 	
+tt12076236 	
+tt12076242 	
+tt12077914 	
+tt12078932 	
+tt1211185 	
+tt12112964 	
+tt12112988 	
+tt12113344 	
+tt12121016 	
+tt1212968 	
+tt1213477 	
+tt12137778 	
+tt12144770 	
+tt12146456 	
+tt1216442 	
+tt12164896 	
+tt12170122 	
+tt1217399 	
+tt12200208 	
+tt12206132 	
+tt12227178 	
+tt1222774 	
+tt1223079 	
+tt12238604 	
+tt12255406 	
+tt12270430 	
+tt12279604 	
+tt1229043 	
+tt12292548 	
+tt1229630 	
+tt12297388 	
+tt12300102 	
+tt12306570 	
+tt12311664 	
+tt12312442 	
+tt12313920 	
+tt1233104 	
+tt1233536 	
+tt12358586 	
+tt12358704 	
+tt1236128 	
+tt12404818 	
+tt12415412 	
+tt12421630 	
+tt12422578 	
+tt12423262 	
+tt1242666 	
+tt1243213 	
+tt12439008 	
+tt12441520 	
+tt12458606 	
+tt12458642 	
+tt12458712 	
+tt12458810 	
+tt12462702 	
+tt12465410 	
+tt1247167 	
+tt12485912 	
+tt12501294 	
+tt12503244 	
+tt12511248 	
+tt12518556 	
+tt1252376 	
+tt12524210 	
+tt12529676 	
+tt12536944 	
+tt12536980 	
+tt12542106 	
+tt12544044 	
+tt12544952 	
+tt12545042 	
+tt12545052 	
+tt12546038 	
+tt12555982 	
+tt12558202 	
+tt12559894 	
+tt12568876 	
+tt12571452 	
+tt12572606 	
+tt12575982 	
+tt12581040 	
+tt1258428 	
+tt12598984 	
+tt1260341 	
+tt12604558 	
+tt12615464 	
+tt12616470 	
+tt12616610 	
+tt12616704 	
+tt12616774 	
+tt12617204 	
+tt12617214 	
+tt12617342 	
+tt12617414 	
+tt12617424 	
+tt12617502 	
+tt12617538 	
+tt12617656 	
+tt12617668 	
+tt12617704 	
+tt12623784 	
+tt12624738 	
+tt12625360 	
+tt1262792 	
+tt12629778 	
+tt12635750 	
+tt12635794 	
+tt12636996 	
+tt12637122 	
+tt12648816 	
+tt12649378 	
+tt12651876 	
+tt12652456 	
+tt12662726 	
+tt12663590 	
+tt12665806 	
+tt12666074 	
+tt12673582 	
+tt12676730 	
+tt12678018 	
+tt12684228 	
+tt12686824 	
+tt12700460 	
+tt12701062 	
+tt12701936 	
+tt1270225 	
+tt1270745 	
+tt12715520 	
+tt12721942 	
+tt12725796 	
+tt12728008 	
+tt12728212 	
+tt12730774 	
+tt12733684 	
+tt12753376 	
+tt12763490 	
+tt12774064 	
+tt12774082 	
+tt12774832 	
+tt12775424 	
+tt12780090 	
+tt12780106 	
+tt12780108 	
+tt12792072 	
+tt1279651 	
+tt12798636 	
+tt12799900 	
+tt12805364 	
+tt12806692 	
+tt12807582 	
+tt1282218 	
+tt12849284 	
+tt12854070 	
+tt12861010 	
+tt12861126 	
+tt12870060 	
+tt12875758 	
+tt12875804 	
+tt12881866 	
+tt12888910 	
+tt12901346 	
+tt12909260 	
+tt12915702 	
+tt12930742 	
+tt12934712 	
+tt12942994 	
+tt12974160 	
+tt12974182 	
+tt12974190 	
+tt1297752 	
+tt1308180 	
+tt1309071 	
+tt1313205 	
+tt1314547 	
+tt1315276 	
+tt1317575 	
+tt1340642 	
+tt1343395 	
+tt1355694 	
+tt1358031 	
+tt1358032 	
+tt1369833 	
+tt1370177 	
+tt1371623 	
+tt1378180 	
+tt1379672 	
+tt1384941 	
+tt1413286 	
+tt1414293 	
+tt1415964 	
+tt1430639 	
+tt1434530 	
+tt1437764 	
+tt1445683 	
+tt1454262 	
+tt1455461 	
+tt1462805 	
+tt1463535 	
+tt1467318 	
+tt1475807 	
+tt1481571 	
+tt1487895 	
+tt1488563 	
+tt1494203 	
+tt1499449 	
+tt1500121 	
+tt1500799 	
+tt1504679 	
+tt1524039 	
+tt1532982 	
+tt1533204 	
+tt1541826 	
+tt1547044 	
+tt1553181 	
+tt1559381 	
+tt1562890 	
+tt1574146 	
+tt1574742 	
+tt1593851 	
+tt1593861 	
+tt1593933 	
+tt1593972 	
+tt1599287 	
+tt1600042 	
+tt1602001 	
+tt1603816 	
+tt1606597 	
+tt1608785 	
+tt1609112 	
+tt1635002 	
+tt1652661 	
+tt1652965 	
+tt1656884 	
+tt1661120 	
+tt1662157 	
+tt1664611 	
+tt1665165 	
+tt1666605 	
+tt1667185 	
+tt1667477 	
+tt1670833 	
+tt1670847 	
+tt1673157 	
+tt1674226 	
+tt1682819 	
+tt1706752 	
+tt1720085 	
+tt1728475 	
+tt1749906 	
+tt1750475 	
+tt1753719 	
+tt1753851 	
+tt1758123 	
+tt1769648 	
+tt1773463 	
+tt1773729 	
+tt1781921 	
+tt1787671 	
+tt1789744 	
+tt1792611 	
+tt1804718 	
+tt1805523 	
+tt1809363 	
+tt1815120 	
+tt1815957 	
+tt1817765 	
+tt1824183 	
+tt1824574 	
+tt1825986 	
+tt1830574 	
+tt1830847 	
+tt1840308 	
+tt1845915 	
+tt1846491 	
+tt1846732 	
+tt1854315 	
+tt1857802 	
+tt1862497 	
+tt1869706 	
+tt1870533 	
+tt1878881 	
+tt1882061 	
+tt1882062 	
+tt1915763 	
+tt1918672 	
+tt1919144 	
+tt1925534 	
+tt1927549 	
+tt1927881 	
+tt1934237 	
+tt1950226 	
+tt1956504 	
+tt1961303 	
+tt1964867 	
+tt1980266 	
+tt1981425 	
+tt1982476 	
+tt1995305 	
+tt1999252 	
+tt2004225 	
+tt2005168 	
+tt2005371 	
+tt2011161 	
+tt2011237 	
+tt2011290 	
+tt2014230 	
+tt2015422 	
+tt2041972 	
+tt2041973 	
+tt2046120 	
+tt2053331 	
+tt2057757 	
+tt2076228 	
+tt2077292 	
+tt2089142 	
+tt2095483 	
+tt2097676 	
+tt2106273 	
+tt2111437 	
+tt2133614 	
+tt2134211 	
+tt2140507 	
+tt2143774 	
+tt2156117 	
+tt2158795 	
+tt2161738 	
+tt2168184 	
+tt2168358 	
+tt2168412 	
+tt2168678 	
+tt2172917 	
+tt2172927 	
+tt2175899 	
+tt2176602 	
+tt2181912 	
+tt2185000 	
+tt2186640 	
+tt2188148 	
+tt2193788 	
+tt2199603 	
+tt2202485 	
+tt2202557 	
+tt2207144 	
+tt2210843 	
+tt2221288 	
+tt2222244 	
+tt2223034 	
+tt2224456 	
+tt2235924 	
+tt2236540 	
+tt2240066 	
+tt2242312 	
+tt2244859 	
+tt2250818 	
+tt2260040 	
+tt2265247 	
+tt2266568 	
+tt2273591 	
+tt2283047 	
+tt2290773 	
+tt2291306 	
+tt2292547 	
+tt2315774 	
+tt2320041 	
+tt2321173 	
+tt2342065 	
+tt2356598 	
+tt2363970 	
+tt2364153 	
+tt2385400 	
+tt2386163 	
+tt2387598 	
+tt2393839 	
+tt2393999 	
+tt2394001 	
+tt2395191 	
+tt2396329 	
+tt2396453 	
+tt2396487 	
+tt2398225 	
+tt2419744 	
+tt2443868 	
+tt2448532 	
+tt2455512 	
+tt2463294 	
+tt2464982 	
+tt2484082 	
+tt2528974 	
+tt2531070 	
+tt2531390 	
+tt2531406 	
+tt2554296 	
+tt2558896 	
+tt2562958 	
+tt2579384 	
+tt2594152 	
+tt2614918 	
+tt2647204 	
+tt2648020 	
+tt2672954 	
+tt2672962 	
+tt2672964 	
+tt2672966 	
+tt2672968 	
+tt2672970 	
+tt2672974 	
+tt2672980 	
+tt2673724 	
+tt2697510 	
+tt2708280 	
+tt2709730 	
+tt2715028 	
+tt2720380 	
+tt2729960 	
+tt2731834 	
+tt2759252 	
+tt2759258 	
+tt2767266 	
+tt2793476 	
+tt2812322 	
+tt2830172 	
+tt2836216 	
+tt2841376 	
+tt2848886 	
+tt2849712 	
+tt2882440 	
+tt2887076 	
+tt2887126 	
+tt2906678 	
+tt2910138 	
+tt2910498 	
+tt2910988 	
+tt2919016 	
+tt2920300 	
+tt2926926 	
+tt2942888 	
+tt2995838 	
+tt3002862 	
+tt3002994 	
+tt3012508 	
+tt3016942 	
+tt3018090 	
+tt3018358 	
+tt3031750 	
+tt3040668 	
+tt3063064 	
+tt3073904 	
+tt3075714 	
+tt3075720 	
+tt3078848 	
+tt3084764 	
+tt3102924 	
+tt3105390 	
+tt3107498 	
+tt3127570 	
+tt3145134 	
+tt3145494 	
+tt3153882 	
+tt3165004 	
+tt3174872 	
+tt3176820 	
+tt3186180 	
+tt3186788 	
+tt3198848 	
+tt3201872 	
+tt3220416 	
+tt3231268 	
+tt3235100 	
+tt3255234 	
+tt3258904 	
+tt3264292 	
+tt3267188 	
+tt3268396 	
+tt3270038 	
+tt3271112 	
+tt3277030 	
+tt3279080 	
+tt3282524 	
+tt3285312 	
+tt3294732 	
+tt3315084 	
+tt3321154 	
+tt3324706 	
+tt3325276 	
+tt3327322 	
+tt3332310 	
+tt3332348 	
+tt3334118 	
+tt3340694 	
+tt3340710 	
+tt3340724 	
+tt3343742 	
+tt3345448 	
+tt3347218 	
+tt3347276 	
+tt3348418 	
+tt3353870 	
+tt3359582 	
+tt3373908 	
+tt3387708 	
+tt3395170 	
+tt3396980 	
+tt3404324 	
+tt3416410 	
+tt3435762 	
+tt3438146 	
+tt3438152 	
+tt3464566 	
+tt3467350 	
+tt3471206 	
+tt3501374 	
+tt3513394 	
+tt3523624 	
+tt3529654 	
+tt3531218 	
+tt3534066 	
+tt3545936 	
+tt3550158 	
+tt3552146 	
+tt3558634 	
+tt3561088 	
+tt3564048 	
+tt3574370 	
+tt3591486 	
+tt3594972 	
+tt3595002 	
+tt3601596 	
+tt3601620 	
+tt3601652 	
+tt3601668 	
+tt3611072 	
+tt3640446 	
+tt3646414 	
+tt3651332 	
+tt3659888 	
+tt3670020 	
+tt3672718 	
+tt3679822 	
+tt3680524 	
+tt3682032 	
+tt3692790 	
+tt3708586 	
+tt3714426 	
+tt3729980 	
+tt3738010 	
+tt3752746 	
+tt3759706 	
+tt3764672 	
+tt3777898 	
+tt3779134 	
+tt3779160 	
+tt3788988 	
+tt3789930 	
+tt3799656 	
+tt3809800 	
+tt3810736 	
+tt3840120 	
+tt3840130 	
+tt3868026 	
+tt3956186 	
+tt3972352 	
+tt4024072 	
+tt4035342 	
+tt4050460 	
+tt4067404 	
+tt4070016 	
+tt4070020 	
+tt4071182 	
+tt4071184 	
+tt4071186 	
+tt4079186 	
+tt4121840 	
+tt4132808 	
+tt4145340 	
+tt4150388 	
+tt4160192 	
+tt4198418 	
+tt4208134 	
+tt4208144 	
+tt4224410 	
+tt4228466 	
+tt4250194 	
+tt4270824 	
+tt4273244 	
+tt4295226 	
+tt4323532 	
+tt4335624 	
+tt4335638 	
+tt4366040 	
+tt4393364 	
+tt4416674 	
+tt4430288 	
+tt4430290 	
+tt4430296 	
+tt4430302 	
+tt4430304 	
+tt4430306 	
+tt4440668 	
+tt4441534 	
+tt4445546 	
+tt4449620 	
+tt4453122 	
+tt4453126 	
+tt4453152 	
+tt4459556 	
+tt4459784 	
+tt4471718 	
+tt4477616 	
+tt4477658 	
+tt4477698 	
+tt4477706 	
+tt4477716 	
+tt4477728 	
+tt4477736 	
+tt4477810 	
+tt4477814 	
+tt4477870 	
+tt4477944 	
+tt4478192 	
+tt4478196 	
+tt4478202 	
+tt4478214 	
+tt4478226 	
+tt4478256 	
+tt4478270 	
+tt4478276 	
+tt4478290 	
+tt4478310 	
+tt4478346 	
+tt4478350 	
+tt4478358 	
+tt4478390 	
+tt4478402 	
+tt4478410 	
+tt4478420 	
+tt4478428 	
+tt4478432 	
+tt4478444 	
+tt4478450 	
+tt4478472 	
+tt4478488 	
+tt4481862 	
+tt4483862 	
+tt4498398 	
+tt4504466 	
+tt4505424 	
+tt4506496 	
+tt4507088 	
+tt4530316 	
+tt4540988 	
+tt4541840 	
+tt4566056 	
+tt4566514 	
+tt4577338 	
+tt4592088 	
+tt4596854 	
+tt4596890 	
+tt4599218 	
+tt4613258 	
+tt4627768 	
+tt4630816 	
+tt4633196 	
+tt4633684 	
+tt4635986 	
+tt4636010 	
+tt4637376 	
+tt4637984 	
+tt4648458 	
+tt4670310 	
+tt4674530 	
+tt4674534 	
+tt4677718 	
+tt4693872 	
+tt4715082 	
+tt4716696 	
+tt4724910 	
+tt4727932 	
+tt4728258 	
+tt4733270 	
+tt4749210 	
+tt4762912 	
+tt4762926 	
+tt4762940 	
+tt4763008 	
+tt4763010 	
+tt4779566 	
+tt4786508 	
+tt4792288 	
+tt4807698 	
+tt4809114 	
+tt4810348 	
+tt4813126 	
+tt4829540 	
+tt4848466 	
+tt4852448 	
+tt4852598 	
+tt4860460 	
+tt4883942 	
+tt4914172 	
+tt4930768 	
+tt4935210 	
+tt4941526 	
+tt4942054 	
+tt4944284 	
+tt4950544 	
+tt4951158 	
+tt4956284 	
+tt4963308 	
+tt4965690 	
+tt4975482 	
+tt4983342 	
+tt4991532 	
+tt4991544 	
+tt5005404 	
+tt5040054 	
+tt5049904 	
+tt5063114 	
+tt5065724 	
+tt5073572 	
+tt5076706 	
+tt5077428 	
+tt5081210 	
+tt5093196 	
+tt5093970 	
+tt5105212 	
+tt5112850 	
+tt5122420 	
+tt5130504 	
+tt5135540 	
+tt5139196 	
+tt5143640 	
+tt5147654 	
+tt5155304 	
+tt5160558 	
+tt5166750 	
+tt5168364 	
+tt5172786 	
+tt5178612 	
+tt5178864 	
+tt5192090 	
+tt5208396 	
+tt5208404 	
+tt5214332 	
+tt5215064 	
+tt5219394 	
+tt5225690 	
+tt5228218 	
+tt5234140 	
+tt5234870 	
+tt5239594 	
+tt5241894 	
+tt5246438 	
+tt5248814 	
+tt5261268 	
+tt5272162 	
+tt5279294 	
+tt5282100 	
+tt5286088 	
+tt5286790 	
+tt5294902 	
+tt5303412 	
+tt5304944 	
+tt5308574 	
+tt5315504 	
+tt5332860 	
+tt5332862 	
+tt5332864 	
+tt5333430 	
+tt5334252 	
+tt5337010 	
+tt5337400 	
+tt5340844 	
+tt5340928 	
+tt5341016 	
+tt5342092 	
+tt5346412 	
+tt5350552 	
+tt5362264 	
+tt5368366 	
+tt5370606 	
+tt5424580 	
+tt5434186 	
+tt5434214 	
+tt5434252 	
+tt5435216 	
+tt5440498 	
+tt5446304 	
+tt5449016 	
+tt5454634 	
+tt5458446 	
+tt5459844 	
+tt5473654 	
+tt5474192 	
+tt5478738 	
+tt5478968 	
+tt5481910 	
+tt5495936 	
+tt5497816 	
+tt5502004 	
+tt5505966 	
+tt5508190 	
+tt5512618 	
+tt5516530 	
+tt5522046 	
+tt5523492 	
+tt5528304 	
+tt5543416 	
+tt5574350 	
+tt5582584 	
+tt5583470 	
+tt5586564 	
+tt5594402 	
+tt5600822 	
+tt5608378 	
+tt5608496 	
+tt5613782 	
+tt5638936 	
+tt5642174 	
+tt5642880 	
+tt5649886 	
+tt5651652 	
+tt5656926 	
+tt5657396 	
+tt5657492 	
+tt5661068 	
+tt5664106 	
+tt5669796 	
+tt5669886 	
+tt5678018 	
+tt5687972 	
+tt5689006 	
+tt5689122 	
+tt5689126 	
+tt5689130 	
+tt5693586 	
+tt5706626 	
+tt5711130 	
+tt5724100 	
+tt5745228 	
+tt5751532 	
+tt5755738 	
+tt5758100 	
+tt5762744 	
+tt5764546 	
+tt5775452 	
+tt5793098 	
+tt5793170 	
+tt5794818 	
+tt5801998 	
+tt5808668 	
+tt5820618 	
+tt5820700 	
+tt5824050 	
+tt5824352 	
+tt5828032 	
+tt5828160 	
+tt5836118 	
+tt5836120 	
+tt5841682 	
+tt5841750 	
+tt5841758 	
+tt5841782 	
+tt5848008 	
+tt5848022 	
+tt5862384 	
+tt5864698 	
+tt5874708 	
+tt5875734 	
+tt5877722 	
+tt5877750 	
+tt5878046 	
+tt5878062 	
+tt5880492 	
+tt5884372 	
+tt5885534 	
+tt5885552 	
+tt5885636 	
+tt5885642 	
+tt5885670 	
+tt5885678 	
+tt5887054 	
+tt5892630 	
+tt5892648 	
+tt5910838 	
+tt5914496 	
+tt5917144 	
+tt5921706 	
+tt5933030 	
+tt5951506 	
+tt5952128 	
+tt5954428 	
+tt5954492 	
+tt5957648 	
+tt5965550 	
+tt5965552 	
+tt5965568 	
+tt5965624 	
+tt5965632 	
+tt5974732 	
+tt5978098 	
+tt5978120 	
+tt5992666 	
+tt5995490 	
+tt6004472 	
+tt6004480 	
+tt6004496 	
+tt6004516 	
+tt6011028 	
+tt6018604 	
+tt6024872 	
+tt6027840 	
+tt6033930 	
+tt6034752 	
+tt6043928 	
+tt6045696 	
+tt6055040 	
+tt6060246 	
+tt6064078 	
+tt6064652 	
+tt6065320 	
+tt6085768 	
+tt6086252 	
+tt6088618 	
+tt6098778 	
+tt6107844 	
+tt6110834 	
+tt6111160 	
+tt6112866 	
+tt6126608 	
+tt6129714 	
+tt6139686 	
+tt6144136 	
+tt6146594 	
+tt6151484 	
+tt6158836 	
+tt6170548 	
+tt6172258 	
+tt6182030 	
+tt6182104 	
+tt6182154 	
+tt6187850 	
+tt6187992 	
+tt6188678 	
+tt6207442 	
+tt6207576 	
+tt6208348 	
+tt6210066 	
+tt6220340 	
+tt6227764 	
+tt6233862 	
+tt6247104 	
+tt6261488 	
+tt6264688 	
+tt6272398 	
+tt6275380 	
+tt6281698 	
+tt6294350 	
+tt6297862 	
+tt6303440 	
+tt6303532 	
+tt6305198 	
+tt6332722 	
+tt6332932 	
+tt6342248 	
+tt6346036 	
+tt6365546 	
+tt6379722 	
+tt6382994 	
+tt6384392 	
+tt6385916 	
+tt6398942 	
+tt6404318 	
+tt6410154 	
+tt6412918 	
+tt6412936 	
+tt6414900 	
+tt6415298 	
+tt6424632 	
+tt6424700 	
+tt6435048 	
+tt6466724 	
+tt6466796 	
+tt6480418 	
+tt6486646 	
+tt6487754 	
+tt6488096 	
+tt6490060 	
+tt6520374 	
+tt6524326 	
+tt6533252 	
+tt6534980 	
+tt6541186 	
+tt6543210 	
+tt6569284 	
+tt6569436 	
+tt6569446 	
+tt6569454 	
+tt6569458 	
+tt6571056 	
+tt6576908 	
+tt6579362 	
+tt6603734 	
+tt6608896 	
+tt6609564 	
+tt6623316 	
+tt6628594 	
+tt6643988 	
+tt6648280 	
+tt6649542 	
+tt6649584 	
+tt6649788 	
+tt6663736 	
+tt6667818 	
+tt6674182 	
+tt6679686 	
+tt6697310 	
+tt6712592 	
+tt6715014 	
+tt6715306 	
+tt6769418 	
+tt6786656 	
+tt6788152 	
+tt6793868 	
+tt6797868 	
+tt6798334 	
+tt6801058 	
+tt6817410 	
+tt6834292 	
+tt6840622 	
+tt6860452 	
+tt6869634 	
+tt6874998 	
+tt6875954 	
+tt6876190 	
+tt6897758 	
+tt6907976 	
+tt6908330 	
+tt6928548 	
+tt6930720 	
+tt6933224 	
+tt6939252 	
+tt6943678 	
+tt6955838 	
+tt6956852 	
+tt6957332 	
+tt6966912 	
+tt6969784 	
+tt6971178 	
+tt6999130 	
+tt7018406 	
+tt7023910 	
+tt7026006 	
+tt7033620 	
+tt7035002 	
+tt7037640 	
+tt7039508 	
+tt7040576 	
+tt7045536 	
+tt7049754 	
+tt7052012 	
+tt7054944 	
+tt7058758 	
+tt7060432 	
+tt7064522 	
+tt7066044 	
+tt7069284 	
+tt7073636 	
+tt7083724 	
+tt7096216 	
+tt7141052 	
+tt7150020 	
+tt7153826 	
+tt7155954 	
+tt7168008 	
+tt7197422 	
+tt7199784 	
+tt7203240 	
+tt7214460 	
+tt7225124 	
+tt7239512 	
+tt7243286 	
+tt7248636 	
+tt7248658 	
+tt7256254 	
+tt7256688 	
+tt7273070 	
+tt7282828 	
+tt7285434 	
+tt7291122 	
+tt7294040 	
+tt7294674 	
+tt7301166 	
+tt7301172 	
+tt7332092 	
+tt7335458 	
+tt7335572 	
+tt7345360 	
+tt7361276 	
+tt7372970 	
+tt7373222 	
+tt7385336 	
+tt7412262 	
+tt7413754 	
+tt7414672 	
+tt7414704 	
+tt7449244 	
+tt7453678 	
+tt7456204 	
+tt7456714 	
+tt7464920 	
+tt7484572 	
+tt7485426 	
+tt7489284 	
+tt7494812 	
+tt7497158 	
+tt7516510 	
+tt7525204 	
+tt7525214 	
+tt7525220 	
+tt7526064 	
+tt7532542 	
+tt7533412 	
+tt7534616 	
+tt7535436 	
+tt7547660 	
+tt7550030 	
+tt7567580 	
+tt7576568 	
+tt7576578 	
+tt7580708 	
+tt7596290 	
+tt7618852 	
+tt7633680 	
+tt7638964 	
+tt7641488 	
+tt7647834 	
+tt7654278 	
+tt7655234 	
+tt7675508 	
+tt7675516 	
+tt7692972 	
+tt7709574 	
+tt7718486 	
+tt7720138 	
+tt7736858 	
+tt7736978 	
+tt7737042 	
+tt7737400 	
+tt7737446 	
+tt7737478 	
+tt7737774 	
+tt7744254 	
+tt7752672 	
+tt7757896 	
+tt7758714 	
+tt7778878 	
+tt7779446 	
+tt7790778 	
+tt7797302 	
+tt7813936 	
+tt7825564 	
+tt7825576 	
+tt7834580 	
+tt7847512 	
+tt7869860 	
+tt7874682 	
+tt7893752 	
+tt7899622 	
+tt7900256 	
+tt7903290 	
+tt7904504 	
+tt7904860 	
+tt7907914 	
+tt7918072 	
+tt7918194 	
+tt7923774 	
+tt7929266 	
+tt7932052 	
+tt7932070 	
+tt7932078 	
+tt7935590 	
+tt7943824 	
+tt7946776 	
+tt7949878 	
+tt7950538 	
+tt7951558 	
+tt7952856 	
+tt7965048 	
+tt7984708 	
+tt8000146 	
+tt8004690 	
+tt8010768 	
+tt8012102 	
+tt8033900 	
+tt8041848 	
+tt8045530 	
+tt8047700 	
+tt8050076 	
+tt8051152 	
+tt8054914 	
+tt8064904 	
+tt8067842 	
+tt8080556 	
+tt8092788 	
+tt8097254 	
+tt8101294 	
+tt8102088 	
+tt8115562 	
+tt8122820 	
+tt8128906 	
+tt8129698 	
+tt8129940 	
+tt8130070 	
+tt8136166 	
+tt8146694 	
+tt8150718 	
+tt8151644 	
+tt8154462 	
+tt8169024 	
+tt8169730 	
+tt8169732 	
+tt8169742 	
+tt8169748 	
+tt8175006 	
+tt8176828 	
+tt8179336 	
+tt8210210 	
+tt8210418 	
+tt8211016 	
+tt8211164 	
+tt8211220 	
+tt8215094 	
+tt8226404 	
+tt8226524 	
+tt8235220 	
+tt8235572 	
+tt8241354 	
+tt8245168 	
+tt8246084 	
+tt8251090 	
+tt8251096 	
+tt8251114 	
+tt8264596 	
+tt8267902 	
+tt8272448 	
+tt8290746 	
+tt8295544 	
+tt8306116 	
+tt8310654 	
+tt8327538 	
+tt8328560 	
+tt8351166 	
+tt8355470 	
+tt8363946 	
+tt8363970 	
+tt8391144 	
+tt8398738 	
+tt8399558 	
+tt8427908 	
+tt8429144 	
+tt8431040 	
+tt8456994 	
+tt8465592 	
+tt8480784 	
+tt8502260 	
+tt8502270 	
+tt8502280 	
+tt8509650 	
+tt8509660 	
+tt8516744 	
+tt8518000 	
+tt8518070 	
+tt8519566 	
+tt8533938 	
+tt8548252 	
+tt8549152 	
+tt8559812 	
+tt8560770 	
+tt8586528 	
+tt8589986 	
+tt8592992 	
+tt8601614 	
+tt8601638 	
+tt8621482 	
+tt8628364 	
+tt8628496 	
+tt8633884 	
+tt8637284 	
+tt8637972 	
+tt8641114 	
+tt8642258 	
+tt8647350 	
+tt8656578 	
+tt8660960 	
+tt8672806 	
+tt8697090 	
+tt8704670 	
+tt8704704 	
+tt8704730 	
+tt8705738 	
+tt8723504 	
+tt8723536 	
+tt8725538 	
+tt8725680 	
+tt8725708 	
+tt8725814 	
+tt8725828 	
+tt8728534 	
+tt8747150 	
+tt8750812 	
+tt8750816 	
+tt8750820 	
+tt8760142 	
+tt8769924 	
+tt8785064 	
+tt8789460 	
+tt8790224 	
+tt8790228 	
+tt8790230 	
+tt8790234 	
+tt8790236 	
+tt8790238 	
+tt8793410 	
+tt8815298 	
+tt8827226 	
+tt8827942 	
+tt8833674 	
+tt8833996 	
+tt8834298 	
+tt8854890 	
+tt8855090 	
+tt8859500 	
+tt8870692 	
+tt8875988 	
+tt8888468 	
+tt8890954 	
+tt8904312 	
+tt8907368 	
+tt8908062 	
+tt8911340 	
+tt8912240 	
+tt8928270 	
+tt8929302 	
+tt8929922 	
+tt8931946 	
+tt8933428 	
+tt8946586 	
+tt8971560 	
+tt8985252 	
+tt9014376 	
+tt9025386 	
+tt9028106 	
+tt9028478 	
+tt9028780 	
+tt9028812 	
+tt9035590 	
+tt9050222 	
+tt9056952 	
+tt9059650 	
+tt9059712 	
+tt9059854 	
+tt9077932 	
+tt9088552 	
+tt9138380 	
+tt9139368 	
+tt9140634 	
+tt9142222 	
+tt9165606 	
+tt9165840 	
+tt9182468 	
+tt9182500 	
+tt9202890 	
+tt9209702 	
+tt9213770 	
+tt9214442 	
+tt9214462 	
+tt9247138 	
+tt9247386 	
+tt9252180 	
+tt9266996 	
+tt9286132 	
+tt9293502 	
+tt9307694 	
+tt9309228 	
+tt9313448 	
+tt9314718 	
+tt9362970 	
+tt9363216 	
+tt9363222 	
+tt9376258 	
+tt9381494 	
+tt9387254 	
+tt9403342 	
+tt9407698 	
+tt9418972 	
+tt9419620 	
+tt9420518 	
+tt9424968 	
+tt9429242 	
+tt9435660 	
+tt9452612 	
+tt9459606 	
+tt9475338 	
+tt9483994 	
+tt9487524 	
+tt9510428 	
+tt9515388 	
+tt9516288 	
+tt9539646 	
+tt9541038 	
+tt9567188 	
+tt9586834 	
+tt9594756 	
+tt9596382 	
+tt9600664 	
+tt9608914 	
+tt9612212 	
+tt9619704 	
+tt9625288 	
+tt9626276 	
+tt9640348 	
+tt9653014 	
+tt9653094 	
+tt9657902 	
+tt9660864 	
+tt9670170 	
+tt9674368 	
+tt9683068 	
+tt9683840 	
+tt9687932 	
+tt9697972 	
+tt9697974 	
+tt9697980 	
+tt9697982 	
+tt9697986 	
+tt9697994 	
+tt9697996 	
+tt9698000 	
+tt9698006 	
+tt9698016 	
+tt9698022 	
+tt9698030 	
+tt9698038 	
+tt9701320 	
+tt9727802 	
+tt9728750 	
+tt9732374 	
+tt9734260 	
+tt9735688 	
+tt9737508 	
+tt9772582 	
+tt9795574 	
+tt9795708 	
+tt9805250 	
+tt9814144 	
+tt9827576 	
+tt9827942 	
+tt9831118 	
+tt9858550 	
+tt9866508 	
+tt9870976 	
+tt9871120 	
+tt9876188 	
+tt9877358 	
+tt9889550 	
+tt9893704 	
+tt9893928 	
+tt9898224 	
+-----------------------------------------------------
+
+9º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	episode	genres	movies	movies_actors	movies_directors	movies_genres	person	episode.episodeid	episode.movieid	episode.seasonnumber	episode.episodenumber	genres.genre_id	genres.name	movies.movieid	movies.type	movies.title	movies.startyear	movies.endyear	movies.rating	movies_actors.movieid	movies_actors.personid	movies_directors.movieid	movies_directors.personid	movies_genres.movie_d	movies_genres.genre_id	person.personid	person.name	person.birthyear	person.deathyear	
+director*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+movie	0	0	-100	0	0	0	0	0	-100	0	0	0	0	82*	0	0	0	0	0	82	0	82	0	75	0	0	0	0	0	
+list	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	66*	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 148
+
+MAPEAMENTO VW:
+null	episode.episodeid.java.lang.String	episode.movieid.java.lang.String	episode.seasonnumber.java.lang.Integer	episode.episodenumber.java.lang.Integer	genres.genre_id.java.lang.Integer	genres.name.java.lang.String	movies.movieid.java.lang.String	movies.type.java.lang.String	movies.title.java.lang.String	movies.startyear.java.lang.String	movies.endyear.java.lang.String	movies.rating.java.math.BigDecimal	movies_actors.movieid.java.lang.String	movies_actors.personid.java.lang.String	movies_directors.movieid.java.lang.String	movies_directors.personid.java.lang.String	movies_genres.movie_d.java.lang.String	movies_genres.genre_id.java.lang.Integer	person.personid.java.lang.String	person.name.java.lang.String	person.birthyear.java.lang.String	person.deathyear.java.lang.String	
+director	71	71	0	0	0	71	-100	-100	-100	80*	80	0	71	71	71	71	71	0	71	71	71	71	
+movie*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+list*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 80
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+movie ---> movies.movieid
+list ---> movies.title
+director ---> movies.startyear.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [movies]
+
+CONSULTA SQL: select distinct movies.movieid, movies.title
+from movies
+where movies.startyear like '%director%' 
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+10º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	episode	genres	movies	movies_actors	movies_directors	movies_genres	person	episode.episodeid	episode.movieid	episode.seasonnumber	episode.episodenumber	genres.genre_id	genres.name	movies.movieid	movies.type	movies.title	movies.startyear	movies.endyear	movies.rating	movies_actors.movieid	movies_actors.personid	movies_directors.movieid	movies_directors.personid	movies_genres.movie_d	movies_genres.genre_id	person.personid	person.name	person.birthyear	person.deathyear	
+director*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+movie	0	0	-100	0	0	0	0	0	-100	0	0	0	0	82*	0	0	0	0	0	82	0	82	0	75	0	0	0	0	0	
+list	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	66*	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 148
+
+MAPEAMENTO VW:
+null	episode.episodeid.java.lang.String	episode.movieid.java.lang.String	episode.seasonnumber.java.lang.Integer	episode.episodenumber.java.lang.Integer	genres.genre_id.java.lang.Integer	genres.name.java.lang.String	movies.movieid.java.lang.String	movies.type.java.lang.String	movies.title.java.lang.String	movies.startyear.java.lang.String	movies.endyear.java.lang.String	movies.rating.java.math.BigDecimal	movies_actors.movieid.java.lang.String	movies_actors.personid.java.lang.String	movies_directors.movieid.java.lang.String	movies_directors.personid.java.lang.String	movies_genres.movie_d.java.lang.String	movies_genres.genre_id.java.lang.Integer	person.personid.java.lang.String	person.name.java.lang.String	person.birthyear.java.lang.String	person.deathyear.java.lang.String	
+director	71	71	0	0	0	71	-100	-100	-100	-100	80*	0	71	71	71	71	71	0	71	71	71	71	
+movie*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+list*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 80
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+movie ---> movies.movieid
+list ---> movies.title
+director ---> movies.endyear.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [movies]
+
+CONSULTA SQL: select distinct movies.movieid, movies.title
+from movies
+where movies.endyear like '%director%' 
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+11º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	episode	genres	movies	movies_actors	movies_directors	movies_genres	person	episode.episodeid	episode.movieid	episode.seasonnumber	episode.episodenumber	genres.genre_id	genres.name	movies.movieid	movies.type	movies.title	movies.startyear	movies.endyear	movies.rating	movies_actors.movieid	movies_actors.personid	movies_directors.movieid	movies_directors.personid	movies_genres.movie_d	movies_genres.genre_id	person.personid	person.name	person.birthyear	person.deathyear	
+director*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+movie	0	0	-100	0	0	0	0	0	82*	0	0	0	0	82	0	0	0	0	0	82	0	82	0	75	0	0	0	0	0	
+list	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	66*	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 148
+
+MAPEAMENTO VW:
+null	episode.episodeid.java.lang.String	episode.movieid.java.lang.String	episode.seasonnumber.java.lang.Integer	episode.episodenumber.java.lang.Integer	genres.genre_id.java.lang.Integer	genres.name.java.lang.String	movies.movieid.java.lang.String	movies.type.java.lang.String	movies.title.java.lang.String	movies.startyear.java.lang.String	movies.endyear.java.lang.String	movies.rating.java.math.BigDecimal	movies_actors.movieid.java.lang.String	movies_actors.personid.java.lang.String	movies_directors.movieid.java.lang.String	movies_directors.personid.java.lang.String	movies_genres.movie_d.java.lang.String	movies_genres.genre_id.java.lang.Integer	person.personid.java.lang.String	person.name.java.lang.String	person.birthyear.java.lang.String	person.deathyear.java.lang.String	
+director	77*	77	0	0	0	71	74	74	74	74	74	0	71	71	71	71	71	0	71	71	71	71	
+movie*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+list*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 77
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+movie ---> episode.movieid
+list ---> movies.title
+director ---> episode.episodeid.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [movies, episode]
+EXECUCAO DO CAMINHO: movies. episode.fk_episode_movie
+
+CONSULTA SQL: select distinct episode.movieid, movies.title
+from movies, episode
+where episode.episodeid like '%director%' AND  movies.movieid = episode.movieid
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+12º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	episode	genres	movies	movies_actors	movies_directors	movies_genres	person	episode.episodeid	episode.movieid	episode.seasonnumber	episode.episodenumber	genres.genre_id	genres.name	movies.movieid	movies.type	movies.title	movies.startyear	movies.endyear	movies.rating	movies_actors.movieid	movies_actors.personid	movies_directors.movieid	movies_directors.personid	movies_genres.movie_d	movies_genres.genre_id	person.personid	person.name	person.birthyear	person.deathyear	
+director*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+movie	0	0	-100	0	0	0	0	0	82*	0	0	0	0	82	0	0	0	0	0	82	0	82	0	75	0	0	0	0	0	
+list	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	66*	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 148
+
+MAPEAMENTO VW:
+null	episode.episodeid.java.lang.String	episode.movieid.java.lang.String	episode.seasonnumber.java.lang.Integer	episode.episodenumber.java.lang.Integer	genres.genre_id.java.lang.Integer	genres.name.java.lang.String	movies.movieid.java.lang.String	movies.type.java.lang.String	movies.title.java.lang.String	movies.startyear.java.lang.String	movies.endyear.java.lang.String	movies.rating.java.math.BigDecimal	movies_actors.movieid.java.lang.String	movies_actors.personid.java.lang.String	movies_directors.movieid.java.lang.String	movies_directors.personid.java.lang.String	movies_genres.movie_d.java.lang.String	movies_genres.genre_id.java.lang.Integer	person.personid.java.lang.String	person.name.java.lang.String	person.birthyear.java.lang.String	person.deathyear.java.lang.String	
+director	-100	77*	0	0	0	71	74	74	74	74	74	0	71	71	71	71	71	0	71	71	71	71	
+movie*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+list*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 77
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+movie ---> episode.movieid
+list ---> movies.title
+director ---> episode.movieid.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [movies, episode]
+EXECUCAO DO CAMINHO: movies. episode.fk_episode_movie
+
+CONSULTA SQL: select distinct movies.title
+from movies, episode
+where episode.movieid like '%director%' AND  movies.movieid = episode.movieid
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+13º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	episode	genres	movies	movies_actors	movies_directors	movies_genres	person	episode.episodeid	episode.movieid	episode.seasonnumber	episode.episodenumber	genres.genre_id	genres.name	movies.movieid	movies.type	movies.title	movies.startyear	movies.endyear	movies.rating	movies_actors.movieid	movies_actors.personid	movies_directors.movieid	movies_directors.personid	movies_genres.movie_d	movies_genres.genre_id	person.personid	person.name	person.birthyear	person.deathyear	
+director*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+movie	0	0	-100	0	0	0	0	0	-100	0	0	0	0	-100	0	0	0	0	0	82*	0	82	0	75	0	0	0	0	0	
+list	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	66*	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 148
+
+MAPEAMENTO VW:
+null	episode.episodeid.java.lang.String	episode.movieid.java.lang.String	episode.seasonnumber.java.lang.Integer	episode.episodenumber.java.lang.Integer	genres.genre_id.java.lang.Integer	genres.name.java.lang.String	movies.movieid.java.lang.String	movies.type.java.lang.String	movies.title.java.lang.String	movies.startyear.java.lang.String	movies.endyear.java.lang.String	movies.rating.java.math.BigDecimal	movies_actors.movieid.java.lang.String	movies_actors.personid.java.lang.String	movies_directors.movieid.java.lang.String	movies_directors.personid.java.lang.String	movies_genres.movie_d.java.lang.String	movies_genres.genre_id.java.lang.Integer	person.personid.java.lang.String	person.name.java.lang.String	person.birthyear.java.lang.String	person.deathyear.java.lang.String	
+director	71	71	0	0	0	71	74	74	74	74	74	0	77*	77	71	71	71	0	71	71	71	71	
+movie*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+list*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 77
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+movie ---> movies_actors.movieid
+list ---> movies.title
+director ---> movies_actors.movieid.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [movies, movies_actors]
+EXECUCAO DO CAMINHO: movies. movies_actors.fk_moviesActors_movie
+
+CONSULTA SQL: select distinct movies.title
+from movies, movies_actors
+where movies_actors.movieid like '%director%' AND movies.movieid = movies_actors.movieid
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+14º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	episode	genres	movies	movies_actors	movies_directors	movies_genres	person	episode.episodeid	episode.movieid	episode.seasonnumber	episode.episodenumber	genres.genre_id	genres.name	movies.movieid	movies.type	movies.title	movies.startyear	movies.endyear	movies.rating	movies_actors.movieid	movies_actors.personid	movies_directors.movieid	movies_directors.personid	movies_genres.movie_d	movies_genres.genre_id	person.personid	person.name	person.birthyear	person.deathyear	
+director*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+movie	0	0	-100	0	0	0	0	0	-100	0	0	0	0	-100	0	0	0	0	0	82*	0	82	0	75	0	0	0	0	0	
+list	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	66*	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 148
+
+MAPEAMENTO VW:
+null	episode.episodeid.java.lang.String	episode.movieid.java.lang.String	episode.seasonnumber.java.lang.Integer	episode.episodenumber.java.lang.Integer	genres.genre_id.java.lang.Integer	genres.name.java.lang.String	movies.movieid.java.lang.String	movies.type.java.lang.String	movies.title.java.lang.String	movies.startyear.java.lang.String	movies.endyear.java.lang.String	movies.rating.java.math.BigDecimal	movies_actors.movieid.java.lang.String	movies_actors.personid.java.lang.String	movies_directors.movieid.java.lang.String	movies_directors.personid.java.lang.String	movies_genres.movie_d.java.lang.String	movies_genres.genre_id.java.lang.Integer	person.personid.java.lang.String	person.name.java.lang.String	person.birthyear.java.lang.String	person.deathyear.java.lang.String	
+director	71	71	0	0	0	71	74	74	74	74	74	0	-100	77*	71	71	71	0	71	71	71	71	
+movie*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+list*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 77
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+movie ---> movies_actors.movieid
+list ---> movies.title
+director ---> movies_actors.personid.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [movies, movies_actors]
+EXECUCAO DO CAMINHO: movies. movies_actors.fk_moviesActors_movie
+
+CONSULTA SQL: select distinct movies_actors.movieid, movies.title
+from movies, movies_actors
+where movies_actors.personid like '%director%' AND movies.movieid = movies_actors.movieid
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+15º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	episode	genres	movies	movies_actors	movies_directors	movies_genres	person	episode.episodeid	episode.movieid	episode.seasonnumber	episode.episodenumber	genres.genre_id	genres.name	movies.movieid	movies.type	movies.title	movies.startyear	movies.endyear	movies.rating	movies_actors.movieid	movies_actors.personid	movies_directors.movieid	movies_directors.personid	movies_genres.movie_d	movies_genres.genre_id	person.personid	person.name	person.birthyear	person.deathyear	
+director*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+movie	0	0	-100	0	0	0	0	0	-100	0	0	0	0	-100	0	0	0	0	0	-100	0	82*	0	75	0	0	0	0	0	
+list	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	66*	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 148
+
+MAPEAMENTO VW:
+null	episode.episodeid.java.lang.String	episode.movieid.java.lang.String	episode.seasonnumber.java.lang.Integer	episode.episodenumber.java.lang.Integer	genres.genre_id.java.lang.Integer	genres.name.java.lang.String	movies.movieid.java.lang.String	movies.type.java.lang.String	movies.title.java.lang.String	movies.startyear.java.lang.String	movies.endyear.java.lang.String	movies.rating.java.math.BigDecimal	movies_actors.movieid.java.lang.String	movies_actors.personid.java.lang.String	movies_directors.movieid.java.lang.String	movies_directors.personid.java.lang.String	movies_genres.movie_d.java.lang.String	movies_genres.genre_id.java.lang.Integer	person.personid.java.lang.String	person.name.java.lang.String	person.birthyear.java.lang.String	person.deathyear.java.lang.String	
+director	71	71	0	0	0	71	74	74	74	74	74	0	71	71	77*	77	71	0	71	71	71	71	
+movie*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+list*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 77
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+movie ---> movies_directors.movieid
+list ---> movies.title
+director ---> movies_directors.movieid.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [movies, movies_directors]
+EXECUCAO DO CAMINHO: movies. movies_directors.fk_directorsMovie_movie
+
+CONSULTA SQL: select distinct movies.title
+from movies, movies_directors
+where movies_directors.movieid like '%director%' AND  movies.movieid = movies_directors.movieid
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+
+16º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	episode	genres	movies	movies_actors	movies_directors	movies_genres	person	episode.episodeid	episode.movieid	episode.seasonnumber	episode.episodenumber	genres.genre_id	genres.name	movies.movieid	movies.type	movies.title	movies.startyear	movies.endyear	movies.rating	movies_actors.movieid	movies_actors.personid	movies_directors.movieid	movies_directors.personid	movies_genres.movie_d	movies_genres.genre_id	person.personid	person.name	person.birthyear	person.deathyear	
+director*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+movie	0	0	-100	0	0	0	0	0	-100	0	0	0	0	-100	0	0	0	0	0	-100	0	82*	0	75	0	0	0	0	0	
+list	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	66*	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 148
+
+MAPEAMENTO VW:
+null	episode.episodeid.java.lang.String	episode.movieid.java.lang.String	episode.seasonnumber.java.lang.Integer	episode.episodenumber.java.lang.Integer	genres.genre_id.java.lang.Integer	genres.name.java.lang.String	movies.movieid.java.lang.String	movies.type.java.lang.String	movies.title.java.lang.String	movies.startyear.java.lang.String	movies.endyear.java.lang.String	movies.rating.java.math.BigDecimal	movies_actors.movieid.java.lang.String	movies_actors.personid.java.lang.String	movies_directors.movieid.java.lang.String	movies_directors.personid.java.lang.String	movies_genres.movie_d.java.lang.String	movies_genres.genre_id.java.lang.Integer	person.personid.java.lang.String	person.name.java.lang.String	person.birthyear.java.lang.String	person.deathyear.java.lang.String	
+director	71	71	0	0	0	71	74	74	74	74	74	0	71	71	-100	77*	71	0	71	71	71	71	
+movie*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+list*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO VW: 77
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+movie ---> movies_directors.movieid
+list ---> movies.title
+director ---> movies_directors.personid.java.lang.String
+
+TABELAS NECESSARIAS PARA A CONSULTA: [movies, movies_directors]
+EXECUCAO DO CAMINHO: movies. movies_directors.fk_directorsMovie_movie
+
+CONSULTA SQL: select distinct movies_directors.movieid, movies.title
+from movies, movies_directors
+where movies_directors.personid like '%director%' AND  movies.movieid = movies_directors.movieid
+
+
+RESULTADO
+-----------------------------------------------------
+Nao encontrado
+-----------------------------------------------------
+

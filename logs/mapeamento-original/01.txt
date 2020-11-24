@@ -1,0 +1,5 @@
+CONSULTA: marc forster director
+CONSULTA EXPANDIDA: [marc, forster, director, manager, managing director, theater director]
+BANCOS COM INFORMACOES UTEIS: {}
+RANKING DOS BANCOS: []
+Nao existem bancos com informacoes uteis para a consulta!
