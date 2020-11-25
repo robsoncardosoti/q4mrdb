@@ -1,0 +1,5 @@
+CONSULTA: actors 'The Last Word'
+CONSULTA EXPANDIDA: [actors, actor, histrion, player]
+BANCOS COM INFORMACOES UTEIS: {}
+RANKING DOS BANCOS: []
+Nao existem bancos com informacoes uteis para a consulta!

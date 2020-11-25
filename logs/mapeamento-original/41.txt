@@ -1,0 +1,426 @@
+CONSULTA: number movies types
+CONSULTA EXPANDIDA: [number, figure, act, routine, movies, movie, film, picture, types, type, character, eccentric]
+BANCOS COM INFORMACOES UTEIS: {imdb_pt=2}
+
+PESQUISANDO O BANCO imdb_pt
+RELACIONAMENTO ENTRE AS TABELAS NO BANCO imdb_pt: {movies_genres=[genres.fk_movieGenre_genre, movies.fk_movieGenre_movie], person=[movies_actors.fk_moviesActors_actors, movies_directors.fk_directorsMovie_person], movies=[episode.fk_episode_movie, movies_actors.fk_moviesActors_movie, movies_directors.fk_directorsMovie_movie, movies_genres.fk_movieGenre_movie], genres=[movies_genres.fk_movieGenre_genre], movies_actors=[movies.fk_moviesActors_movie, person.fk_moviesActors_actors], episode=[movies.fk_episode_movie], movies_directors=[movies.fk_directorsMovie_movie, person.fk_directorsMovie_person]}
+
+MATRIZ DE PESOS
+
+MATRIZ SW:
+null	episode	genres	movies	movies_actors	movies_directors	movies_genres	person	episode.episodeid	episode.movieid	episode.seasonnumber	episode.episodenumber	genres.genre_id	genres.name	movies.movieid	movies.type	movies.title	movies.startyear	movies.endyear	movies.rating	movies_actors.movieid	movies_actors.personid	movies_directors.movieid	movies_directors.personid	movies_genres.movie_d	movies_genres.genre_id	person.personid	person.name	person.birthyear	person.deathyear	
+number	0	0	0	0	0	0	0	0	0	66	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+movies	0	0	100	0	0	0	0	0	75	0	0	0	0	75	0	0	0	0	0	75	0	75	0	70	0	0	0	0	0	
+types	0	0	0	0	0	0	0	0	0	0	0	0	0	0	83	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+
+
+MATRIZ VW:
+null	episode.episodeid.java.lang.String	episode.movieid.java.lang.String	episode.seasonnumber.java.lang.Integer	episode.episodenumber.java.lang.Integer	genres.genre_id.java.lang.Integer	genres.name.java.lang.String	movies.movieid.java.lang.String	movies.type.java.lang.String	movies.title.java.lang.String	movies.startyear.java.lang.String	movies.endyear.java.lang.String	movies.rating.java.math.BigDecimal	movies_actors.movieid.java.lang.String	movies_actors.personid.java.lang.String	movies_directors.movieid.java.lang.String	movies_directors.personid.java.lang.String	movies_genres.movie_d.java.lang.String	movies_genres.genre_id.java.lang.Integer	person.personid.java.lang.String	person.name.java.lang.String	person.birthyear.java.lang.String	person.deathyear.java.lang.String	
+number	65	65	0	0	0	65	65	65	65	65	65	0	65	65	65	65	65	0	65	65	65	65	
+movies	65	65	0	0	0	65	65	65	65	65	65	0	65	65	65	65	65	0	65	65	65	65	
+types	65	65	0	0	0	65	65	65	65	65	65	0	65	65	65	65	65	0	65	65	65	65	
+
+1º MAPEAMENTO
+
+MAPEAMENTO SW:
+null	episode	genres	movies	movies_actors	movies_directors	movies_genres	person	episode.episodeid	episode.movieid	episode.seasonnumber	episode.episodenumber	genres.genre_id	genres.name	movies.movieid	movies.type	movies.title	movies.startyear	movies.endyear	movies.rating	movies_actors.movieid	movies_actors.personid	movies_directors.movieid	movies_directors.personid	movies_genres.movie_d	movies_genres.genre_id	person.personid	person.name	person.birthyear	person.deathyear	
+number	0	0	0	0	0	0	0	0	0	66*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+movies	0	0	100*	0	0	0	0	0	75	0	0	0	0	75	0	0	0	0	0	75	0	75	0	70	0	0	0	0	0	
+types	0	0	0	0	0	0	0	0	0	0	0	0	0	0	83*	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+PONTUACAO SW: 249
+
+MAPEAMENTO DAS PALAVRAS-CHAVE:
+number ---> episode.seasonnumber
+movies ---> movies
+types ---> movies.type
+
+TABELAS NECESSARIAS PARA A CONSULTA: [movies, episode]
+EXECUCAO DO CAMINHO: movies. episode.fk_episode_movie
+
+CONSULTA SQL: select distinct episode.seasonnumber, movies.type
+from movies, episode
+where movies.movieid = episode.movieid
+
+
+RESULTADO
+-----------------------------------------------------
+episode.seasonnumber 	movies.type 	
+
+1 	tvSeries 	
+null 	tvSeries 	
+3 	tvSeries 	
+2 	tvSeries 	
+4 	tvSeries 	
+5 	tvSeries 	
+6 	tvSeries 	
+9 	tvSeries 	
+1 	tvMiniSeries 	
+8 	tvSeries 	
+7 	tvSeries 	
+10 	tvSeries 	
+11 	tvSeries 	
+12 	tvSeries 	
+13 	tvSeries 	
+14 	tvSeries 	
+16 	tvSeries 	
+17 	tvSeries 	
+24 	tvSeries 	
+15 	tvSeries 	
+28 	tvSeries 	
+20 	tvSeries 	
+31 	tvSeries 	
+30 	tvSeries 	
+18 	tvSeries 	
+23 	tvSeries 	
+32 	tvSeries 	
+33 	tvSeries 	
+34 	tvSeries 	
+21 	tvSeries 	
+19 	tvSeries 	
+null 	tvMiniSeries 	
+22 	tvSeries 	
+1998 	tvSeries 	
+1995 	tvSeries 	
+25 	tvSeries 	
+40 	tvSeries 	
+26 	tvSeries 	
+27 	tvSeries 	
+1965 	tvSeries 	
+39 	tvSeries 	
+29 	tvSeries 	
+38 	tvSeries 	
+1996 	tvSeries 	
+44 	tvSeries 	
+47 	tvSeries 	
+36 	tvSeries 	
+2 	tvMiniSeries 	
+45 	tvSeries 	
+37 	tvSeries 	
+41 	tvSeries 	
+35 	tvSeries 	
+1994 	tvSeries 	
+42 	tvSeries 	
+51 	tvSeries 	
+46 	tvSeries 	
+3 	tvMiniSeries 	
+50 	tvSeries 	
+48 	tvSeries 	
+52 	tvSeries 	
+53 	tvSeries 	
+77 	tvSeries 	
+82 	tvSeries 	
+78 	tvSeries 	
+43 	tvSeries 	
+79 	tvSeries 	
+49 	tvSeries 	
+54 	tvSeries 	
+67 	tvSeries 	
+1967 	tvSeries 	
+1966 	tvSeries 	
+1973 	tvSeries 	
+56 	tvSeries 	
+55 	tvSeries 	
+70 	tvSeries 	
+57 	tvSeries 	
+68 	tvSeries 	
+165 	tvSeries 	
+162 	tvSeries 	
+166 	tvSeries 	
+138 	tvSeries 	
+135 	tvSeries 	
+137 	tvSeries 	
+4 	tvMiniSeries 	
+5 	tvMiniSeries 	
+6 	tvMiniSeries 	
+164 	tvSeries 	
+66 	tvSeries 	
+139 	tvSeries 	
+58 	tvSeries 	
+59 	tvSeries 	
+159 	tvSeries 	
+161 	tvSeries 	
+160 	tvSeries 	
+73 	tvSeries 	
+75 	tvSeries 	
+136 	tvSeries 	
+140 	tvSeries 	
+168 	tvSeries 	
+83 	tvMiniSeries 	
+174 	tvSeries 	
+141 	tvSeries 	
+105 	tvSeries 	
+101 	tvSeries 	
+167 	tvSeries 	
+169 	tvSeries 	
+8 	tvMiniSeries 	
+163 	tvSeries 	
+99 	tvSeries 	
+170 	tvSeries 	
+76 	tvSeries 	
+1997 	tvSeries 	
+65 	tvSeries 	
+62 	tvSeries 	
+63 	tvSeries 	
+64 	tvSeries 	
+142 	tvSeries 	
+60 	tvSeries 	
+61 	tvSeries 	
+143 	tvSeries 	
+129 	tvSeries 	
+128 	tvSeries 	
+127 	tvSeries 	
+144 	tvSeries 	
+1993 	tvSeries 	
+7 	tvMiniSeries 	
+171 	tvSeries 	
+71 	tvSeries 	
+172 	tvSeries 	
+145 	tvSeries 	
+183 	tvSeries 	
+175 	tvSeries 	
+146 	tvSeries 	
+81 	tvSeries 	
+333 	tvSeries 	
+338 	tvSeries 	
+83 	tvSeries 	
+334 	tvSeries 	
+84 	tvSeries 	
+85 	tvSeries 	
+86 	tvSeries 	
+87 	tvSeries 	
+88 	tvSeries 	
+335 	tvSeries 	
+182 	tvSeries 	
+89 	tvSeries 	
+337 	tvSeries 	
+90 	tvSeries 	
+332 	tvSeries 	
+331 	tvSeries 	
+91 	tvSeries 	
+92 	tvSeries 	
+93 	tvSeries 	
+329 	tvSeries 	
+94 	tvSeries 	
+95 	tvSeries 	
+96 	tvSeries 	
+97 	tvSeries 	
+336 	tvSeries 	
+98 	tvSeries 	
+330 	tvSeries 	
+327 	tvSeries 	
+326 	tvSeries 	
+100 	tvSeries 	
+102 	tvSeries 	
+103 	tvSeries 	
+104 	tvSeries 	
+106 	tvSeries 	
+112 	tvSeries 	
+111 	tvSeries 	
+116 	tvSeries 	
+115 	tvSeries 	
+113 	tvSeries 	
+147 	tvSeries 	
+114 	tvSeries 	
+117 	tvSeries 	
+118 	tvSeries 	
+119 	tvSeries 	
+108 	tvSeries 	
+109 	tvSeries 	
+120 	tvSeries 	
+121 	tvSeries 	
+123 	tvSeries 	
+124 	tvSeries 	
+80 	tvSeries 	
+122 	tvSeries 	
+126 	tvSeries 	
+325 	tvSeries 	
+328 	tvSeries 	
+18 	tvMiniSeries 	
+125 	tvSeries 	
+324 	tvSeries 	
+74 	tvSeries 	
+72 	tvSeries 	
+323 	tvSeries 	
+130 	tvSeries 	
+69 	tvSeries 	
+131 	tvSeries 	
+321 	tvSeries 	
+132 	tvSeries 	
+176 	tvSeries 	
+320 	tvSeries 	
+319 	tvSeries 	
+322 	tvSeries 	
+2020 	tvSeries 	
+177 	tvSeries 	
+318 	tvSeries 	
+315 	tvSeries 	
+133 	tvSeries 	
+134 	tvSeries 	
+148 	tvSeries 	
+149 	tvSeries 	
+314 	tvSeries 	
+313 	tvSeries 	
+316 	tvSeries 	
+312 	tvSeries 	
+311 	tvSeries 	
+310 	tvSeries 	
+339 	tvSeries 	
+317 	tvSeries 	
+308 	tvSeries 	
+178 	tvSeries 	
+19 	tvMiniSeries 	
+299 	tvSeries 	
+302 	tvSeries 	
+301 	tvSeries 	
+300 	tvSeries 	
+179 	tvSeries 	
+150 	tvSeries 	
+303 	tvSeries 	
+304 	tvSeries 	
+309 	tvSeries 	
+151 	tvSeries 	
+152 	tvSeries 	
+153 	tvSeries 	
+2019 	tvMiniSeries 	
+154 	tvSeries 	
+180 	tvSeries 	
+181 	tvSeries 	
+305 	tvSeries 	
+10 	tvMiniSeries 	
+11 	tvMiniSeries 	
+2019 	tvSeries 	
+298 	tvSeries 	
+297 	tvSeries 	
+296 	tvSeries 	
+185 	tvSeries 	
+341 	tvSeries 	
+2010 	tvSeries 	
+184 	tvSeries 	
+292 	tvSeries 	
+291 	tvSeries 	
+295 	tvSeries 	
+307 	tvSeries 	
+306 	tvSeries 	
+293 	tvSeries 	
+294 	tvSeries 	
+290 	tvSeries 	
+289 	tvSeries 	
+288 	tvSeries 	
+287 	tvSeries 	
+286 	tvSeries 	
+285 	tvSeries 	
+284 	tvSeries 	
+283 	tvSeries 	
+282 	tvSeries 	
+281 	tvSeries 	
+280 	tvSeries 	
+279 	tvSeries 	
+278 	tvSeries 	
+277 	tvSeries 	
+276 	tvSeries 	
+275 	tvSeries 	
+274 	tvSeries 	
+273 	tvSeries 	
+272 	tvSeries 	
+187 	tvSeries 	
+155 	tvSeries 	
+271 	tvSeries 	
+270 	tvSeries 	
+268 	tvSeries 	
+267 	tvSeries 	
+266 	tvSeries 	
+265 	tvSeries 	
+9 	tvMiniSeries 	
+264 	tvSeries 	
+263 	tvSeries 	
+262 	tvSeries 	
+261 	tvSeries 	
+186 	tvSeries 	
+260 	tvSeries 	
+259 	tvSeries 	
+258 	tvSeries 	
+257 	tvSeries 	
+256 	tvSeries 	
+255 	tvSeries 	
+254 	tvSeries 	
+253 	tvSeries 	
+252 	tvSeries 	
+251 	tvSeries 	
+250 	tvSeries 	
+249 	tvSeries 	
+248 	tvSeries 	
+247 	tvSeries 	
+246 	tvSeries 	
+245 	tvSeries 	
+244 	tvSeries 	
+243 	tvSeries 	
+242 	tvSeries 	
+12 	tvMiniSeries 	
+13 	tvMiniSeries 	
+14 	tvMiniSeries 	
+156 	tvSeries 	
+188 	tvSeries 	
+340 	tvSeries 	
+241 	tvSeries 	
+240 	tvSeries 	
+239 	tvSeries 	
+238 	tvSeries 	
+237 	tvSeries 	
+236 	tvSeries 	
+235 	tvSeries 	
+234 	tvSeries 	
+233 	tvSeries 	
+189 	tvSeries 	
+190 	tvSeries 	
+232 	tvSeries 	
+231 	tvSeries 	
+230 	tvSeries 	
+229 	tvSeries 	
+228 	tvSeries 	
+227 	tvSeries 	
+226 	tvSeries 	
+225 	tvSeries 	
+224 	tvSeries 	
+223 	tvSeries 	
+158 	tvSeries 	
+157 	tvSeries 	
+22 	tvMiniSeries 	
+2018 	tvSeries 	
+191 	tvSeries 	
+1971 	tvSeries 	
+1992 	tvSeries 	
+342 	tvSeries 	
+192 	tvSeries 	
+193 	tvSeries 	
+343 	tvSeries 	
+194 	tvSeries 	
+1 	tvMovie 	
+195 	tvSeries 	
+2012 	tvSeries 	
+2008 	tvSeries 	
+2006 	tvSeries 	
+1 	tvEpisode 	
+2007 	tvSeries 	
+2011 	tvSeries 	
+2009 	tvSeries 	
+2013 	tvSeries 	
+201 	tvSeries 	
+2014 	tvSeries 	
+107 	tvSeries 	
+2015 	tvSeries 	
+110 	tvSeries 	
+2016 	tvSeries 	
+2000 	tvSeries 	
+25 	tvMiniSeries 	
+1980 	tvSeries 	
+28 	tvMiniSeries 	
+29 	tvMiniSeries 	
+31 	tvMiniSeries 	
+30 	tvMiniSeries 	
+2018 	tvMiniSeries 	
+2017 	tvSeries 	
+173 	tvSeries 	
+2017 	tvMiniSeries 	
+-----------------------------------------------------
+
+Tempo em millis: 58782

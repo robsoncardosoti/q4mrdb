@@ -1,0 +1,28 @@
+CONSULTA: number of films released per year
+CONSULTA EXPANDIDA: [number, figure, act, routine, of, films, movie, film, picture, released, let go of, let go, release, per, year, twelvemonth, yr, class]
+BANCOS COM INFORMACOES UTEIS: {imdb_pt=2}
+
+PESQUISANDO O BANCO imdb_pt
+RELACIONAMENTO ENTRE AS TABELAS NO BANCO imdb_pt: {movies_genres=[genres.fk_movieGenre_genre, movies.fk_movieGenre_movie], person=[movies_actors.fk_moviesActors_actors, movies_directors.fk_directorsMovie_person], movies=[episode.fk_episode_movie, movies_actors.fk_moviesActors_movie, movies_directors.fk_directorsMovie_movie, movies_genres.fk_movieGenre_movie], genres=[movies_genres.fk_movieGenre_genre], movies_actors=[movies.fk_moviesActors_movie, person.fk_moviesActors_actors], episode=[movies.fk_episode_movie], movies_directors=[movies.fk_directorsMovie_movie, person.fk_directorsMovie_person]}
+
+MATRIZ DE PESOS
+
+MATRIZ SW:
+null	episode	genres	movies	movies_actors	movies_directors	movies_genres	person	episode.episodeid	episode.movieid	episode.seasonnumber	episode.episodenumber	genres.genre_id	genres.name	movies.movieid	movies.type	movies.title	movies.startyear	movies.endyear	movies.rating	movies_actors.movieid	movies_actors.personid	movies_directors.movieid	movies_directors.personid	movies_genres.movie_d	movies_genres.genre_id	person.personid	person.name	person.birthyear	person.deathyear	
+number	0	0	0	0	0	0	0	0	0	66	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+of	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+films	0	0	77	0	0	0	0	0	73	0	0	0	0	73	0	0	0	0	0	73	0	73	0	68	0	0	0	0	0	
+released	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+per	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+year	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	68	0	0	0	0	0	0	0	0	0	0	0	
+
+
+MATRIZ VW:
+null	episode.episodeid.java.lang.String	episode.movieid.java.lang.String	episode.seasonnumber.java.lang.Integer	episode.episodenumber.java.lang.Integer	genres.genre_id.java.lang.Integer	genres.name.java.lang.String	movies.movieid.java.lang.String	movies.type.java.lang.String	movies.title.java.lang.String	movies.startyear.java.lang.String	movies.endyear.java.lang.String	movies.rating.java.math.BigDecimal	movies_actors.movieid.java.lang.String	movies_actors.personid.java.lang.String	movies_directors.movieid.java.lang.String	movies_directors.personid.java.lang.String	movies_genres.movie_d.java.lang.String	movies_genres.genre_id.java.lang.Integer	person.personid.java.lang.String	person.name.java.lang.String	person.birthyear.java.lang.String	person.deathyear.java.lang.String	
+number	65	65	0	0	0	65	65	65	65	65	65	0	65	65	65	65	65	0	65	65	65	65	
+of	65	65	0	0	0	65	65	65	65	65	65	0	65	65	65	65	65	0	65	65	65	65	
+films	65	65	0	0	0	65	65	65	65	65	65	0	65	65	65	65	65	0	65	65	65	65	
+released	65	65	0	0	0	65	65	65	65	65	65	0	65	65	65	65	65	0	65	65	65	65	
+per	65	65	0	0	0	65	65	65	65	65	65	0	65	65	65	65	65	0	65	65	65	65	
+year	65	65	0	0	0	65	65	65	65	65	65	0	65	65	65	65	65	0	65	65	65	65	
+
